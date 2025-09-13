@@ -1,0 +1,28 @@
+<!--Using ng-option and for loop-->
+<form (ngSubmit)="onSubmit()">
+<ng-select
+  [items]="(characters$ | async) ?? []"
+  bindLabel="name"
+  bindValue="id"
+  placeholder="Search characters"
+  [typeahead]="searchInput$"
+  [(ngModel)]="selectedCharacter"
+  name="character"
+>
+
+  <ng-template ng-option-tmp let-item="item">
+    <div class="fle items-center gap-2">
+      <img [src]="'http://localhost:5000/' + item.image_url" alt ="{{item.name}}" class="w-8 h-8 rounded-full object-cover" />
+      <span>{{ item.name }}</span>
+    </div>
+  </ng-template>
+
+  <ng-template ng-label-tmp let-item="item">
+    <div class="flex items-center gap-2">
+      <img [src]="'http://localhost:5000/' + item.image_url" alt="{{item.name}}" class="w-5 h-5 rounded-full object-cover" />
+      <span>{{ item.name }}</span>
+    </div>
+  </ng-template>
+</ng-select>
+  <button type="submit">Submit</button>
+</form>
