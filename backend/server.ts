@@ -3,6 +3,7 @@ import cors from "cors";
 import { pool } from "./src/db";   // 👈 must match the export above
 import path from "path";
 import gameRouter from "./src/routes/game";
+import { errorHandler } from './src/middleware/errorHandler';
 
 const app = express();
 app.use(cors());
@@ -23,6 +24,8 @@ app.get("/api/characters", async (req: Request, res: Response) => {
     res.status(500).json({ db: "error", error: err.message });
   }
 });
+
+app.use(errorHandler);
 
 app.listen(5000, () => {
   console.log("Server running on http://localhost:5000");

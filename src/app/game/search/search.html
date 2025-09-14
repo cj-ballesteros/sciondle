@@ -1,12 +1,12 @@
 <!--Using ng-option and for loop-->
-<form (ngSubmit)="onSubmit()">
+<form (ngSubmit)="on_submit()">
 <ng-select
   [items]="(characters$ | async) ?? []"
   bindLabel="name"
   bindValue="id"
   placeholder="Search characters"
   [typeahead]="searchInput$"
-  [(ngModel)]="selectedCharacter"
+  [(ngModel)]="selected_character"
   name="character"
 >
 

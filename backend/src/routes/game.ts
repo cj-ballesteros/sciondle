@@ -5,31 +5,56 @@ const router = Router();
 
 const correct_character_id = 4;
 
-router.post("/guess", async (req, res) => {
+router.post("/guess", async (req, res, next) => {
   try {
-    const {characterId} = req.body;
-
-    if (!characterId) {
-      return res.status(400).json({error: "Missing characterId"});
+    if (!req.body || typeof req.body.character_id === "undefined") {
+      const error: any = new Error("Missing character_id in request body");
+      error.status = 400;
+      throw error;
     }
 
-    const result = await pool.query(
-      "SELECT id, name, image_url FROM characters WHERE id = $1",
-      [characterId]
+    const character_id = Number(req.body.character_id);
+    if (isNaN(character_id)) {
+      const error: any = new Error("character_id must be a number");
+      error.status = 400;
+      throw error;
+    }
+
+    const guess_result = await pool.query(
+      "SELECT id, name, affiliation, current_job, race, version_introduction, image_url FROM characters WHERE id = $1",
+      [character_id]
     );
 
-    if (result.rows.length === 0) {
-      return res.status(404).json({error: "Character not found"});
+    if (guess_result.rows.length === 0) {
+      const error: any = new Error("Character not found");
+      error.status = 404;
+      throw error;
     }
+    const guess = guess_result.rows[0];
 
-    const character = result.rows[0];
+    const answerResult = await pool.query(
+      "SELECT id, name, affiliation, current_job, race, version_introduction, image_url FROM characters WHERE id = $1",
+      [correct_character_id]
+    )
+    const answer = answerResult.rows[0];
 
-    const isCorrect = character.id === correct_character_id;
+    const comparison = {
+      name: guess.name === answer.name,
+      affiliation: guess.affiliation === answer.affiliation,
+      current_job: guess.current_job === answer.current_job,
+      race: guess.race === answer.race,
+      version_introduction: guess.version_introduction === answer.version_introduction,
+    }
+    res.json({
+      guess,
+      comparison,
+      correct: guess.id === answer.id,
+    });
+    console.log({guess, comparison, stuff: guess.id === answer.id});
 
-    res.json({correct: isCorrect, character});
   } catch(err) {
-  console.error(err);
-  res.status(500).json({error: "server error"});}
+    next(err);
+  }
 });
 
 export default router;
