@@ -11,18 +11,14 @@
 >
 
   <ng-template ng-option-tmp let-item="item">
-    <div class="fle items-center gap-2">
-      <img [src]="'http://localhost:5000/' + item.image_url" alt ="{{item.name}}" class="w-8 h-8 rounded-full object-cover" />
+    <div class="flex items-center gap-2">
+      <div class="w-8 h-8 rounded overflow-hidden border border-gray-300 flex-shrink-0">
+        <img [src]="'http://localhost:5000/' + item.image_url" alt ="{{item.name}}" class="w-full h-full object-cover" />
+      </div>
       <span>{{ item.name }}</span>
     </div>
   </ng-template>
 
-  <ng-template ng-label-tmp let-item="item">
-    <div class="flex items-center gap-2">
-      <img [src]="'http://localhost:5000/' + item.image_url" alt="{{item.name}}" class="w-5 h-5 rounded-full object-cover" />
-      <span>{{ item.name }}</span>
-    </div>
-  </ng-template>
 </ng-select>
   <button type="submit">Submit</button>
 </form>
