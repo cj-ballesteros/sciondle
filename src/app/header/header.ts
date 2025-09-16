@@ -13,6 +13,6 @@ import { MatListModule } from '@angular/material/list';
   templateUrl: './header.html',
   styleUrl: './header.css'
 })
-export class Header {
+export class HeaderComponent {
 
 }

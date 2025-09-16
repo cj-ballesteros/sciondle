@@ -1,13 +1,10 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import {MatToolbar} from '@angular/material/toolbar';
-import {Header} from './header/header';
-import {Game} from './game/game';
-import {SearchComponent} from './game/search/search';
+import {HeaderComponent} from './header/header';
+import {GameComponent} from './game/game';
 
 @Component({
   selector: 'app-root',
-  imports: [Header, Game, SearchComponent],
+  imports: [HeaderComponent, GameComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

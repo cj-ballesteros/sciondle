@@ -50,7 +50,6 @@ router.post("/guess", async (req, res, next) => {
       comparison,
       correct: guess.id === answer.id,
     });
-    console.log({guess, comparison, stuff: guess.id === answer.id});
 
   } catch(err) {
     next(err);

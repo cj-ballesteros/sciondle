@@ -5,33 +5,8 @@
   </div>
 </div>
 
-<div class="character-table">
-  <!-- Header Row -->
-  <div class="header">CHARACTER</div>
-  <div class="header">GENDER</div>
-  <div class="header">AFFILIATION</div>
-  <div class="header">DEVIL FRUIT</div>
-  <div class="header">HAKI</div>
-  <div class="header">LAST BOUNTY</div>
-  <div class="header">HEIGHT</div>
-  <div class="header">ORIGIN</div>
-  <div class="header">FIRST ARC</div>
-
-  <!-- Data Row -->
-  <div class="cell image">
-    <img src=".png" alt="Character" />
-  </div>
-  <div class="cell green">Male</div>
-  <div class="cell red">Straw Hat Pirates</div>
-  <div class="cell red">Paramecia</div>
-  <div class="cell green">👑 💪 👀</div>
-  <div class="cell red">💰 3B</div>
-  <div class="cell red">1m74</div>
-  <div class="cell green">East Blue</div>
-  <div class="cell red">Romance Dawn</div>
-</div>
-
-
+<app-search (guessMade)="addGuess($event)"/>
+<app-guess-table [guesses]="guesses"/>
 
 
 

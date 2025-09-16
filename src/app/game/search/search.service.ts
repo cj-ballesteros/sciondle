@@ -12,7 +12,7 @@ export class SearchService {
 
   constructor(private http: HttpClient) { }
 
-  searchCharacters(query: string): Observable<Character[]> {
+  search_characters(query: string): Observable<Character[]> {
     return this.http.get<Character[]>(`${this.characterUrl}?search=${query}`);
   }
 
