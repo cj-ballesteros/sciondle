@@ -1,9 +1,6 @@
 {
-  "name": "xivdle",
+  "name": "angular-test-again",
   "version": "0.0.0",
-  "engines": {
-    "node": "22.13.1"
-  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
