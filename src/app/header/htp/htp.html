@@ -1,0 +1,37 @@
+
+@if (isOpen) {
+  <div
+    class="fixed inset-0 bg-black/30 backdrop-blur-sm flex items-center justify-center z-50
+           animate-[fadeInBackdrop_0.3s_ease-out_forwards]"  >
+    <!-- Modal box -->
+    <div
+      class="bg-white rounded-2xl shadow-xl max-w-md w-11/12 p-6 relative
+             animate-fadeInScale"
+    >
+      <button
+        (click)="toggle()"
+        class="absolute top-3 right-3 text-gray-600 hover:text-gray-800"
+      >
+        ✕
+      </button>
+
+      <h2 class="text-2xl font-bold mb-4">How to Play</h2>
+
+      <ol class="list-decimal list-inside space-y-2 text-gray-700">
+        <li>Search for a character using the box above.</li>
+        <li>Each guess will show hints for attributes like affiliation, gender, current job, etc.</li>
+        <li>Green = exact match, Yellow = close, Red = wrong.</li>
+        <li>Try to find the correct character in as few guesses as possible!</li>
+      </ol>
+
+      <div class="mt-6 flex justify-end">
+        <button
+          (click)="toggle()"
+          class="px-4 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700"
+        >
+          Got it!
+        </button>
+      </div>
+    </div>
+  </div>
+}

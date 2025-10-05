@@ -1,3 +1,9 @@
+.welcome-wrapper {
+  width: 90%;
+  max-width: 700px;
+  margin: 1rem auto;
+}
+
 .center-container {
   display: flex;
   justify-content: center; /* horizontal */

@@ -1,5 +1,43 @@
 /* You can add global styles to this file, and also import other style files */
 @import "tailwindcss";
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body, app-root { height: 100%; margin: 0;}
+body {
+  margin: 0;
+  font-family: sans-serif, "Helvetica Neue", Roboto;
+  background-image: url('app/assets/dawntrail_poster.jpeg');
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@font-face {
+  font-family: 'OPTIEngeEtienne';
+  src: url('app/assets/fonts/OPTIEngeEtienne.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* global styles.css OR :host ::ng-deep if in component */
+:root {
+  --ng-select-border-radius: 0.5rem; /* 8px rounded */
+}
+
+.search-input .ng-select-container {
+  @apply border border-gray-300 rounded-lg shadow-md bg-white
+  focus-within:ring-2 focus-within:ring-red-400 transition;
+}
+
+.search-input .ng-dropdown-panel {
+  @apply mt-1 border border-gray-300 rounded-lg shadow-lg bg-white;
+}
+
+.search-input .ng-option {
+  @apply px-3 py-2 cursor-pointer hover:bg-red-50 transition;
+}
+
+.search-input .ng-option-selected {
+  @apply bg-red-100 font-semibold;
+}

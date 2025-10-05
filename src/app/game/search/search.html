@@ -1,24 +1,37 @@
-<!--Using ng-option and for loop-->
-<form (ngSubmit)="on_submit()">
-<ng-select
-  [items]="(characters$ | async) ?? []"
-  bindLabel="name"
-  bindValue="id"
-  placeholder="Search characters"
-  [typeahead]="searchInput$"
-  [(ngModel)]="selected_character"
-  name="character"
->
+<div class="guess-wrapper">
+  <form (ngSubmit)="on_submit()" class="formStyler">
+    <ng-select
+      [items]="(characters$ | async) ?? []"
+      bindLabel="name"
+      bindValue="id"
+      placeholder="Character name, alias..."
+      [typeahead]="searchInput$"
+      [(ngModel)]="selected_character"
+      name="character"
+      class="w-full search-input"
+    >
+      <ng-template ng-option-tmp let-item="item">
+        <div class="inline-flex items-center gap-2">
+          <div class="w-8 h-8 rounded overflow-hidden border border-gray-300 flex-shrink-0">
+            <img [src]="'http://localhost:5000/' + item.image_url"
+                 alt="{{item.name}}"
+                 class="w-full h-full object-cover" />
+          </div>
+          <span>{{ item.name }}</span>
+        </div>
+      </ng-template>
 
-  <ng-template ng-option-tmp let-item="item">
-    <div class="flex items-center gap-2">
-      <div class="w-8 h-8 rounded overflow-hidden border border-gray-300 flex-shrink-0">
-        <img [src]="'http://localhost:5000/' + item.image_url" alt ="{{item.name}}" class="w-full h-full object-cover" />
-      </div>
-      <span>{{ item.name }}</span>
-    </div>
-  </ng-template>
-
-</ng-select>
-  <button type="submit">Submit</button>
-</form>
+    </ng-select>
+    <button type="submit"
+            class="submit-button px-6 py-2 rounded-md font-semibold shadow-md transition
+             hover:scale-105">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+           fill="none" stroke="currentColor" stroke-width="2"
+           stroke-linecap="round" stroke-linejoin="round"
+           class="w-5 h-5 text-red-600">
+        <path d="M22 2L11 13"></path>
+        <path d="M22 2L15 22L11 13L2 9L22 2Z"></path>
+      </svg>
+    </button>
+  </form>
+</div>
