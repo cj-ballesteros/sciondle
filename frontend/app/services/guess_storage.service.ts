@@ -1,4 +1,3 @@
-// src/app/services/guess-storage.service.ts
 import { Injectable } from '@angular/core';
 
 @Injectable({ providedIn: 'root' })
