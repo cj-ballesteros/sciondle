@@ -1,0 +1,3 @@
+interface Character {
+  id: string
+}

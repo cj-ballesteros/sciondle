@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { GuessResponse } from '../search/search.model';
+import { GuessResponse } from '../searchjson/searchjson.model';
 import { NgClass } from '@angular/common';
 
 @Component({

@@ -38,7 +38,7 @@ export class SearchComponent {
 
     this.search_service.submit_guess(this.selected_character).subscribe({
         next: (res) => this.guessMade.emit(res),
-        error: (err) => console.error('Erorr submitting guess: ', err),
+        error: (err) => console.error('Error submitting guess: ', err),
       });
     }
 }

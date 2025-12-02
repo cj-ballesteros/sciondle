@@ -20,7 +20,7 @@
           class="px-4 py-2 bg-white"
         >
           <img
-            [src]="'http://localhost:5000/' + g.guess.image_url"
+            [src]="'jobs_and_characters/' + g.guess.image_url"
             alt="{{ g.guess.name }}"
             class="table-cell-image"
           />
@@ -68,7 +68,7 @@
         >
           @if (g.guess.current_job !== 'None') {
             <img
-              [src]="'http://localhost:5000/' + g.guess.job_image_url"
+              [src]="'jobs_and_characters/' + g.guess.job_image_url"
               alt="{{ g.guess.current_job }}"
               class="table-cell-image"
             />

@@ -24,12 +24,12 @@
 </div>
 
 @if (!game_over){
-  <app-search (guessMade)="add_guess($event)"/>
+  <app-searchjson (characterSelected)="onCharacterSelected($event)"/>
 }
 @if (guesses && guesses.length > 0) {
   <app-guess-table [guesses]="guesses"/>
 }
-@if (game_over && correct_answer) {
-  <app-results [correctAnswer]="correct_answer" [guesses]="guesses"/>
+@if (game_over && correctAnswer) {
+  <app-results [correctAnswer]="correctAnswer" [guesses]="guesses"/>
 }
 

@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import {Character, GuessResponse} from '../search/search.model';
+import {Character, GuessResponse} from '../searchjson/searchjson.model';
 
 @Component({
   selector: 'app-results',
