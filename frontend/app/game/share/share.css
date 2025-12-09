@@ -1,0 +1,61 @@
+.share-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 10px;
+
+  background-color: #5a6fa3;  /* green shade from image */
+  color: white;
+
+  border: none;
+  border-radius: 999px;
+
+  padding: 8px 30px;
+  font-size: 20px;
+  font-weight: 500;
+
+  cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.share-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.share-btn:active {
+  transform: translateY(1px);
+  box-shadow: none;
+}
+
+.share-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.clipboardMessage {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-20px);
+
+  background: white;
+  color: black;
+
+  padding: 14px 24px;
+  border-radius: 8px;
+  font-weight: 500;
+
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.25s ease;
+}
+
+.clipboardMessage.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+

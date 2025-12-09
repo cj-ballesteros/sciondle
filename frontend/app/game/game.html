@@ -31,5 +31,6 @@
 }
 @if (game_over && correctAnswer) {
   <app-results [correctAnswer]="correctAnswer" [guesses]="guesses"/>
+  <app-share [guesses]="guesses"/>
 }
 

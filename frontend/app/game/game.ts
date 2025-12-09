@@ -4,13 +4,16 @@ import { GuessTableComponent } from './guess-table/guess-table';
 import { ResultsComponent } from './results/results';
 import { GuessStorageService } from '../services/guess_storage.service';
 import { SearchJsonComponent } from './searchjson/searchjson';
+import { ShareComponent } from './share/share';
+
 
 @Component({
   selector: 'app-game',
   imports: [
     GuessTableComponent,
     ResultsComponent,
-    SearchJsonComponent
+    SearchJsonComponent,
+    ShareComponent
   ],
   templateUrl: './game.html',
   styleUrl: './game.css'
@@ -44,12 +47,31 @@ export class GameComponent {
         this.characters = this.characters.filter(
           c => !this.guesses.some(g => g.guess.id === c.id)
         );
-        this.setCorrectAnswer(); // pick correct answer *after* loading
+        this.setCorrectAnswer();
       });
   }
 
+  getGlobalSeed = (): number => {
+    const now = new Date();
+
+    const laTime = new Date(
+      now.toLocaleString('en-US', {
+        timeZone: 'America/Los_Angeles'
+      })
+    );
+
+    laTime.setHours(laTime.getHours() - 21);
+
+    const dateKey = laTime.toISOString().slice(0, 10);
+
+    return dateKey
+      .split('')
+      .reduce((a, c) => a + c.charCodeAt(0), 0);
+  };
+
   setCorrectAnswer() {
-    this.correctAnswer = this.unmodifiedCharacters[2];
+    const index = this.getGlobalSeed() % this.unmodifiedCharacters.length;
+    this.correctAnswer = this.unmodifiedCharacters[index];
   }
 
   buildGuessResponse(guess: Character): GuessResponse {
@@ -81,7 +103,7 @@ export class GameComponent {
 
   compareNumber(guess: number, answer: number): 'higher' | 'lower' | 'equal' {
     if (guess === answer) return 'equal';
-    return guess > answer ? 'higher' : 'lower';
+    return guess > answer ? 'lower' : 'higher';
   }
 
   private compareVersions(a: string, b: string): 'higher' | 'lower' | 'equal' {
@@ -93,11 +115,11 @@ export class GameComponent {
     const [majorA, minorA] = toParts(a);
     const [majorB, minorB] = toParts(b);
 
-    if (majorA > majorB) return 'higher';
-    if (majorA < majorB) return 'lower';
+    if (majorA > majorB) return 'lower';
+    if (majorA < majorB) return 'higher';
 
-    if (minorA > minorB) return 'higher';
-    if (minorA < minorB) return 'lower';
+    if (minorA > minorB) return 'lower';
+    if (minorA < minorB) return 'higher';
 
     return 'equal';
   }

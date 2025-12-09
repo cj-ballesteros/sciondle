@@ -1,0 +1,25 @@
+<div class="mt-10 flex flex-col items-center text-center">
+  <div class="bg-white shadow-lg rounded-2xl p-6 w-full max-w-lg flex flex-col items-center">
+
+    <h3 class="text-2xl font-bold text-center mb-3">Share your results!</h3>
+
+    <pre><p [innerHTML]="shareString"></p></pre>
+
+    <button [cdkCopyToClipboard]="shareString" class="share-btn" (click)="notifyCopy()">
+      <span>Share</span>
+      <svg class="share-icon" viewBox="0 0 24 24" fill="none">
+        <path d="M18 16.08C17.24 16.08 16.56 16.38 16.06 16.85L8.91 12.7C8.96 12.48 9 12.25 9 12C9 11.75 8.96 11.52 8.91 11.3L15.99 7.19C16.5 7.71 17.21 8.04 18 8.04C19.66 8.04 21 6.7 21 5.04C21 3.38 19.66 2.04 18 2.04C16.34 2.04 15 3.38 15 5.04C15 5.29 15.04 5.52 15.09 5.74L8.01 9.85C7.5 9.33 6.79 9 6 9C4.34 9 3 10.34 3 12C3 13.66 4.34 15 6 15C6.79 15 7.5 14.67 8.01 14.15L15.16 18.31C15.11 18.5 15.08 18.7 15.08 18.91C15.08 20.54 16.41 21.87 18.04 21.87C19.67 21.87 21 20.54 21 18.91C21 17.28 19.67 16.08 18 16.08Z"
+              fill="white"/>
+      </svg>
+    </button>
+
+  </div>
+</div>
+
+<div class="clipboardMessage"
+     [class.show]="showMessage"
+     role="status"
+     aria-live="polite"
+     aria-atomic="true">
+  Copied results to clipboard!
+</div>
