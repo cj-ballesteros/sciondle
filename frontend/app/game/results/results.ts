@@ -10,4 +10,6 @@ import {Character, GuessResponse} from '../searchjson/searchjson.model';
 export class ResultsComponent {
   @Input() correctAnswer!: Character;
   @Input() guesses!: GuessResponse[];
+
+  ngOnInit(): void {}
 }

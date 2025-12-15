@@ -1,4 +1,4 @@
-import {Component, Input, inject} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {GuessResponse} from '../searchjson/searchjson.model';
 import { DatePipe } from '@angular/common';
 import { ClipboardModule } from '@angular/cdk/clipboard';

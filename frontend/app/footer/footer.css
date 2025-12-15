@@ -1,0 +1,39 @@
+/* Container to space the button nicely */
+.kofi-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+/* Circular Ko-fi button */
+.kofi-btn {
+  width: 45px;
+  height: 45px;
+
+  background-color: #ff5e5b; /* Ko-fi red */
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.kofi-btn:hover,
+.kofi-btn:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+}
+
+.kofi-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.kofi-btn img {
+  width: 26px;
+  height: 26px;
+}

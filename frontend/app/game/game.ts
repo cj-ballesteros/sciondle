@@ -23,9 +23,10 @@ export class GameComponent {
   correctAnswer!: Character;
   characters: Character[] = [];
   unmodifiedCharacters: Character[] = [];
-  game_over = false;
+  game_over: boolean = false;
 
   constructor(private guessStorage: GuessStorageService) {
+    this.game_over = this.guessStorage.loadGameState();
     this.guesses = this.guessStorage.loadGuesses();
   }
 
@@ -126,12 +127,11 @@ export class GameComponent {
 
   add_guess(guess: GuessResponse) {
     this.guesses.unshift(guess);
-    this.guessStorage.saveGuesses(this.guesses)
 
     if (guess.correct) {
-      this.correctAnswer = guess.guess
       this.game_over = true;
       this.guessStorage.clearGuesses();
     }
+    this.guessStorage.saveGuesses(this.guesses, this.game_over)
   }
 }
