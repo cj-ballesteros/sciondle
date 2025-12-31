@@ -23,6 +23,16 @@ export class GameComponent {
   correctAnswer!: Character;
   characters: Character[] = [];
   unmodifiedCharacters: Character[] = [];
+  randomOrder: number[] = [13, 69, 17, 62, 60, 66, 48, 74, 86, 47,
+    85, 6, 7, 19, 82, 61, 45, 83, 40, 0, 76, 52, 75, 68, 49, 31,
+    53, 50, 73, 21, 57, 67, 16, 46, 18, 27, 70, 72, 10, 64, 65, 77,
+    91, 11, 87, 9, 15, 14, 32, 42, 37, 25, 3, 56, 44, 2, 12, 54, 8,
+    4, 29, 55, 84, 90, 28, 78, 26, 89, 51, 41, 20, 80, 38, 22, 93,
+    34, 39, 92, 36, 71, 88, 33, 79, 23, 43, 1, 63, 59, 35, 30, 81,
+    58, 94, 5, 24]
+  // https://www.calculatorsoup.com/calculators/statistics/random-number-generator.php
+  // adjust everytime a new character is added!!!
+  // TODO: maybe add an automatic function for randomOrder
   game_over: boolean = false;
 
   constructor(private guessStorage: GuessStorageService) {
@@ -72,7 +82,9 @@ export class GameComponent {
 
   setCorrectAnswer() {
     const index = this.getGlobalSeed() % this.unmodifiedCharacters.length;
-    this.correctAnswer = this.unmodifiedCharacters[index];
+    this.correctAnswer = this.unmodifiedCharacters[this.randomOrder[index]];
+    console.log(this.randomOrder.length);
+    console.log(this.unmodifiedCharacters.length);
   }
 
   buildGuessResponse(guess: Character): GuessResponse {
