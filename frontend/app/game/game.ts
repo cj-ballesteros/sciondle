@@ -28,7 +28,7 @@ export class GameComponent {
     53, 50, 73, 21, 57, 67, 16, 46, 18, 27, 70, 72, 10, 64, 65, 77,
     91, 11, 87, 9, 15, 14, 32, 42, 37, 25, 3, 56, 44, 2, 12, 54, 8,
     4, 29, 55, 84, 90, 28, 78, 26, 89, 51, 41, 20, 80, 38, 22, 93,
-    34, 39, 92, 36, 71, 88, 33, 79, 23, 43, 1, 63, 59, 35, 30, 81,
+    34, 39, 92, 36, 71, 88, 33, 79, 23, 43, 95, 1, 63, 59, 35, 30, 81,
     58, 94, 5, 24]
   // https://www.calculatorsoup.com/calculators/statistics/random-number-generator.php
   // adjust everytime a new character is added!!!
@@ -83,8 +83,6 @@ export class GameComponent {
   setCorrectAnswer() {
     const index = this.getGlobalSeed() % this.unmodifiedCharacters.length;
     this.correctAnswer = this.unmodifiedCharacters[this.randomOrder[index]];
-    console.log(this.randomOrder.length);
-    console.log(this.unmodifiedCharacters.length);
   }
 
   buildGuessResponse(guess: Character): GuessResponse {

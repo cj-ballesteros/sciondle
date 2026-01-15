@@ -46,7 +46,7 @@ export class GuessStorageService {
     const storedKey = localStorage.getItem('xivdle_daykey');
 
     if (storedKey !== currentKey) {
-      localStorage.clear(); // or selectively remove keys
+      localStorage.clear();
       localStorage.setItem('xivdle_daykey', currentKey);
     }
   }
