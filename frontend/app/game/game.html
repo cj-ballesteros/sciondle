@@ -16,11 +16,13 @@
     <!-- Centered Dialogue Text -->
     <p class="absolute left-[10%] h-[35%] text-gray-900 leading-tight"
        style="font-size: min(2.5vw, 20px);">
-      Guess today's XIV MSQ character!<br/>
+      Guess today's XIV character!<br/>
       Enter your guess to get started!
     </p>
   </div>
 </div>
+
+<app-header-buttons/>
 
 @if (!game_over){
   <app-searchjson (characterSelected)="onCharacterSelected($event)"/>

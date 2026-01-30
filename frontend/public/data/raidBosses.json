@@ -1,0 +1,902 @@
+[
+  {
+    "boss_id": 1,
+    "boss_name": "Bahamut Prime",
+    "boss_alias": null,
+    "expansion": "2.0",
+    "average_clear_time": "",
+    "boss_type": [
+      "normal",
+      "wall_boss",
+      "stationary_boss",
+      "dual_boss",
+      "door_boss",
+      "final_boss",
+      "two_phase"
+    ],
+    "arena_features": [
+      "square",
+      "circular",
+      "rectangular",
+      "multiple_platforms/arenas",
+      "breakable_platforms",
+      "teleporters",
+      "irregular",
+      "limited_space"
+    ],
+    "encounter_features": [
+      "downtime",
+      "adds",
+      "no_positionals"
+    ],
+    "fundamental_mechanics_featured": [
+      "spreads",
+      "stacks",
+      "light_party_stacks",
+      "partner_stacks",
+      "role_stacks",
+      "line_stacks",
+      "towers",
+      "proximity",
+      "flares",
+      "knockback",
+      "chariot/dynamo",
+      "proteans",
+      "tethers"
+    ],
+    "common_mechanics_featured": [
+      "doom_cleanse",
+      "akh_morn",
+      "defamation",
+      "baited_aoes",
+      "wild_charge",
+      "exas",
+      "twister",
+      "chain_break",
+      "hot_wing/hot_tail",
+      "earthshakers",
+      "limit_cut",
+      "playstation",
+      "nisi",
+      "tumults",
+      "akh_rhai",
+      "monitors",
+      "enumeration",
+      "hand_of_pain",
+      "stillness",
+      "motion",
+      "gaze",
+      "rotating",
+      "hot_spell/cold_spell",
+      "shiva"
+    ],
+    "created_at": "2025-1-23",
+    "image_url": "bahamut_prime.jpeg"
+  },
+  {
+    "boss_id": 2,
+    "boss_name": "Black Cat",
+    "boss_alias": null,
+    "expansion": "7.0",
+    "average_clear_time": "",
+    "boss_type": [
+      "normal"
+    ],
+    "arena_type": [
+      "square",
+      "limited_space"
+    ],
+    "encounter_features": [
+      null
+    ],
+    "fundamental_mechanics_featured": [
+      "spreads",
+      "stacks",
+      "light_party_stacks",
+      "role_stacks",
+      "partner_stacks"
+    ],
+    "mechanics_featured": [
+      "proteans",
+      "knockback"
+    ],
+    "created_at": "2026-01-23",
+    "image_url": "black_cat.jpeg"
+  },
+  {
+    "boss_id": 3,
+    "boss_name": "Honey B. Lovely",
+    "boss_alias": null,
+    "expansion": "7.0",
+    "average_clear_time": "",
+    "boss_type": [
+      "normal"
+    ],
+    "arena_type": [
+      "circular"
+    ],
+    "encounter_features": [
+      "breakable_platforms"
+    ],
+    "fundamental_mechanics_featured": [
+      "spreads",
+      "stacks",
+      "partner_stacks",
+      "towers"
+    ],
+    "mechanics_featured": [
+      "chariot/dynamo",
+      "baited_aoes",
+      "defamations",
+      "nisi"
+    ],
+    "created_at": "2026-01-23",
+    "image_url": "honey_b_lovely.jpeg"
+  },
+  {
+    "boss_id": 4,
+    "boss_name": "Brute Bomber",
+    "boss_alias": null,
+    "expansion": "7.0",
+    "average_clear_time": "",
+    "boss_type": [
+      "normal"
+    ],
+    "arena_type": [
+      "square",
+      "limited_space"
+    ],
+    "encounter_features": [
+      null
+    ],
+    "fundamental_mechanics_featured": [
+      "spreads",
+      "stacks",
+      "partner_stacks",
+      "towers",
+      "proximity_aoe",
+      "knockback",
+      "chariot/dynamo"
+    ],
+    "mechanics_featured": [
+      "doom_cleanse",
+      "akh_morn",
+      "tumults"
+    ],
+    "created_at": "2026-01-23",
+    "image_url": "brute_bomber.jpeg"
+  },
+  {
+    "boss_id": 5,
+    "boss_name": "Wicked Thunder",
+    "boss_alias": null,
+    "expansion": "7.0",
+    "average_clear_time": "",
+    "boss_type": [
+      "normal",
+      "wall_boss",
+      "stationary_boss",
+      "two_phase"
+    ],
+    "arena_type": [
+      "square",
+      "rectangular",
+      "multiple_platforms/arenas",
+      "breakable_platforms",
+      "limited_space"
+    ],
+    "encounter_features": [
+      "downtime",
+      "no_positionals"
+    ],
+    "fundamental_mechanics_featured": [
+      "spreads",
+      "stacks",
+      "light_party_stacks",
+      "partner_stacks",
+      "line_stacks",
+      "towers",
+      "knockback",
+      "chariot/dynamo",
+      "proteans",
+      "tethers"
+    ],
+    "mechanics_featured": [
+      "doom_cleanse",
+      "akh_morn",
+      "defamation",
+      "baited_aoes",
+      "wild_charge",
+      "exas",
+      "hot_wing/hot_tail"
+    ],
+    "created_at": "2026-01-23",
+    "image_url": "wicked_thunder.jpeg"
+  },
+  {
+    "boss_id": 6,
+    "boss_name": "Dancing Green",
+    "boss_alias": null,
+    "expansion": "7.0",
+    "average_clear_time": "",
+    "boss_type": [
+      "normal"
+    ],
+    "arena_features": [
+      "square"
+    ],
+    "encounter_features": [
+      "no_positionals"
+    ],
+    "fundamental_mechanics_featured": [
+      "spreads",
+      "light_party_stacks",
+      "partner_stacks",
+      "role_stacks",
+      "line_stacks",
+      "chariot/dynamo",
+      "proteans"
+    ],
+    "common_mechanics_featured": [
+      "nisi"
+    ],
+    "created_at": "2025-01-23",
+    "image_url": "dancing_green.jpeg"
+  },
+  {
+    "boss_id": 7,
+    "boss_name": "Sugar Riot",
+    "boss_alias": null,
+    "expansion": "7.0",
+    "average_clear_time": "",
+    "boss_type": [
+      "normal"
+    ],
+    "arena_features": [
+      "square",
+      "limited_space"
+    ],
+    "encounter_features": [
+      "adds"
+    ],
+    "fundamental_mechanics_featured": [
+      "spreads",
+      "stacks",
+      "light_party_stacks",
+      "partner_stacks",
+      "towers",
+      "tethers"
+    ],
+    "common_mechanics_featured": [
+      "akh_morn",
+      "defamation",
+      "twister"
+    ],
+    "created_at": "2025-1-23",
+    "image_url": "sugar_riot.jpeg"
+  },
+  {
+    "boss_id": 8,
+    "boss_name": "Brute Abombinator",
+    "boss_alias": null,
+    "expansion": "2.0",
+    "average_clear_time": "",
+    "boss_type": [
+      "normal",
+      "wall_boss"
+    ],
+    "arena_features": [
+      "square",
+      "rectangular",
+      "multiple_platforms/arenas"
+    ],
+    "encounter_features": [
+      "downtime",
+      "adds",
+      "no_positionals"
+    ],
+    "fundamental_mechanics_featured": [
+      "spreads",
+      "stacks",
+      "light_party_stacks",
+      "partner_stacks",
+      "towers",
+      "proximity",
+      "flares",
+      "knockback",
+      "chariot/dynamo",
+      "proteans",
+      "tethers"
+    ],
+    "common_mechanics_featured": [
+      "baited_aoes",
+      "tumults"
+    ],
+    "created_at": "2025-1-23",
+    "image_url": "brute_abombinator.jpeg"
+  },
+  {
+    "boss_id": 9,
+    "boss_name": "Howling Blade",
+    "boss_alias": null,
+    "expansion": "7.0",
+    "average_clear_time": "",
+    "boss_type": [
+      "normal",
+      "stationary_boss",
+      "two_phase"
+    ],
+    "arena_features": [
+      "circular",
+      "multiple_platforms/arenas",
+      "breakable_platforms",
+      "teleporters",
+      "limited_space"
+    ],
+    "encounter_features": [
+      "downtime",
+      "adds",
+      "no_positionals"
+    ],
+    "fundamental_mechanics_featured": [
+      "spreads",
+      "stacks",
+      "light_party_stacks",
+      "partner_stacks",
+      "towers",
+      "knockback",
+      "chariot/dynamo",
+      "proteans",
+      "tethers"
+    ],
+    "common_mechanics_featured": [
+      "akh_morn",
+      "defamation",
+      "enumeration",
+      "rotating"
+    ],
+    "created_at": "2025-1-23",
+    "image_url": "howling_blade.jpeg"
+  },
+  {
+    "boss_id": 10,
+    "boss_name": "Vamp Fatale",
+    "boss_alias": null,
+    "expansion": "7.0",
+    "average_clear_time": "",
+    "boss_type": [
+      "normal"
+    ],
+    "arena_features": [
+      "square",
+      "rectangular",
+      "limited_space"
+    ],
+    "encounter_features": [
+      "adds",
+      "no_positionals"
+    ],
+    "fundamental_mechanics_featured": [
+      "spreads",
+      "stacks",
+      "light_party_stacks",
+      "towers",
+      "chariot/dynamo",
+      "proteans",
+      "tethers"
+    ],
+    "common_mechanics_featured": [
+      "akh_morn",
+      "defamation"
+    ],
+    "created_at": "2025-1-23",
+    "image_url": "vamp_fatale.jpeg"
+  },
+  {
+    "boss_id": 11,
+    "boss_name": "The Xtremes",
+    "boss_alias": null,
+    "expansion": "7.0",
+    "average_clear_time": "",
+    "boss_type": [
+      "dual_boss"
+    ],
+    "arena_features": [
+      "square",
+      "limited_space"
+    ],
+    "encounter_features": [
+      "downtime",
+      "adds",
+      "no_positionals"
+    ],
+    "fundamental_mechanics_featured": [
+      "spreads",
+      "stacks",
+      "light_party_stacks",
+      "partner_stacks",
+      "towers",
+      "knockback",
+      "chariot/dynamo",
+      "proteans",
+      "tethers"
+    ],
+    "common_mechanics_featured": [
+      "defamation",
+      "baited_aoes"
+    ],
+    "created_at": "2025-1-23",
+    "image_url": "the_xtremes.jpeg"
+  },
+  {
+    "boss_id": 12,
+    "boss_name": "The Tyrant",
+    "boss_alias": null,
+    "expansion": "2.0",
+    "average_clear_time": "",
+    "boss_type": [
+      "normal",
+      "stationary_boss"
+    ],
+    "arena_features": [
+      "square",
+      "rectangular",
+      "multiple_platforms/arenas",
+      "breakable_platforms",
+      "limited_space"
+    ],
+    "encounter_features": [
+      "no_positionals"
+    ],
+    "fundamental_mechanics_featured": [
+      "spreads",
+      "stacks",
+      "light_party_stacks",
+      "partner_stacks",
+      "line_stacks",
+      "towers",
+      "proximity",
+      "knockback",
+      "chariot/dynamo",
+      "proteans",
+      "tethers"
+    ],
+    "common_mechanics_featured": [
+      "baited_aoes",
+      "wild_charge"
+    ],
+    "created_at": "2025-1-23",
+    "image_url": "bahamut_prime.jpeg"
+  },
+  {
+    "boss_id": 13,
+    "boss_name": "Lindwurm (Phase 1)",
+    "boss_alias": null,
+    "expansion": "2.0",
+    "average_clear_time": "",
+    "boss_type": [
+      "wall_boss",
+      "door_boss"
+    ],
+    "arena_features": [
+      "rectangular",
+      "multiple_platforms/arenas",
+      "breakable_platforms",
+      "limited_space"
+    ],
+    "encounter_features": [
+      "downtime",
+      "no_positionals"
+    ],
+    "fundamental_mechanics_featured": [
+      "spreads",
+      "stacks",
+      "role_stacks",
+      "towers",
+      "knockback",
+      "tethers"
+    ],
+    "common_mechanics_featured": [
+      "baited_aoes",
+      "chain_break",
+      "limit_cut",
+      "monitors"
+    ],
+    "created_at": "2025-1-23",
+    "image_url": "lindwurm_phase_1.jpeg"
+  },
+  {
+    "boss_id": 14,
+    "boss_name": "Lindwurm (Phase 2)",
+    "boss_alias": null,
+    "expansion": "7.0",
+    "average_clear_time": "",
+    "boss_type": [
+      "normal",
+      "stationary_boss",
+      "final_boss"
+    ],
+    "arena_features": [
+      "circular",
+      "multiple_platforms/arenas",
+      "breakable_platforms"
+    ],
+    "encounter_features": [
+      "no_positionals"
+    ],
+    "fundamental_mechanics_featured": [
+      "spreads",
+      "stacks",
+      "light_party_stacks",
+      "partner_stacks",
+      "towers",
+      "chariot/dynamo",
+      "proteans",
+      "tethers"
+    ],
+    "common_mechanics_featured": [
+      "doom_cleanse",
+      "defamation",
+      "twister",
+      "stillness*"
+    ],
+    "created_at": "2025-1-23",
+    "image_url": "lindwurm_phase_2.jpeg"
+  },
+  {
+    "boss_id": 15,
+    "boss_name": "Fatebreaker (FRU)",
+    "boss_alias": null,
+    "expansion": "7.0",
+    "average_clear_time": "",
+    "boss_type": [
+      "normal"
+    ],
+    "arena_features": [
+      "circular"
+    ],
+    "encounter_features": [
+      "downtime"
+    ],
+    "fundamental_mechanics_featured": [
+      "spreads",
+      "stacks",
+      "light_party_stacks",
+      "partner_stacks",
+      "towers",
+      "knockback",
+      "proteans",
+      "tethers"
+    ],
+    "common_mechanics_featured": [
+      "hot_wing/hot_tail",
+      "enumeration"
+    ],
+    "created_at": "2025-1-23",
+    "image_url": "fatebreaker.jpeg"
+  },
+  {
+    "boss_id": 16,
+    "boss_name": "Usurper of Frost",
+    "boss_alias": null,
+    "expansion": "7.0",
+    "average_clear_time": "",
+    "boss_type": [
+      "normal"
+    ],
+    "arena_features": [
+      "circular"
+    ],
+    "encounter_features": [
+      "downtime"
+    ],
+    "fundamental_mechanics_featured": [
+      "spreads",
+      "stacks",
+      "light_party_stacks",
+      "partner_stacks",
+      "line_stacks",
+      "towers",
+      "knockback",
+      "chariot/dynamo",
+      "proteans",
+      "tethers"
+    ],
+    "common_mechanics_featured": [
+      "baited_aoes",
+      "enumeration"
+    ],
+    "created_at": "2025-1-23",
+    "image_url": "shiva_ryne.jpeg"
+  },
+  {
+    "boss_id": 17,
+    "boss_name": "Oracle of Darkness (FRU)",
+    "boss_alias": null,
+    "expansion": "7.0",
+    "average_clear_time": "",
+    "boss_type": [
+      "normal"
+    ],
+    "arena_features": [
+      "circular",
+      "limited_space"
+    ],
+    "encounter_features": [
+      null
+    ],
+    "fundamental_mechanics_featured": [
+      "spreads",
+      "stacks",
+      "light_party_stacks",
+      "knockback",
+      "chariot/dynamo"
+    ],
+    "common_mechanics_featured": [
+      "enumeration",
+      "gaze",
+      "rotating"
+    ],
+    "created_at": "2025-1-23",
+    "image_url": "oracle_of_darkness.jpeg"
+  },
+  {
+    "boss_id": 18,
+    "boss_name": "Roommates",
+    "boss_alias": null,
+    "expansion": "7.0",
+    "average_clear_time": "",
+    "boss_type": [
+      "dual_boss"
+    ],
+    "arena_features": [
+      "circular"
+    ],
+    "encounter_features": [
+      "downtime",
+      "adds"
+    ],
+    "fundamental_mechanics_featured": [
+      "spreads",
+      "stacks",
+      "light_party_stacks",
+      "towers",
+      "knockback",
+      "proteans",
+      "tethers"
+    ],
+    "common_mechanics_featured": [
+      "doom_cleanse",
+      "akh_morn",
+      "wild_charge",
+      "akh_rhai",
+      "enumeration",
+      "hand_of_pain"
+    ],
+    "created_at": "2025-1-23",
+    "image_url": "roommates.jpeg"
+  },
+  {
+    "boss_id": 19,
+    "boss_name": "Pandora",
+    "boss_alias": null,
+    "expansion": "7.0",
+    "average_clear_time": "",
+    "boss_type": [
+      "normal",
+      "stationary_boss"
+    ],
+    "arena_features": [
+      "circular"
+    ],
+    "encounter_features": [
+      null
+    ],
+    "fundamental_mechanics_featured": [
+      "stacks",
+      "light_party_stacks",
+      "line_stacks",
+      "towers",
+      "tethers"
+    ],
+    "common_mechanics_featured": [
+      "wild_charge",
+      "exas"
+    ],
+    "created_at": "2025-1-23",
+    "image_url": "pandora.jpeg"
+  },
+  {
+    "boss_id": 20,
+    "boss_name": "Erichthonios",
+    "boss_alias": null,
+    "expansion": "6.0",
+    "average_clear_time": "",
+    "boss_type": [
+      "normal"
+    ],
+    "arena_features": [
+      "square",
+      "circular",
+      "limited_space"
+    ],
+    "encounter_features": [
+      null
+    ],
+    "fundamental_mechanics_featured": [
+      "spreads",
+      "stacks",
+      "flares",
+      "knockback",
+      "chariot/dynamo",
+      "tethers"
+    ],
+    "common_mechanics_featured": [
+      "hot_spell/cold_spell"
+    ],
+    "created_at": "2025-1-26",
+    "image_url": "erichthonios.jpeg"
+  },
+  {
+    "boss_id": 21,
+    "boss_name": "Hippokampos",
+    "boss_alias": null,
+    "expansion": "6.0",
+    "average_clear_time": "",
+    "boss_type": [
+      "normal"
+    ],
+    "arena_features": [
+      "rectangular",
+      "irregular",
+      "limited_space"
+    ],
+    "encounter_features": [
+      "no_positionals"
+    ],
+    "fundamental_mechanics_featured": [
+      "spreads",
+      "stacks",
+      "light_party_stacks",
+      "line_stacks",
+      "knockback",
+      "tethers"
+    ],
+    "common_mechanics_featured": [
+      "baited_aoes",
+      "wild_charge",
+      "limit_cut"
+    ],
+    "created_at": "2025-1-25",
+    "image_url": "hippokampos.jpeg"
+  },
+  {
+    "boss_id": 23,
+    "boss_name": "Phoinix",
+    "boss_alias": null,
+    "expansion": "6.0",
+    "average_clear_time": "",
+    "boss_type": [
+      "normal"
+    ],
+    "arena_features": [
+      "circular"
+    ],
+    "encounter_features": [
+      "downtime",
+      "adds"
+    ],
+    "fundamental_mechanics_featured": [
+      "spreads",
+      "stacks",
+      "light_party_stacks",
+      "partner_stacks",
+      "towers",
+      "knockback",
+      "chariot/dynamo",
+      "proteans",
+      "tethers"
+    ],
+    "common_mechanics_featured": [
+      "baited_aoes",
+      "hot_wing/hot_tail",
+      "limit_cut",
+      "tumults",
+      "shiva"
+    ],
+    "created_at": "2025-1-26",
+    "image_url": "phoinix.jpeg"
+  },
+  {
+    "boss_id": 24,
+    "boss_name": "Hesperos (Phase 1)",
+    "boss_alias": null,
+    "expansion": "6.0",
+    "average_clear_time": "",
+    "boss_type": [
+      "normal",
+      "door_boss"
+    ],
+    "arena_features": [
+      "square",
+      "circular",
+      "rectangular",
+      "multiple_platforms/arenas",
+      "breakable_platforms",
+      "teleporters",
+      "irregular",
+      "limited_space"
+    ],
+    "encounter_features": [
+      "downtime",
+      "adds",
+      "no_positionals"
+    ],
+    "fundamental_mechanics_featured": [
+      "spreads",
+      "stacks",
+      "light_party_stacks",
+      "partner_stacks",
+      "role_stacks",
+      "line_stacks",
+      "towers",
+      "proximity",
+      "flares",
+      "knockback",
+      "chariot/dynamo",
+      "proteans",
+      "tethers"
+    ],
+    "common_mechanics_featured": [
+      "doom_cleanse",
+      "akh_morn",
+      "defamation",
+      "baited_aoes",
+      "wild_charge",
+      "exas",
+      "twister",
+      "chain_break",
+      "hot_wing/hot_tail",
+      "earthshakers",
+      "limit_cut",
+      "playstation",
+      "nisi",
+      "tumults",
+      "akh_rhai",
+      "monitors",
+      "enumeration",
+      "hand_of_pain",
+      "stillness",
+      "motion",
+      "gaze",
+      "rotating",
+      "hot_spell/cold_spell",
+      "shiva"
+    ],
+    "created_at": "2025-1-23",
+    "image_url": "bahamut_prime.jpeg"
+  },
+  {
+    "boss_id": 31023,
+    "boss_name": "Caduceus",
+    "boss_alias": null,
+    "expansion": "2.0",
+    "average_clear_time": "",
+    "boss_type": [
+      "normal",
+      "dual_boss"
+    ],
+    "encounter_features": [
+      "downtime",
+      "adds"
+    ],
+    "fundamental_mechanics_featured": [
+      "spreads"
+    ],
+    "mechanics_featured": [
+      ""
+    ],
+    "created_at": "2026-01-21",
+    "image_url": ""
+  }
+]

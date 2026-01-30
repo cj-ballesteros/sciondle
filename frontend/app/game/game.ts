@@ -5,6 +5,7 @@ import { ResultsComponent } from './results/results';
 import { GuessStorageService } from '../services/guess_storage.service';
 import { SearchJsonComponent } from './searchjson/searchjson';
 import { ShareComponent } from './share/share';
+import {HeaderButtons} from './header-buttons/header-buttons';
 
 
 @Component({
@@ -13,7 +14,8 @@ import { ShareComponent } from './share/share';
     GuessTableComponent,
     ResultsComponent,
     SearchJsonComponent,
-    ShareComponent
+    ShareComponent,
+    HeaderButtons
   ],
   templateUrl: './game.html',
   styleUrl: './game.css'
