@@ -7,8 +7,8 @@
     <th class="px-4 py-2">Name</th>
     <th class="px-4 py-2">Gender</th>
     <th class="px-4 py-2">&nbsp;Age&nbsp;</th>
-    <th class="px-4 py-2">Affiliation</th>
-    <th class="px-4 py-2">Job</th>
+    <th class="px-4 py-2">Affiliation(s)</th>
+    <th class="px-4 py-2">Job(s)</th>
     <th class="px-4 py-2">Race</th>
     <th class="px-4 py-2">Version Introduction</th>
   </tr>
@@ -39,7 +39,8 @@
         </td>
         <td
           class="px-4 py-2 border-t border-gray-300"
-          [ngClass]="{ 'bg-green-200': g.comparison.age === 'equal', 'bg-red-200': g.comparison.age !== 'equal' }"
+          [ngClass]="{ 'bg-green-200': g.comparison.age === 'equal',
+          'bg-red-200': g.comparison.age !== 'equal' }"
         >
           @if (!g.guess.age){
             Not Specified
@@ -58,23 +59,39 @@
         </td>
         <td
           class="px-4 py-2 border-t border-gray-300"
-          [ngClass]="{ 'bg-green-200': g.comparison.affiliation, 'bg-red-200': !g.comparison.affiliation }"
-        >
-          {{ g.guess.affiliation }}
+          [ngClass]="
+          { 'bg-green-200': g.comparison.affiliation === 'exact',
+          'bg-yellow-200': g.comparison.affiliation === 'partial',
+          'bg-red-200': g.comparison.affiliation === 'none'
+          }">
+          @for (affiliation of g.guess.affiliation; track affiliation) {
+            @if ($last) {
+              {{ affiliation }}
+            }
+            @else {
+              {{ affiliation }},
+            }
+          }
         </td>
         <td
           class="px-4 py-2"
-          [ngClass]="{ 'bg-green-200': g.comparison.current_job, 'bg-red-200': !g.comparison.current_job }"
-        >
-          @if (g.guess.current_job !== 'None') {
-            <img
-              [src]="'jobs_and_characters/' + g.guess.job_image_url"
-              alt="{{ g.guess.current_job }}"
-              class="table-cell-image"
-            />
-          } @else {
-            Jobless
-          }
+          [ngClass]="
+          { 'bg-green-200': g.comparison.current_job === 'exact',
+          'bg-yellow-200': g.comparison.current_job === 'partial',
+          'bg-red-200': g.comparison.current_job === 'none'
+           }">
+            @for (job of g.guess.current_job; track job) {
+              @if (job !== 'None') {
+                <img
+                  [src]="'jobs_and_characters/Class_Job_Icons/' + job + '.png'"
+                  alt="{{ job }}"
+                  class="table-cell-image"
+                  title="{{ job }}"
+                />
+              } @else {
+                Jobless
+              }
+            }
         </td>
         <td
           class="px-4 py-2"

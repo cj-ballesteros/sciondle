@@ -5,8 +5,8 @@ import { ResultsComponent } from './results/results';
 import { GuessStorageService } from '../services/guess_storage.service';
 import { SearchJsonComponent } from './searchjson/searchjson';
 import { ShareComponent } from './share/share';
-import {HeaderButtons} from './header-buttons/header-buttons';
-
+import { HeaderButtons } from './header-buttons/header-buttons';
+import { attributeMatch, jobMatch } from '../shared/attribute-match';
 
 @Component({
   selector: 'app-game',
@@ -31,7 +31,7 @@ export class GameComponent {
     91, 11, 87, 9, 15, 14, 32, 42, 37, 25, 3, 56, 44, 2, 12, 54, 8,
     4, 29, 55, 84, 90, 28, 78, 26, 89, 51, 41, 20, 80, 38, 22, 93,
     34, 39, 92, 36, 71, 88, 33, 79, 23, 43, 95, 1, 63, 59, 35, 30, 81,
-    58, 94, 5, 24]
+    58, 94, 5, 24, 96, 97]
   // https://www.calculatorsoup.com/calculators/statistics/random-number-generator.php
   // adjust everytime a new character is added!!!
   // TODO: maybe add an automatic function for randomOrder
@@ -84,7 +84,9 @@ export class GameComponent {
 
   setCorrectAnswer() {
     const index = this.getGlobalSeed() % this.unmodifiedCharacters.length;
-    this.correctAnswer = this.unmodifiedCharacters[this.randomOrder[index]];
+    // this.correctAnswer = this.unmodifiedCharacters[this.randomOrder[index]];
+    this.correctAnswer = this.unmodifiedCharacters[76];
+    console.log(this.correctAnswer);
   }
 
   buildGuessResponse(guess: Character): GuessResponse {
@@ -95,8 +97,8 @@ export class GameComponent {
 
       comparison: {
         name: guess.name === this.correctAnswer.name,
-        affiliation: guess.affiliation === this.correctAnswer.affiliation,
-        current_job: guess.current_job === this.correctAnswer.current_job,
+        affiliation: attributeMatch(guess.affiliation, this.correctAnswer.affiliation),
+        current_job: jobMatch(guess.current_job, this.correctAnswer.current_job),
         race: guess.race === this.correctAnswer.race,
 
         version_introduction: this.compareVersions(
@@ -114,8 +116,9 @@ export class GameComponent {
     };
   }
 
-  compareNumber(guess: number, answer: number): 'higher' | 'lower' | 'equal' {
+  compareNumber(guess: number, answer: number): 'higher' | 'lower' | 'equal' | 'not_specified' {
     if (guess === answer) return 'equal';
+    if (guess && !answer) return 'not_specified';
     return guess > answer ? 'lower' : 'higher';
   }
 

@@ -15,8 +15,7 @@ thead {
 
 .table-cell-image {
   width: 100px;
-  height: 100px;
-  object-fit: contain;   /* fit fully visible */
+  object-fit: contain;
   display: block;
   margin: 0 auto;
 }

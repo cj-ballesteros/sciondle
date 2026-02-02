@@ -4,7 +4,7 @@
     'wght' 400,
     'GRAD' 0,
     'opsz' 24;
-  font-size: min(5vw, 32px);
+  font-size: min(9vw, 32px);
   color: rgb(99, 99, 99);
 }
 
