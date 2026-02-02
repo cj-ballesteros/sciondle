@@ -84,9 +84,7 @@ export class GameComponent {
 
   setCorrectAnswer() {
     const index = this.getGlobalSeed() % this.unmodifiedCharacters.length;
-    // this.correctAnswer = this.unmodifiedCharacters[this.randomOrder[index]];
-    this.correctAnswer = this.unmodifiedCharacters[76];
-    console.log(this.correctAnswer);
+    this.correctAnswer = this.unmodifiedCharacters[this.randomOrder[index]];
   }
 
   buildGuessResponse(guess: Character): GuessResponse {

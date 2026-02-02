@@ -1,124 +1,126 @@
-{
-  "boss_id": 20,
-  "boss_name": "Erichthonios",
+[
+  {
+    "boss_id": 20,
+    "boss_name": "Erichthonios",
+    "boss_alias": null,
+    "expansion": "6.0",
+    "average_clear_time": "",
+    "boss_type": [
+      "normal"
+    ],
+    "arena_features": [
+      "square",
+      "circular",
+      "limited_space"
+    ],
+    "encounter_features": [
+      null
+    ],
+    "fundamental_mechanics_featured": [
+      "spreads",
+      "stacks",
+      "flares",
+      "knockback",
+      "chariot/dynamo",
+      "tethers"
+    ],
+    "common_mechanics_featured": [
+      "hot_spell/cold_spell"
+    ],
+    "created_at": "2025-1-26",
+    "image_url": "erichthonios.jpeg"
+  },
+  {
+  "boss_id": 21,
+  "boss_name": "Hippokampos",
   "boss_alias": null,
   "expansion": "6.0",
   "average_clear_time": "",
   "boss_type": [
-    "normal"
+  "normal"
   ],
   "arena_features": [
-    "square",
-    "circular",
-    "limited_space"
+  "rectangular",
+  "irregular",
+  "limited_space"
   ],
   "encounter_features": [
-    null
+  "no_positionals"
   ],
   "fundamental_mechanics_featured": [
-    "spreads",
-    "stacks",
-    "flares",
-    "knockback",
-    "chariot/dynamo",
-    "tethers"
+  "spreads",
+  "stacks",
+  "light_party_stacks",
+  "line_stacks",
+  "knockback",
+  "tethers"
   ],
   "common_mechanics_featured": [
-    "hot_spell/cold_spell"
+  "baited_aoes",
+  "wild_charge",
+  "limit_cut"
+  ],
+  "created_at": "2025-1-25",
+  "image_url": "hippokampos.jpeg"
+  },
+  {
+  "boss_id": 23,
+  "boss_name": "Phoinix",
+  "boss_alias": null,
+  "expansion": "6.0",
+  "average_clear_time": "",
+  "boss_type": [
+  "normal"
+  ],
+  "arena_features": [
+  "circular"
+  ],
+  "encounter_features": [
+  "downtime",
+  "adds"
+  ],
+  "fundamental_mechanics_featured": [
+  "spreads",
+  "stacks",
+  "light_party_stacks",
+  "partner_stacks",
+  "towers",
+  "knockback",
+  "chariot/dynamo",
+  "proteans",
+  "tethers"
+  ],
+  "common_mechanics_featured": [
+  "baited_aoes",
+  "hot_wing/hot_tail",
+  "limit_cut",
+  "tumults",
+  "shiva"
   ],
   "created_at": "2025-1-26",
-  "image_url": "erichthonios.jpeg"
-},
-{
-"boss_id": 21,
-"boss_name": "Hippokampos",
-"boss_alias": null,
-"expansion": "6.0",
-"average_clear_time": "",
-"boss_type": [
-"normal"
-],
-"arena_features": [
-"rectangular",
-"irregular",
-"limited_space"
-],
-"encounter_features": [
-"no_positionals"
-],
-"fundamental_mechanics_featured": [
-"spreads",
-"stacks",
-"light_party_stacks",
-"line_stacks",
-"knockback",
-"tethers"
-],
-"common_mechanics_featured": [
-"baited_aoes",
-"wild_charge",
-"limit_cut"
-],
-"created_at": "2025-1-25",
-"image_url": "hippokampos.jpeg"
-},
-{
-"boss_id": 23,
-"boss_name": "Phoinix",
-"boss_alias": null,
-"expansion": "6.0",
-"average_clear_time": "",
-"boss_type": [
-"normal"
-],
-"arena_features": [
-"circular"
-],
-"encounter_features": [
-"downtime",
-"adds"
-],
-"fundamental_mechanics_featured": [
-"spreads",
-"stacks",
-"light_party_stacks",
-"partner_stacks",
-"towers",
-"knockback",
-"chariot/dynamo",
-"proteans",
-"tethers"
-],
-"common_mechanics_featured": [
-"baited_aoes",
-"hot_wing/hot_tail",
-"limit_cut",
-"tumults",
-"shiva"
-],
-"created_at": "2025-1-26",
-"image_url": "phoinix.jpeg"
-},
-{
-"boss_id": 31023,
-"boss_name": "Caduceus",
-"boss_alias": null,
-"expansion": "2.0",
-"average_clear_time": "",
-"boss_type": [
-"normal",
-"dual_boss"
-],
-"encounter_features": [
-"downtime",
-"adds"
-],
-"fundamental_mechanics_featured": [
-"spreads"
-],
-"mechanics_featured": [
-""
-],
-"created_at": "2026-01-21",
-"image_url": ""
-}
+  "image_url": "phoinix.jpeg"
+  },
+  {
+  "boss_id": 31023,
+  "boss_name": "Caduceus",
+  "boss_alias": null,
+  "expansion": "2.0",
+  "average_clear_time": "",
+  "boss_type": [
+  "normal",
+  "dual_boss"
+  ],
+  "encounter_features": [
+  "downtime",
+  "adds"
+  ],
+  "fundamental_mechanics_featured": [
+  "spreads"
+  ],
+  "mechanics_featured": [
+  ""
+  ],
+  "created_at": "2026-01-21",
+  "image_url": ""
+  }
+]
