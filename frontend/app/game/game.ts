@@ -73,7 +73,7 @@ export class GameComponent {
       })
     );
 
-    laTime.setHours(laTime.getHours() - 21);
+    laTime.setHours(laTime.getHours() - 5);
 
     const dateKey = laTime.toISOString().slice(0, 10);
 

@@ -37,7 +37,7 @@ export class GuessStorageService {
       })
     );
 
-    laTime.setHours(laTime.getHours() - 21);
+    laTime.setHours(laTime.getHours() - 5);
     return laTime.toISOString().slice(0, 10);
   }
 

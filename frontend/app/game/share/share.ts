@@ -48,10 +48,8 @@ export class ShareComponent {
         }
         if (this.guesses[i].comparison.age == "equal") {
           this.shareString += "🟩";
-        } else if (this.guesses[i].comparison.age == "higher"){
-          this.shareString += "⬆️";
         } else {
-          this.shareString += "⬇️";
+          this.shareString += "🟥";
         }
         if (this.guesses[i].comparison.affiliation) {
           this.shareString += "🟩";
@@ -70,10 +68,8 @@ export class ShareComponent {
         }
         if (this.guesses[i].comparison.version_introduction == "equal") {
           this.shareString += "🟩";
-        } else if (this.guesses[i].comparison.version_introduction == "higher"){
-          this.shareString += "⬆️";
         } else {
-          this.shareString += "⬇️";
+          this.shareString += "🟥";
         }
         this.shareString +="\n";
       }
