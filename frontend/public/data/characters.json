@@ -14,7 +14,7 @@
     "created_at": "2025-09-20 22:16:02.122874",
     "image_url": "Louisoix.jpeg",
     "age": 72,
-    "job_image_url": "Class_Job_Icons/Conjurer.png",
+    "job_image_url": "class_job_icons/conjurer.png",
     "gender": "Male"
   },
   {
@@ -34,7 +34,7 @@
     "created_at": "2025-09-04 22:43:34.150692",
     "image_url": "Urianger.png",
     "age": 29,
-    "job_image_url": "Class_Job_Icons/Astrologian.png",
+    "job_image_url": "class_job_icons/astrologian.png",
     "gender": "Male"
   },
   {
@@ -53,7 +53,7 @@
     "created_at": "2025-09-04 22:53:03.074686",
     "image_url": "Alisaie.png",
     "age": 16,
-    "job_image_url": "Class_Job_Icons/RedMage.png",
+    "job_image_url": "class_job_icons/red_mage.png",
     "gender": "Female"
   },
   {
@@ -72,7 +72,7 @@
     "created_at": "2025-09-04 22:53:03.074686",
     "image_url": "Alphinaud.png",
     "age": 16,
-    "job_image_url": "Class_Job_Icons/Sage.png",
+    "job_image_url": "class_job_icons/sage.png",
     "gender": "Male"
   },
   {
@@ -91,7 +91,7 @@
     "created_at": "2025-09-04 22:53:03.074686",
     "image_url": "Estinien.png",
     "age": 32,
-    "job_image_url": "Class_Job_Icons/Dragoon.png",
+    "job_image_url": "class_job_icons/dragoon.png",
     "gender": "Male"
   },
   {
@@ -111,7 +111,7 @@
     "created_at": "2025-09-04 22:53:03.074686",
     "image_url": "G'raha_Tia.png",
     "age": 24,
-    "job_image_url": "Class_Job_Icons/AllRounder.png",
+    "job_image_url": "class_job_icons/all_rounder.png",
     "gender": "Male"
   },
   {
@@ -131,7 +131,7 @@
     "created_at": "2025-09-04 22:53:03.074686",
     "image_url": "Krile.png",
     "age": 22,
-    "job_image_url": "Class_Job_Icons/Pictomancer.png",
+    "job_image_url": "class_job_icons/pictomancer.png",
     "gender": "Female"
   },
   {
@@ -151,7 +151,7 @@
     "created_at": "2025-09-04 23:07:57.150607",
     "image_url": "Lyse.png",
     "age": 25,
-    "job_image_url": "Class_Job_Icons/Pugilist.png",
+    "job_image_url": "class_job_icons/pugilist.png",
     "gender": "Female"
   },
   {
@@ -170,7 +170,7 @@
     "created_at": "2025-09-04 23:07:57.150607",
     "image_url": "Minfilia.png",
     "age": 27,
-    "job_image_url": "Class_Job_Icons/Miner.png",
+    "job_image_url": "class_job_icons/miner.png",
     "gender": "Female"
   },
   {
@@ -190,7 +190,7 @@
     "created_at": "2025-09-04 23:11:40.431125",
     "image_url": "Papalymo.png",
     "age": 42,
-    "job_image_url": "Class_Job_Icons/Thaumaturge.png",
+    "job_image_url": "class_job_icons/thaumaturge.png",
     "gender": "Male"
   },
   {
@@ -209,7 +209,7 @@
     "created_at": "2025-09-04 23:13:27.373893",
     "image_url": "Tataru.png",
     "age": 21,
-    "job_image_url": "Class_Job_Icons/weaver.png",
+    "job_image_url": "class_job_icons/weaver.png",
     "gender": "Female"
   },
   {
@@ -230,7 +230,7 @@
     "created_at": "2025-09-04 23:14:59.960943",
     "image_url": "Thancred.png",
     "age": 32,
-    "job_image_url": "Class_Job_Icons/Gunbreaker.png",
+    "job_image_url": "class_job_icons/gunbreaker.png",
     "gender": "Male"
   },
   {
@@ -248,7 +248,7 @@
     "created_at": "2025-09-04 23:23:58.367414",
     "image_url": "Warrior_of_Light.jpeg",
     "age": null,
-    "job_image_url": "Class_Job_Icons/AllRounder.png",
+    "job_image_url": "class_job_icons/all_rounder.png",
     "gender": "Selectable"
   },
   {
@@ -269,7 +269,7 @@
     "created_at": "2025-09-04 23:23:58.367414",
     "image_url": "Yshtola.png",
     "age": 33,
-    "job_image_url": "Class_Job_Icons/BlackMage.png",
+    "job_image_url": "class_job_icons/black_mage.png",
     "gender": "Female"
   },
   {
@@ -287,7 +287,7 @@
     "created_at": "2025-09-04 23:23:58.367414",
     "image_url": "Ardbert.png",
     "age": null,
-    "job_image_url": "Class_Job_Icons/Warrior.png",
+    "job_image_url": "class_job_icons/warrior.png",
     "gender": "Male"
   },
   {
@@ -305,7 +305,7 @@
     "created_at": "2025-09-20 21:22:00.994689",
     "image_url": "Arenvald.jpeg",
     "age": 19,
-    "job_image_url": "Class_Job_Icons/Gladiator.png",
+    "job_image_url": "class_job_icons/gladiator.png",
     "gender": "Male"
   },
   {
@@ -324,7 +324,7 @@
     "created_at": "2025-09-20 21:25:48.09642",
     "image_url": "Moenbryda.jpeg",
     "age": 29,
-    "job_image_url": "Class_Job_Icons/Marauder.png",
+    "job_image_url": "class_job_icons/marauder.png",
     "gender": "Female"
   },
   {
@@ -343,7 +343,7 @@
     "created_at": "2025-09-20 21:28:32.824905",
     "image_url": "Cid.jpeg",
     "age": 34,
-    "job_image_url": "Class_Job_Icons/Gladiator.png",
+    "job_image_url": "class_job_icons/gladiator.png",
     "gender": "Male"
   },
   {
@@ -362,7 +362,7 @@
     "created_at": "2025-09-20 21:31:30.052937",
     "image_url": "Biggs.jpeg",
     "age": 25,
-    "job_image_url": "Class_Job_Icons/Pugilist.png",
+    "job_image_url": "class_job_icons/pugilist.png",
     "gender": "Male"
   },
   {
@@ -417,7 +417,7 @@
     "created_at": "2025-09-20 21:48:42.938272",
     "image_url": "Kan-E-Senna.jpeg",
     "age": 28,
-    "job_image_url": "Class_Job_Icons/WhiteMage.png",
+    "job_image_url": "class_job_icons/white_mage.png",
     "gender": "Female"
   },
   {
@@ -453,7 +453,7 @@
     "created_at": "2025-09-20 21:48:42.938272",
     "image_url": "Raubahn.jpeg",
     "age": 44,
-    "job_image_url": "Class_Job_Icons/Gladiator.png",
+    "job_image_url": "class_job_icons/gladiator.png",
     "gender": "Male"
   },
   {
@@ -471,7 +471,7 @@
     "created_at": "2025-09-20 21:48:42.938272",
     "image_url": "Pipin.jpeg",
     "age": 25,
-    "job_image_url": "Class_Job_Icons/Gladiator.png",
+    "job_image_url": "class_job_icons/gladiator.png",
     "gender": "Male"
   },
   {
@@ -543,7 +543,7 @@
     "created_at": "2025-09-20 21:48:42.938272",
     "image_url": "Aymeric.jpeg",
     "age": 32,
-    "job_image_url": "Class_Job_Icons/Paladin.png",
+    "job_image_url": "class_job_icons/paladin.png",
     "gender": "Male"
   },
   {
@@ -561,7 +561,7 @@
     "created_at": "2025-09-20 21:48:42.938272",
     "image_url": "Lucia.jpeg",
     "age": 28,
-    "job_image_url": "Class_Job_Icons/Gladiator.png",
+    "job_image_url": "class_job_icons/gladiator.png",
     "gender": "Female"
   },
   {
@@ -597,7 +597,7 @@
     "created_at": "2025-09-20 21:48:42.938272",
     "image_url": "Haurchefant.jpeg",
     "age": 28,
-    "job_image_url": "Class_Job_Icons/Gladiator.png",
+    "job_image_url": "class_job_icons/gladiator.png",
     "gender": "Male"
   },
   {
@@ -615,7 +615,7 @@
     "created_at": "2025-09-20 21:48:42.938272",
     "image_url": "Artoriel.jpeg",
     "age": 30,
-    "job_image_url": "Class_Job_Icons/Gladiator.png",
+    "job_image_url": "class_job_icons/gladiator.png",
     "gender": "Male"
   },
   {
@@ -633,7 +633,7 @@
     "created_at": "2025-09-20 21:48:42.938272",
     "image_url": "Emmanellain.jpeg",
     "age": 26,
-    "job_image_url": "Class_Job_Icons/Gladiator.png",
+    "job_image_url": "class_job_icons/gladiator.png",
     "gender": "Male"
   },
   {
@@ -651,7 +651,7 @@
     "created_at": "2025-09-20 21:48:42.938272",
     "image_url": "Ysayle.jpeg",
     "age": 24,
-    "job_image_url": "Class_Job_Icons/AllRounder.png",
+    "job_image_url": "class_job_icons/all_rounder.png",
     "gender": "Female"
   },
   {
@@ -744,7 +744,7 @@
     "created_at": "2025-09-20 22:02:34.341752",
     "image_url": "Zenos.jpeg",
     "age": 26,
-    "job_image_url": "Class_Job_Icons/Reaper.png",
+    "job_image_url": "class_job_icons/reaper.png",
     "gender": "Male"
   },
   {
@@ -762,7 +762,7 @@
     "created_at": "2025-09-20 22:02:34.341752",
     "image_url": "Nael.jpeg",
     "age": 38,
-    "job_image_url": "Class_Job_Icons/Lancer.png",
+    "job_image_url": "class_job_icons/lancer.png",
     "gender": "Female"
   },
   {
@@ -781,7 +781,7 @@
     "created_at": "2025-09-20 22:02:34.341752",
     "image_url": "Gaius.jpeg",
     "age": 56,
-    "job_image_url": "Class_Job_Icons/Gunbreaker.png",
+    "job_image_url": "class_job_icons/gunbreaker.png",
     "gender": "Male"
   },
   {
@@ -800,7 +800,7 @@
     "created_at": "2025-09-20 22:02:34.341752",
     "image_url": "Nero.jpeg",
     "age": 34,
-    "job_image_url": "Class_Job_Icons/Gladiator.png",
+    "job_image_url": "class_job_icons/gladiator.png",
     "gender": "Male"
   },
   {
@@ -818,7 +818,7 @@
     "created_at": "2025-09-20 22:02:34.341752",
     "image_url": "Livia.jpeg",
     "age": 26,
-    "job_image_url": "Class_Job_Icons/Pugilist.png",
+    "job_image_url": "class_job_icons/pugilist.png",
     "gender": "Female"
   },
   {
@@ -836,7 +836,7 @@
     "created_at": "2025-09-20 22:02:34.341752",
     "image_url": "Asahi.jpeg",
     "age": 27,
-    "job_image_url": "Class_Job_Icons/Samurai.png",
+    "job_image_url": "class_job_icons/samurai.png",
     "gender": "Male"
   },
   {
@@ -872,7 +872,7 @@
     "created_at": "2025-09-20 22:02:34.341752",
     "image_url": "Ilberd.jpeg",
     "age": 44,
-    "job_image_url": "Class_Job_Icons/Gladiator.png",
+    "job_image_url": "class_job_icons/gladiator.png",
     "gender": "Male"
   },
   {
@@ -890,7 +890,7 @@
     "created_at": "2025-09-20 22:02:34.341752",
     "image_url": "Conrad.jpeg",
     "age": 70,
-    "job_image_url": "Class_Job_Icons/Thaumaturge.png",
+    "job_image_url": "class_job_icons/thaumaturge.png",
     "gender": "Male"
   },
   {
@@ -908,7 +908,7 @@
     "created_at": "2025-09-20 22:02:34.341752",
     "image_url": "M'naago.jpeg",
     "age": 22,
-    "job_image_url": "Class_Job_Icons/Archer.png",
+    "job_image_url": "class_job_icons/archer.png",
     "gender": "Female"
   },
   {
@@ -927,7 +927,7 @@
     "created_at": "2025-09-20 22:02:34.341752",
     "image_url": "Fordola.jpeg",
     "age": 19,
-    "job_image_url": "Class_Job_Icons/Gladiator.png",
+    "job_image_url": "class_job_icons/gladiator.png",
     "gender": "Female"
   },
   {
@@ -945,7 +945,7 @@
     "created_at": "2025-09-20 22:02:34.341752",
     "image_url": "Hien.jpeg",
     "age": 25,
-    "job_image_url": "Class_Job_Icons/Samurai.png",
+    "job_image_url": "class_job_icons/samurai.png",
     "gender": "Male"
   },
   {
@@ -963,7 +963,7 @@
     "created_at": "2025-09-20 22:02:34.341752",
     "image_url": "Yugiri.jpeg",
     "age": 26,
-    "job_image_url": "Class_Job_Icons/Ninja.png",
+    "job_image_url": "class_job_icons/ninja.png",
     "gender": "Female"
   },
   {
@@ -1000,7 +1000,7 @@
     "created_at": "2025-09-20 22:02:34.341752",
     "image_url": "Gosetsu.jpeg",
     "age": null,
-    "job_image_url": "Class_Job_Icons/Conjurer.png",
+    "job_image_url": "class_job_icons/conjurer.png",
     "gender": "Male"
   },
   {
@@ -1018,7 +1018,7 @@
     "created_at": "2025-09-20 22:02:34.341752",
     "image_url": "Cirina.jpeg",
     "age": 21,
-    "job_image_url": "Class_Job_Icons/Archer.png",
+    "job_image_url": "class_job_icons/archer.png",
     "gender": "Female"
   },
   {
@@ -1036,7 +1036,7 @@
     "created_at": "2025-09-20 22:02:34.341752",
     "image_url": "Magnai.jpeg",
     "age": 27,
-    "job_image_url": "Class_Job_Icons/Marauder.png",
+    "job_image_url": "class_job_icons/marauder.png",
     "gender": "Male"
   },
   {
@@ -1054,7 +1054,7 @@
     "created_at": "2025-09-20 22:02:34.341752",
     "image_url": "Sadu.jpeg",
     "age": 27,
-    "job_image_url": "Class_Job_Icons/Thaumaturge.png",
+    "job_image_url": "class_job_icons/thaumaturge.png",
     "gender": "Female"
   },
   {
@@ -1072,7 +1072,7 @@
     "created_at": "2025-09-20 22:02:34.341752",
     "image_url": "Ryne.jpeg",
     "age": 17,
-    "job_image_url": "Class_Job_Icons/Rogue.png",
+    "job_image_url": "class_job_icons/rogue.png",
     "gender": "Female"
   },
   {
@@ -1108,7 +1108,7 @@
     "created_at": "2025-09-20 22:02:34.341752",
     "image_url": "Lyna.jpeg",
     "age": 33,
-    "job_image_url": "Class_Job_Icons/Dancer.png",
+    "job_image_url": "class_job_icons/dancer.png",
     "gender": "Female"
   },
   {
@@ -1144,7 +1144,7 @@
     "created_at": "2025-09-20 22:02:34.341752",
     "image_url": "Ranjit.jpeg",
     "age": 88,
-    "job_image_url": "Class_Job_Icons/Pugilist.png",
+    "job_image_url": "class_job_icons/pugilist.png",
     "gender": "Male"
   },
   {
@@ -1198,7 +1198,7 @@
     "created_at": "2025-09-20 22:02:34.341752",
     "image_url": "Tesleen.jpeg",
     "age": 18,
-    "job_image_url": "Class_Job_Icons/Gladiator.png",
+    "job_image_url": "class_job_icons/gladiator.png",
     "gender": "Female"
   },
   {
@@ -1252,7 +1252,7 @@
     "created_at": "2025-09-20 22:02:34.341752",
     "image_url": "Mikoto.jpeg",
     "age": 24,
-    "job_image_url": "Class_Job_Icons/Conjurer.png",
+    "job_image_url": "class_job_icons/conjurer.png",
     "gender": "Female"
   },
   {
@@ -1270,7 +1270,7 @@
     "created_at": "2025-09-20 22:02:34.341752",
     "image_url": "Fourchenault.jpeg",
     "age": 40,
-    "job_image_url": "Class_Job_Icons/Sage.png",
+    "job_image_url": "class_job_icons/sage.png",
     "gender": "Male"
   },
   {
@@ -1324,7 +1324,7 @@
     "created_at": "2025-09-20 22:02:34.341752",
     "image_url": "Varshahn.jpeg",
     "age": 12,
-    "job_image_url": "Class_Job_Icons/AllRounder.png",
+    "job_image_url": "class_job_icons/all_rounder.png",
     "gender": "Male"
   },
   {
@@ -1378,7 +1378,7 @@
     "created_at": "2025-09-20 22:02:34.341752",
     "image_url": "Godbert.jpeg",
     "age": 56,
-    "job_image_url": "Class_Job_Icons/goldsmith.png",
+    "job_image_url": "class_job_icons/goldsmith.png",
     "gender": "Male"
   },
   {
@@ -1398,7 +1398,7 @@
     "created_at": "2025-09-20 22:16:02.122874",
     "image_url": "Emet-Selch.jpeg",
     "age": null,
-    "job_image_url": "Class_Job_Icons/AllRounder.png",
+    "job_image_url": "class_job_icons/all_rounder.png",
     "gender": "Male"
   },
   {
@@ -1477,15 +1477,14 @@
     "created_at": "2025-09-20 22:16:02.122874",
     "image_url": "Venat.jpeg",
     "age": null,
-    "job_image_url": "Class_Job_Icons/AllRounder.png",
+    "job_image_url": "class_job_icons/all_rounder.png",
     "gender": "Female"
   },
   {
     "id": 80,
     "name": "Hythlodaeus",
     "alias": null,
-    "affiliation": [
-    ],
+    "affiliation": [],
     "current_job": [
       "bard"
     ],
@@ -1494,7 +1493,7 @@
     "created_at": "2025-09-20 22:16:02.122874",
     "image_url": "Hythlodaeus.jpeg",
     "age": null,
-    "job_image_url": "Class_Job_Icons/Bard.png",
+    "job_image_url": "class_job_icons/bard.png",
     "gender": "Male"
   },
   {
@@ -1548,7 +1547,7 @@
     "created_at": "2025-09-20 22:16:02.122874",
     "image_url": "Wuk_Lamat.jpeg",
     "age": 19,
-    "job_image_url": "Class_Job_Icons/Warrior.png",
+    "job_image_url": "class_job_icons/warrior.png",
     "gender": "Female"
   },
   {
@@ -1566,7 +1565,7 @@
     "created_at": "2025-09-20 22:16:02.122874",
     "image_url": "Koana.jpeg",
     "age": null,
-    "job_image_url": "Class_Job_Icons/Machinist.png",
+    "job_image_url": "class_job_icons/machinist.png",
     "gender": "Male"
   },
   {
@@ -1584,7 +1583,7 @@
     "created_at": "2025-09-20 22:16:02.122874",
     "image_url": "Gulool_Ja_Ja.jpeg",
     "age": null,
-    "job_image_url": "Class_Job_Icons/Viper.png",
+    "job_image_url": "class_job_icons/viper.png",
     "gender": "Male"
   },
   {
@@ -1602,7 +1601,7 @@
     "created_at": "2025-09-20 22:16:02.122874",
     "image_url": "Zoraal_Ja.jpeg",
     "age": null,
-    "job_image_url": "Class_Job_Icons/Viper.png",
+    "job_image_url": "class_job_icons/viper.png",
     "gender": "Male"
   },
   {
@@ -1638,7 +1637,7 @@
     "created_at": "2025-09-20 22:16:02.122874",
     "image_url": "Sphene.jpeg",
     "age": null,
-    "job_image_url": "Class_Job_Icons/Arcanist.png",
+    "job_image_url": "class_job_icons/arcanist.png",
     "gender": "Female"
   },
   {
@@ -1728,7 +1727,7 @@
     "created_at": "2025-09-20 23:36:07.297335",
     "image_url": "Hilda.jpeg",
     "age": 21,
-    "job_image_url": "Class_Job_Icons/Machinist.png",
+    "job_image_url": "class_job_icons/machinist.png",
     "gender": "Female"
   },
   {
@@ -1746,7 +1745,7 @@
     "created_at": "2025-09-20 23:36:07.297335",
     "image_url": "Maxima.jpeg",
     "age": 34,
-    "job_image_url": "Class_Job_Icons/Gladiator.png",
+    "job_image_url": "class_job_icons/gladiator.png",
     "gender": "Male"
   },
   {
@@ -1764,7 +1763,7 @@
     "created_at": "2026-1-14 23:36:07.297335",
     "image_url": "Zero.jpg",
     "age": null,
-    "job_image_url": "Class_Job_Icons/Reaper.png",
+    "job_image_url": "class_job_icons/reaper.png",
     "gender": "Female"
   },
   {
@@ -1783,7 +1782,7 @@
     "created_at": "2026-01-30 23:07:57.150607",
     "image_url": "Yda.png",
     "age": 25,
-    "job_image_url": "Class_Job_Icons/Pugilist.png",
+    "job_image_url": "class_job_icons/pugilist.png",
     "gender": "Female"
   },
   {
