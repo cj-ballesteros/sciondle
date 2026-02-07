@@ -51,12 +51,12 @@ export class ShareComponent {
         } else {
           this.shareString += "🟥";
         }
-        if (this.guesses[i].comparison.affiliation) {
+        if (this.guesses[i].comparison.affiliation == "exact") {
           this.shareString += "🟩";
         } else {
           this.shareString += "🟥";
         }
-        if (this.guesses[i].comparison.current_job) {
+        if (this.guesses[i].comparison.current_job == "exact") {
           this.shareString += "🟩";
         } else {
           this.shareString += "🟥";
