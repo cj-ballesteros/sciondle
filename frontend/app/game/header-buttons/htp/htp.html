@@ -58,7 +58,7 @@
             character.</p>
           </div>
           <div class="pl-6 text-[#D0D0D0] tracking-wide drop-shadow-[0_1px_0_rgba(0,0,0,0.25)] space-y-1">
-            <p><span class="text-green-200">Green</span> indicates an
+            <p><span [ngClass]="textIsColorblind()">Green</span> indicates an
             exact match.</p>
             <p><span class="text-yellow-200">Yellow</span> indicates a
               partial match.</p>
@@ -147,7 +147,7 @@
                         class="table-cell-image"
                       />
                     </td>
-                    <td class="px-4 py-2 bg-green-200">
+                    <td class="px-4 py-2" [ngClass]="bgIsColorblind()">
                       Hyur
                     </td>
                     <td class="px-4 py-2 bg-red-200">
@@ -162,19 +162,19 @@
                         class="table-cell-image"
                       />
                     </td>
-                    <td class="px-4 py-2 bg-green-200">
+                    <td class="px-4 py-2" [ngClass]="bgIsColorblind()">
                       Thancred
                     </td>
-                    <td class="px-4 py-2 border-t border-gray-300 bg-green-200">
+                    <td class="px-4 py-2 border-t border-gray-300" [ngClass]="bgIsColorblind()">
                       Male
                     </td>
-                    <td class="px-4 py-2 border-t border-gray-300 bg-green-200">
+                    <td class="px-4 py-2 border-t border-gray-300" [ngClass]="bgIsColorblind()">
                       32
                     </td>
-                    <td class="px-4 py-2 border-t border-gray-300 bg-green-200">
+                    <td class="px-4 py-2 border-t border-gray-300" [ngClass]="bgIsColorblind()">
                       Scions of the Seventh Dawn
                     </td>
-                    <td class="px-4 py-2 bg-green-200">
+                    <td class="px-4 py-2" [ngClass]="bgIsColorblind()">
                       <img
                         [src]="'jobs_and_characters/' + 'class_job_icons/gunbreaker.png'"
                         alt="Gunbreaker"
@@ -191,10 +191,10 @@
                         class="table-cell-image"
                       />
                     </td>
-                    <td class="px-4 py-2 bg-green-200">
+                    <td class="px-4 py-2" [ngClass]="bgIsColorblind()">
                       Hyur
                     </td>
-                    <td class="px-4 py-2 bg-green-200">
+                    <td class="px-4 py-2" [ngClass]="bgIsColorblind()">
                       1.0
                     </td>
                   </tr>
