@@ -1,7 +1,6 @@
-import {Component, ViewChild, Input} from '@angular/core';
-import {MatIconModule} from '@angular/material/icon';
+import {Component, Input} from '@angular/core';
 import { HTPComponent } from './htp/htp';
-import {OptionsComponent} from './options/options';
+import { OptionsComponent } from './options/options';
 
 @Component({
   selector: 'app-header-buttons',
@@ -12,4 +11,4 @@ import {OptionsComponent} from './options/options';
 export class HeaderButtons {
   @Input() openOptions = false;
   @Input() openHelp = false;
-}
+ }
