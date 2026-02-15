@@ -3,7 +3,7 @@
            mx-auto flex items-center justify-center
            gap-3 rounded-2xl bg-[#e7dfca] px-4 py-1 shadow-sm"
 >
-  <button title="Settings" class="flex h-10 w-10 items-center
+  <button title="Settings" (click)="openOptions = true" class="flex h-10 w-10 items-center
    justify-center rounded-lg material-symbols-outlined">
     settings
   </button>
@@ -11,10 +11,11 @@
    justify-center rounded-lg material-symbols-outlined">
     docs
   </button>
-  <button title="How to Play" (click)="open = true" class="flex h-10 w-10 items-center
+  <button title="How to Play" (click)="openHelp = true" class="flex h-10 w-10 items-center
    justify-center rounded-lg material-symbols-outlined">
     help
   </button>
 </div>
 
-<app-htp [(open)]="open"/>
+<app-htp [(open)]="openHelp"/>
+<app-options [(open)]="openOptions"/>
