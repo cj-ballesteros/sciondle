@@ -7,7 +7,7 @@
    justify-center rounded-lg material-symbols-outlined">
     settings
   </button>
-  <button title="Update Log" class="flex h-10 w-10 items-center
+  <button title="Update Log" (click)="openPatchNotes = true" class="flex h-10 w-10 items-center
    justify-center rounded-lg material-symbols-outlined">
     docs
   </button>
@@ -19,3 +19,4 @@
 
 <app-htp [(open)]="openHelp"/>
 <app-options [(open)]="openOptions"/>
+<app-patch-notes [(open)]="openPatchNotes"/>
