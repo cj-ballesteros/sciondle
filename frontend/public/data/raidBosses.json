@@ -1230,16 +1230,120 @@
     "expansion": "4.0",
     "average_clear_time": "",
     "boss_type": [
-      "normal",
-      "wall_boss",
-      "stationary_boss",
-      "dual_boss",
-      "door_boss",
-      "final_boss",
-      "two_phase"
+      "normal"
     ],
     "arena_features": [
-      "square",
+      "circular"
+    ],
+    "encounter_features": [
+      "downtime",
+      "adds"
+    ],
+    "fundamental_mechanics_featured": [
+      "stacks",
+      "chariot/dynamo",
+      "tethers"
+    ],
+    "common_mechanics_featured": [
+      "wild_charge",
+      "feather_rain"
+    ],
+    "created_at": "2026-02-15",
+    "image_url": "garuda.jpeg"
+  },
+  {
+    "boss_id": 38,
+    "boss_name": "Garuda",
+    "boss_alias": null,
+    "expansion": "4.0",
+    "average_clear_time": "",
+    "boss_type": [
+      "normal"
+    ],
+    "arena_features": [
+      "circular"
+    ],
+    "encounter_features": [
+      "downtime",
+      "adds"
+    ],
+    "fundamental_mechanics_featured": [
+      "stacks",
+      "chariot/dynamo",
+      "tethers"
+    ],
+    "common_mechanics_featured": [
+      "wild_charge",
+      "feather_rain"
+    ],
+    "created_at": "2026-02-15",
+    "image_url": "garuda.jpeg"
+  },
+  {
+    "boss_id": 39,
+    "boss_name": "Ifrit",
+    "boss_alias": null,
+    "expansion": "4.0",
+    "average_clear_time": "",
+    "boss_type": [
+      "normal"
+    ],
+    "arena_features": [
+      "circular"
+    ],
+    "encounter_features": [
+      "downtime",
+      "adds"
+    ],
+    "fundamental_mechanics_featured": [
+      "spreads",
+      "stacks",
+      "knockback",
+      "tethers"
+    ],
+    "common_mechanics_featured": [
+      "baited_aoes"
+    ],
+    "created_at": "2026-02-15",
+    "image_url": "ifrit.jpeg"
+  },
+  {
+    "boss_id": 40,
+    "boss_name": "Titan",
+    "boss_alias": null,
+    "expansion": "4.0",
+    "average_clear_time": "",
+    "boss_type": [
+      "normal"
+    ],
+    "arena_features": [
+      "circular",
+      "limited_space"
+    ],
+    "encounter_features": [
+      "downtime",
+      "adds"
+    ],
+    "fundamental_mechanics_featured": [
+      "knockback"
+    ],
+    "common_mechanics_featured": [
+      "baited_aoes",
+      "tumults"
+    ],
+    "created_at": "2026-01-23",
+    "image_url": "titan.jpeg"
+  },
+  {
+    "boss_id": 41,
+    "boss_name": "The Ultima Weapon",
+    "boss_alias": null,
+    "expansion": "4.0",
+    "average_clear_time": "",
+    "boss_type": [
+      "normal"
+    ],
+    "arena_features": [
       "circular",
       "rectangular",
       "multiple_platforms/arenas",

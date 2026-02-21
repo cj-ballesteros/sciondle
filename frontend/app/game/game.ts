@@ -25,13 +25,14 @@ export class GameComponent {
   correctAnswer!: Character;
   characters: Character[] = [];
   unmodifiedCharacters: Character[] = [];
-  randomOrder: number[] = [13, 69, 17, 62, 60, 66, 48, 74, 86, 47,
-    85, 6, 7, 19, 82, 61, 45, 83, 40, 0, 76, 52, 75, 68, 49, 31,
-    53, 50, 73, 21, 57, 67, 16, 46, 18, 27, 70, 72, 10, 64, 65, 77,
-    91, 11, 87, 9, 15, 14, 32, 42, 37, 25, 3, 56, 44, 2, 12, 54, 8,
-    4, 29, 55, 84, 90, 28, 78, 26, 89, 51, 41, 20, 80, 38, 22, 93,
-    34, 39, 92, 36, 71, 88, 33, 79, 23, 43, 95, 1, 63, 59, 35, 30, 81,
-    58, 94, 5, 24, 96, 97]
+  randomOrder: number[] = [48, 86, 52, 49, 62, 6, 79, 90,
+    57, 7, 88, 35, 46, 82, 24, 18, 4, 38, 75, 78, 45, 1,
+    67, 40, 13, 20, 41, 21, 77, 26, 55, 25, 43, 29, 69,
+    89, 73, 85, 37, 76, 56, 30, 51, 65, 17, 34, 44, 58,
+    3, 33, 64, 81, 72, 63, 27, 66, 31, 39, 70, 96, 16,
+    84, 91, 83, 87, 97, 60, 12, 92, 36, 5, 23, 9, 54, 50,
+    28, 42, 53, 59, 71, 22, 80, 61, 47, 14, 15, 32, 10, 11,
+    2, 93, 94, 74, 68, 95, 19, 8];
   // https://www.calculatorsoup.com/calculators/statistics/random-number-generator.php
   // adjust everytime a new character is added!!!
   // TODO: maybe add an automatic function for randomOrder
@@ -83,7 +84,7 @@ export class GameComponent {
   };
 
   setCorrectAnswer() {
-    const index = this.getGlobalSeed() % this.unmodifiedCharacters.length;
+    const index = (this.getGlobalSeed() + 8) % this.unmodifiedCharacters.length;
     this.correctAnswer = this.unmodifiedCharacters[this.randomOrder[index]];
   }
 
