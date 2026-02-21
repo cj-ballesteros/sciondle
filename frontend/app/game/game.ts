@@ -84,7 +84,7 @@ export class GameComponent {
   };
 
   setCorrectAnswer() {
-    const index = (this.getGlobalSeed() + 8) % this.unmodifiedCharacters.length;
+    const index = (this.getGlobalSeed() + 7) % this.unmodifiedCharacters.length;
     this.correctAnswer = this.unmodifiedCharacters[this.randomOrder[index]];
   }
 
