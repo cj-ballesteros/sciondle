@@ -9,6 +9,22 @@ export type PatchEntry = {
 
 export const patchNotes: PatchEntry[] = [
   {
+    version: "1.0.21",
+    date: "2026-02-21",
+    summary: "Heyo, I got some suggestions about the randomness" +
+    " of the daily characters. I won't lie, the way it's done" +
+    " is a little cooked and I apologize for that. I'll continue to monitor it daily" +
+    " and implement a better way to choose a random character" +
+    " from the pool. In the meantime, a raid bosses mode is on" +
+    " the way, as well as infinite mode, so stay tuned.",
+    changed: [
+      "Changed Krile version introduction from 2.0 to 3.1",
+    ],
+    fixed: [
+      "Hotfixed randomness",
+    ]
+  },
+  {
     version: "1.0.2",
     date: "2026-02-15",
     summary: "Implemented some much needed changes in this update." +
