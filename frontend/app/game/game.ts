@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {Character, GuessResponse} from './searchjson/searchjson.model';
+import { Character, GuessResponse } from './searchjson/searchjson.model';
 import { GuessTableComponent } from './guess-table/guess-table';
 import { ResultsComponent } from './results/results';
 import { GuessStorageService } from '../services/guess_storage.service';
@@ -74,7 +74,7 @@ export class GameComponent {
       })
     );
 
-    laTime.setHours(laTime.getHours() - 5);
+    laTime.setHours(laTime.getHours() - 4);
 
     const dateKey = laTime.toISOString().slice(0, 10);
 
@@ -86,6 +86,11 @@ export class GameComponent {
   setCorrectAnswer() {
     const index = (this.getGlobalSeed() + 7) % this.unmodifiedCharacters.length;
     this.correctAnswer = this.unmodifiedCharacters[this.randomOrder[index]];
+  }
+
+  getPreviousDayAnswer() {
+    const index = (this.getGlobalSeed() + 7) % this.unmodifiedCharacters.length;
+    return this.unmodifiedCharacters[this.randomOrder[index - 1]];
   }
 
   buildGuessResponse(guess: Character): GuessResponse {

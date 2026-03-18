@@ -9,6 +9,21 @@ export type PatchEntry = {
 
 export const patchNotes: PatchEntry[] = [
   {
+    version: "1.0.3",
+    date: "2026-03-17",
+    summary: "Improved responsiveness for most components on the website",
+    added: [
+      "Added component to show character of yesterday",
+    ],
+    changed: [
+      "Changed time for characters to update daily due to daylight savings"
+    ],
+    fixed: [
+      "Responsiveness for most components when shrinking down the window size/using" +
+      " mobile platform has been improved slightly",
+    ]
+  },
+  {
     version: "1.0.21",
     date: "2026-02-21",
     summary: "Heyo, I got some suggestions about the randomness" +
