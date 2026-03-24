@@ -25,14 +25,13 @@ export class GameComponent {
   correctAnswer!: Character;
   characters: Character[] = [];
   unmodifiedCharacters: Character[] = [];
-  randomOrder: number[] = [48, 86, 52, 49, 62, 6, 79, 90,
-    57, 7, 88, 35, 46, 82, 24, 18, 4, 38, 75, 78, 45, 1,
-    67, 40, 13, 20, 41, 21, 77, 26, 55, 25, 43, 29, 69,
-    89, 73, 85, 37, 76, 56, 30, 51, 65, 17, 34, 44, 58,
-    3, 33, 64, 81, 72, 63, 27, 66, 31, 39, 70, 96, 16,
-    84, 91, 83, 87, 97, 60, 12, 92, 36, 5, 23, 9, 54, 50,
-    28, 42, 53, 59, 71, 22, 80, 61, 47, 14, 15, 32, 10, 11,
-    2, 93, 94, 74, 68, 95, 19, 8];
+  randomOrder: number[] = [27, 50, 70, 32, 16, 24, 81, 35, 64, 58,
+    49, 26, 60, 79, 55, 72, 39, 10, 44, 94, 7, 12, 33, 69, 63,
+    84, 19, 42, 43, 54, 37, 31, 76, 56, 41, 15, 74, 90, 21, 25,
+    78, 6, 8, 59, 4, 83, 73, 91, 29, 92, 57, 47, 75, 36, 2, 95,
+    68, 46, 80, 77, 34, 71, 65, 85, 86, 18, 61, 14, 93, 13, 88,
+    22, 82, 52, 23, 97, 48, 17, 62, 20, 87, 45, 96, 1, 40,
+    30, 89, 3, 28, 67, 53, 38, 51, 5, 9, 66, 11];
   // https://www.calculatorsoup.com/calculators/statistics/random-number-generator.php
   // adjust everytime a new character is added!!!
   // TODO: maybe add an automatic function for randomOrder
@@ -65,31 +64,38 @@ export class GameComponent {
       });
   }
 
-  getGlobalSeed = (): number => {
+  getGlobalSeed(offsetDays = 0): string {
     const now = new Date();
 
     const laTime = new Date(
-      now.toLocaleString('en-US', {
-        timeZone: 'America/Los_Angeles'
-      })
+      now.toLocaleString('en-US', { timeZone: 'America/Los_Angeles' })
     );
 
-    laTime.setHours(laTime.getHours() - 4);
+    laTime.setHours(laTime.getHours() + 3);
+    laTime.setDate(laTime.getDate() + offsetDays);
 
-    const dateKey = laTime.toISOString().slice(0, 10);
+    const year = laTime.getFullYear();
+    const month = String(laTime.getMonth() + 1).padStart(2, '0');
+    const day = String(laTime.getDate()).padStart(2, '0');
 
-    return dateKey
-      .split('')
-      .reduce((a, c) => a + c.charCodeAt(0), 0);
+    return `${year}-${month}-${day}`;
   };
 
+  getDayOffsetFromStart(dateKey: string): number {
+    const start = new Date('2026-01-01T00:00:00Z');
+    const current = new Date(dateKey + 'T00:00:00Z');
+
+    return Math.floor((current.getTime() - start.getTime()) / 86400000);
+  }
+
+
   setCorrectAnswer() {
-    const index = (this.getGlobalSeed() + 7) % this.unmodifiedCharacters.length;
+    const index = this.getDayOffsetFromStart(this.getGlobalSeed(4)) % this.unmodifiedCharacters.length;
     this.correctAnswer = this.unmodifiedCharacters[this.randomOrder[index]];
   }
 
   getPreviousDayAnswer() {
-    const index = (this.getGlobalSeed() + 7) % this.unmodifiedCharacters.length;
+    const index = this.getDayOffsetFromStart(this.getGlobalSeed(4))  % this.unmodifiedCharacters.length;
     return this.unmodifiedCharacters[this.randomOrder[index - 1]];
   }
 

@@ -9,6 +9,15 @@ export type PatchEntry = {
 
 export const patchNotes: PatchEntry[] = [
   {
+    version: "1.0.31",
+    date: "2026-03-17",
+    summary: "If randomness doesn't improve with this my family will die. also i promise " +
+    "I didn't kill Moenbryda like SE, randomness is a pain. I'm sorry about the hyurs.",
+    fixed: [
+      "random"
+    ]
+  },
+  {
     version: "1.0.3",
     date: "2026-03-17",
     summary: "Improved responsiveness for most components on the website",
