@@ -1,0 +1,20 @@
+<div
+  class="relative w-max max-w-3xl outline-1
+           mx-auto flex items-center justify-center
+           gap-3 rounded-2xl bg-[#e7dfca] px-4 py-1 shadow-sm"
+>
+  <button title="Settings" class="flex h-10 w-10 items-center
+   justify-center rounded-lg material-symbols-outlined">
+    settings
+  </button>
+  <button title="Update Log" class="flex h-10 w-10 items-center
+   justify-center rounded-lg material-symbols-outlined">
+    docs
+  </button>
+  <button title="How to Play" (click)="open = true" class="flex h-10 w-10 items-center
+   justify-center rounded-lg material-symbols-outlined">
+    help
+  </button>
+</div>
+
+<app-htp [(open)]="open"/>

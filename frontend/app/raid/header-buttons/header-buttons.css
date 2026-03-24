@@ -1,0 +1,14 @@
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
+  font-size: min(9vw, 32px);
+  color: rgb(99, 99, 99);
+}
+
+.material-symbols-outlined:hover {
+  color: black;
+  cursor: pointer;
+}

@@ -1,0 +1,124 @@
+<div class="table-wrapper">
+<div class="mt-8 table-container">
+  <table class="min-w-full rounded-lg">
+  <thead>
+  <tr class="text-center font-semibold">
+    <th class="px-4 py-2">Character</th>
+    <th class="px-4 py-2">Name</th>
+    <th class="px-4 py-2">Gender</th>
+    <th class="px-4 py-2">&nbsp;Age&nbsp;</th>
+    <th class="px-4 py-2">Affiliation(s)</th>
+    <th class="px-4 py-2">Job(s)</th>
+    <th class="px-4 py-2">Race</th>
+    <th class="px-4 py-2">Version Introduction</th>
+  </tr>
+  </thead>
+  <tbody>
+    @for (g of guesses; track g.guess.id){
+      <tr>
+        <td
+          class="px-4 py-2 bg-white"
+        >
+          <img
+            [src]="'jobs_and_characters/' + g.guess.image_url"
+            alt="{{ g.guess.name }}"
+            class="table-cell-image"
+          />
+        </td>
+        <td
+          class="px-4 py-2"
+          [ngClass]="{ 'bg-green-200': g.comparison.name, 'bg-red-200': !g.comparison.name }"
+        >
+          {{ g.guess.name }}
+        </td>
+        <td
+          class="px-4 py-2 border-t border-gray-300"
+          [ngClass]="{ 'bg-green-200': g.comparison.gender, 'bg-red-200': !g.comparison.gender }"
+        >
+          {{ g.guess.gender }}
+        </td>
+        <td
+          class="px-4 py-2 border-t border-gray-300"
+          [ngClass]="{ 'bg-green-200': g.comparison.age === 'equal',
+          'bg-red-200': g.comparison.age !== 'equal' }"
+        >
+          @if (!g.guess.age){
+            Not Specified
+          } @else {
+            {{ g.guess.age }}<span class="text-red-600">
+            @switch (g.comparison.age) {
+              @case ('higher') {
+                ⬆
+              }
+              @case ('lower') {
+                ⬇
+              }
+            }
+            </span>
+          }
+        </td>
+        <td
+          class="px-4 py-2 border-t border-gray-300"
+          [ngClass]="
+          { 'bg-green-200': g.comparison.affiliation === 'exact',
+          'bg-yellow-200': g.comparison.affiliation === 'partial',
+          'bg-red-200': g.comparison.affiliation === 'none'
+          }">
+          @for (affiliation of g.guess.affiliation; track affiliation) {
+            @if ($last) {
+              {{ affiliation }}
+            }
+            @else {
+              {{ affiliation }},
+            }
+          }
+        </td>
+        <td
+          class="px-4 py-2"
+          [ngClass]="
+          { 'bg-green-200': g.comparison.current_job === 'exact',
+          'bg-yellow-200': g.comparison.current_job === 'partial',
+          'bg-red-200': g.comparison.current_job === 'none'
+           }">
+            @for (job of g.guess.current_job; track job) {
+              @if (job !== 'None') {
+                <img
+                  [src]="'jobs_and_characters/class_job_icons/' + job + '.png'"
+                  alt="{{ job }}"
+                  class="table-cell-image"
+                  title="{{ job }}"
+                />
+              } @else {
+                Jobless
+              }
+            }
+        </td>
+        <td
+          class="px-4 py-2"
+          [ngClass]="{ 'bg-green-200': g.comparison.race, 'bg-red-200': !g.comparison.race }"
+        >
+          {{ g.guess.race }}
+        </td>
+        <td
+          class="px-4 py-2"
+          [ngClass]="{
+            'bg-green-200': g.comparison.version_introduction === 'equal',
+            'bg-red-200': g.comparison.version_introduction !== 'equal'
+          }"
+        >
+          {{ g.guess.version_introduction }}
+            @switch (g.comparison.version_introduction) {
+              @case ('higher') {
+                <span class="text-red-600">⬆</span>
+              }
+              @case ('lower') {
+                <span class="text-red-600">⬇</span>
+              }
+            }
+        </td>
+      </tr>
+    }
+  </tbody>
+</table>
+</div>
+</div>

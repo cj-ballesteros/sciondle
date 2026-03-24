@@ -1,0 +1,231 @@
+@if (open) {
+  <div class="fixed inset-0 z-50 bg-black/50" role="dialog" aria-modal="true" (click)="close()">
+    <div
+      class="absolute inset-0"
+      animate.enter="backdrop-enter"
+      animate.leave="backdrop-leave"
+    ></div>
+
+    <div class="flex min-h-full items-center justify-center p-4">
+      <div
+        #panel
+        tabindex="-1"
+        class="flex max-h-[85vh] w-[min(92vw,760px)] flex-col overflow-hidden rounded-xlbg-[#2b2b2b] shadow-2xl outline-none"
+        cdkTrapFocus
+        [cdkTrapFocusAutoCapture]="true"
+        animate.enter="panel-enter"
+        animate.leave="panel-leave"
+        (click)="$event.stopPropagation()"
+      >
+        <div class="relative bg-gradient-to-b from-[#4a4a4a] to-[#2f2f2f] px-3 pt-2">
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <h2 class="text-xl tracking-wide text-[#e7e7e7]">
+                How to Play
+              </h2>
+
+            </div>
+
+            <button
+              type="button"
+              class="rounded-md px-1 text-2xl leading-none text-white/80 hover:bg-white/10 hover:text-white focus:outline-none focus:ring-2 focus:ring-white/30"
+              (click)="close()"
+              aria-label="Close"
+            >
+              ×
+            </button>
+          </div>
+          <div class="mt-2 h-px w-[calc(100%-0.5rem)] bg-white/15"></div>
+        </div>
+
+        <div class="flex-1 overflow-y-auto bg-[#2f2f2f] p-6">
+          <p class="text-[#D0D0D0] text-lg pb-3">Guess a character from the hit
+          MMORPG Final Fantasy XIV! Updates daily. </p>
+          <p class="text-[#D0D0D0] text-lg pb-3">Characters that
+          can be guessed are from the MSQ as well as major storylines like
+          the raid stories and Hildibrand.</p>
+
+          <h2 class="text-[#D0D0D0] pb-1 text-lg tracking-wide">
+            Quest Mode
+          </h2>
+          <!-- color of yellow text is #B59B6A -->
+          <div class="text-[#D0D0D0] tracking-wide drop-shadow-[0_1px_0_rgba(0,0,0,0.25)] space-y-1">
+            <p>In Quest Mode, type in the name of a character and their
+            properties will be revealed. The color in the table will
+            tell you how close your guess was from the daily
+            character.</p>
+          </div>
+          <div class="pl-6 text-[#D0D0D0] tracking-wide drop-shadow-[0_1px_0_rgba(0,0,0,0.25)] space-y-1">
+            <p><span class="text-green-200">Green</span> indicates an
+            exact match.</p>
+            <p><span class="text-yellow-200">Yellow</span> indicates a
+              partial match.</p>
+            <p><span class="text-red-200">Red</span> indicates no
+            match at all.</p>
+            <p><span class="text-red-600">⬆</span><span class="text-red-600">⬇</span>
+            The arrows will indicate whether the answer's property is
+            above/below your guess.</p>
+          </div>
+
+          <h2 class="text-[#D0D0D0] pb-1 text-lg tracking-wide">
+            Properties
+          </h2>
+          <!-- color of yellow text is #B59B6A -->
+          <div class="text-[#D0D0D0] tracking-wide drop-shadow-[0_1px_0_rgba(0,0,0,0.25)] space-y-1">
+            <p>A description of what each property means
+            in relation to the character follows:</p>
+          </div>
+          <div class="pl-6 text-[#D0D0D0] tracking-wide drop-shadow-[0_1px_0_rgba(0,0,0,0.25)] space-y-1">
+            <p><span class="text-[#B59B6A]">Gender: </span>Character's
+            gender can be Male, Female, or Ambiguous/Non-Binary</p>
+            <p><span class="text-[#B59B6A]">Age: </span>How old a
+              character actually is.</p>
+            <p><span class="text-[#B59B6A]">Affiliation: </span>What
+            organization(s) the character associates
+            themselves with. Example: Scions of the Seventh Dawn, Ascians,
+            Maelstrom, etc.</p>
+            <p><span class="text-[#B59B6A]">Job: </span>What in-game
+            job(s) the character plays as. A character can be mulitple
+              jobs over the course of the MSQ, so guessing a character
+              with one of those jobs will give a partial color. As well
+            as that, classes
+            <p><span class="text-[#B59B6A]">Race: </span>What race
+            the character is.</p>
+            <p><span class="text-[#B59B6A]">Version Introduction: </span>
+            XIV patch the character was introduced on screen and not just
+              mentioned.</p>
+          </div>
+          <h2 class="text-[#D0D0D0] pb-1 text-lg tracking-wide">
+            Example
+          </h2>
+          <div class="text-[#D0D0D0] tracking-wide drop-shadow-[0_1px_0_rgba(0,0,0,0.25)] space-y-1">
+            <p>Assume the correct character is Thancred and we guess
+            Fordola, this is what shows up and the correct answer as comparison:</p>
+          </div>
+          <div class="table-wrapper">
+            <div class="table-container">
+              <table class="min-w-full rounded-lg">
+                <thead>
+                <tr class="text-center font-semibold">
+                  <th class="px-4 py-2">Char.</th>
+                  <th class="px-4 py-2">Name</th>
+                  <th class="px-4 py-2">Gender</th>
+                  <th class="py-2">&nbsp;Age&nbsp;</th>
+                  <th class="px-4 py-2">Aff.</th>
+                  <th class="px-4 py-2">Job(s)</th>
+                  <th class="px-4 py-2">Race</th>
+                  <th class="px-4 py-2">Ver.</th>
+                </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="px-4 py-2 bg-white">
+                      <img
+                        [src]="'jobs_and_characters/Fordola.jpeg'"
+                        alt="Fordola"
+                        class="table-cell-image"
+                      />
+                    </td>
+                    <td class="px-4 py-2 bg-red-200">
+                      Fordola
+                    </td>
+                    <td class="px-4 py-2 border-t border-gray-300 bg-red-200">
+                      Female
+                    </td>
+                    <td class="px-4 py-2 border-t border-gray-300 bg-red-200">
+                        19<span class="text-red-600">⬆</span>
+                    </td>
+                    <td class="px-4 py-2 border-t border-gray-300 bg-red-200">
+                      Ala Mhigo
+                    </td>
+                    <td class="px-4 py-2 bg-yellow-200">
+                      <img
+                        [src]="'jobs_and_characters/' + 'Class_Job_Icons/gladiator.png'"
+                        alt="Gladiator"
+                        class="table-cell-image"
+                      />
+                    </td>
+                    <td class="px-4 py-2 bg-green-200">
+                      Hyur
+                    </td>
+                    <td class="px-4 py-2 bg-red-200">
+                      4.0<span class="text-red-600">⬇</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-2 bg-white">
+                      <img
+                        [src]="'jobs_and_characters/Thancred.png'"
+                        alt="Thancred"
+                        class="table-cell-image"
+                      />
+                    </td>
+                    <td class="px-4 py-2 bg-green-200">
+                      Thancred
+                    </td>
+                    <td class="px-4 py-2 border-t border-gray-300 bg-green-200">
+                      Male
+                    </td>
+                    <td class="px-4 py-2 border-t border-gray-300 bg-green-200">
+                      32
+                    </td>
+                    <td class="px-4 py-2 border-t border-gray-300 bg-green-200">
+                      Scions of the Seventh Dawn
+                    </td>
+                    <td class="px-4 py-2 bg-green-200">
+                      <img
+                        [src]="'jobs_and_characters/' + 'Class_Job_Icons/gunbreaker.png'"
+                        alt="Gunbreaker"
+                        class="table-cell-image"
+                      />
+                      <img
+                        [src]="'jobs_and_characters/' + 'Class_Job_Icons/rogue.png'"
+                        alt="rogue"
+                        class="table-cell-image"
+                      />
+                      <img
+                        [src]="'jobs_and_characters/' + 'Class_Job_Icons/gladiator.png'"
+                        alt="gladiator"
+                        class="table-cell-image"
+                      />
+                    </td>
+                    <td class="px-4 py-2 bg-green-200">
+                      Hyur
+                    </td>
+                    <td class="px-4 py-2 bg-green-200">
+                      1.0
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="text-[#D0D0D0] tracking-wide drop-shadow-[0_1px_0_rgba(0,0,0,0.25)] space-y-1">
+            This is what shows up!
+          </div>
+        </div>
+        <div class="shrink-0 border-t border-white/10 bg-[#2b2b2b] px-6 py-4 flex justify-end">
+          <button
+            cdkFocusInitial
+            (click)="close()"
+            class="
+              rounded-3xl
+              border border-white/20
+              bg-gradient-to-b from-[#5a5a5a] to-[#3a3a3a]
+              px-8 py-1
+              text-sm font-semibold tracking-wide text-[#e7e7e7]
+              shadow-[inset_0_1px_0_rgba(255,255,255,0.25),_0_2px_4px_rgba(0,0,0,0.4)]
+              hover:from-[#6a6a6a] hover:to-[#4a4a4a]
+              active:translate-y-px
+              active:shadow-[inset_0_2px_2px_rgba(0,0,0,0.5)]
+              focus:outline-none
+              focus:ring-2 focus:ring-white/30
+            "
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+}

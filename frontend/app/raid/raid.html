@@ -1,0 +1,36 @@
+<div class="welcome-wrapper">
+  <div
+    class="relative min-w-1xl w-[85%] max-w-3xl aspect-[1341/310]
+           mx-auto
+           bg-[url('app/assets/textbox_template.png')] bg-contain bg-no-repeat bg-center
+           flex items-center justify-center px-6"
+  >
+    <div
+      class="absolute left-[12%] top-0 h-[32.5%] flex items-center
+              text-white drop-shadow-[1px_1px_1px_rgba(255,255,255,0.6)]"
+      style="font-size: min(2.5vw, 20px);"
+    >
+      Welcome to XIVdle!
+    </div>
+
+    <!-- Centered Dialogue Text -->
+    <p class="absolute left-[10%] h-[35%] text-gray-900 leading-tight"
+       style="font-size: min(2.5vw, 20px);">
+      Guess today's XIV character!<br/>
+      Enter your guess to get started!
+    </p>
+  </div>
+</div>
+
+<app-header-buttons/>
+
+@if (!game_over){
+  <app-searchjson (characterSelected)="onBossSelected($event)"/>
+}
+@if (guesses && guesses.length > 0) {
+  <app-guess-table [guesses]="guesses"/>
+}
+@if (game_over && correctAnswer) {
+  <app-results [correctAnswer]="correctAnswer" [guesses]="guesses"/>
+  <app-share [guesses]="guesses"/>
+}

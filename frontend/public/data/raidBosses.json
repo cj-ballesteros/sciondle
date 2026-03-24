@@ -1,79 +1,5 @@
 [
   {
-    "boss_id": 1,
-    "boss_name": "Bahamut Prime",
-    "boss_alias": null,
-    "expansion": "2.0",
-    "average_clear_time": "",
-    "boss_type": [
-      "normal",
-      "wall_boss",
-      "stationary_boss",
-      "dual_boss",
-      "door_boss",
-      "final_boss",
-      "two_phase"
-    ],
-    "arena_features": [
-      "square",
-      "circular",
-      "rectangular",
-      "multiple_platforms/arenas",
-      "breakable_platforms",
-      "teleporters",
-      "irregular",
-      "limited_space"
-    ],
-    "encounter_features": [
-      "downtime",
-      "adds",
-      "no_positionals"
-    ],
-    "fundamental_mechanics_featured": [
-      "spreads",
-      "stacks",
-      "partner_stacks",
-      "role_stacks",
-      "line_stacks",
-      "towers",
-      "proximity",
-      "flares",
-      "knockback",
-      "chariot/dynamo",
-      "proteans",
-      "tethers"
-    ],
-    "common_mechanics_featured": [
-      "doom_cleanse",
-      "akh_morn",
-      "defamation",
-      "baited_aoes",
-      "wild_charge",
-      "exas",
-      "twister",
-      "chain_break",
-      "hot_wing/hot_tail",
-      "earthshakers",
-      "limit_cut",
-      "playstation",
-      "nisi",
-      "tumults",
-      "akh_rhai",
-      "monitors",
-      "enumeration",
-      "hand_of_pain",
-      "stillness",
-      "motion",
-      "gaze",
-      "rotating",
-      "hot_spell/cold_spell",
-      "shiva",
-      "feather_rain"
-    ],
-    "created_at": "2025-1-23",
-    "image_url": "bahamut_prime.jpeg"
-  },
-  {
     "boss_id": 2,
     "boss_name": "Black Cat",
     "boss_alias": null,
@@ -100,7 +26,7 @@
       "knockback"
     ],
     "created_at": "2026-01-23",
-    "image_url": "black_cat.jpeg"
+    "image_url": "raid/black_cat.jpg"
   },
   {
     "boss_id": 3,
@@ -127,10 +53,11 @@
       "chariot/dynamo",
       "baited_aoes",
       "defamations",
-      "nisi"
+      "nisi",
+      "dropped_puddles/aoes"
     ],
     "created_at": "2026-01-23",
-    "image_url": "honey_b_lovely.jpeg"
+    "image_url": "raid/honey_b_lovely.jpg"
   },
   {
     "boss_id": 4,
@@ -142,8 +69,7 @@
       "normal"
     ],
     "arena_type": [
-      "square",
-      "limited_space"
+      "square"
     ],
     "encounter_features": [
       null
@@ -163,7 +89,7 @@
       "tumults"
     ],
     "created_at": "2026-01-23",
-    "image_url": "brute_bomber.jpeg"
+    "image_url": "raid/brute_bomber.jpg"
   },
   {
     "boss_id": 5,
@@ -203,13 +129,13 @@
       "doom_cleanse",
       "akh_morn",
       "defamation",
-      "baited_aoes",
       "wild_charge",
       "exas",
-      "hot_wing/hot_tail"
+      "hot_wing/hot_tail",
+      "dropped_puddles/aoes"
     ],
     "created_at": "2026-01-23",
-    "image_url": "wicked_thunder.jpeg"
+    "image_url": "raid/wicked_thunder.jpg"
   },
   {
     "boss_id": 6,
@@ -238,8 +164,8 @@
     "common_mechanics_featured": [
       "nisi"
     ],
-    "created_at": "2025-01-23",
-    "image_url": "dancing_green.jpeg"
+    "created_at": "2026-01-23",
+    "image_url": "raid/dancing_green.png"
   },
   {
     "boss_id": 7,
@@ -267,10 +193,12 @@
     "common_mechanics_featured": [
       "akh_morn",
       "defamation",
-      "feather_rain"
+      "feather_rain",
+      "dropped_puddles/aoes",
+      "baited_markers/debuffs"
     ],
-    "created_at": "2025-1-23",
-    "image_url": "sugar_riot.jpeg"
+    "created_at": "2026-1-23",
+    "image_url": "raid/sugar_riot.png"
   },
   {
     "boss_id": 8,
@@ -306,10 +234,13 @@
     ],
     "common_mechanics_featured": [
       "baited_aoes",
-      "tumults"
+      "tumults",
+      "line_of_sight",
+      "dropped_puddles/aoes",
+      "baited_markers/debuffs"
     ],
-    "created_at": "2025-1-23",
-    "image_url": "brute_abombinator.jpeg"
+    "created_at": "2026-1-23",
+    "image_url": "raid/brute_abombinator.png"
   },
   {
     "boss_id": 9,
@@ -350,8 +281,8 @@
       "enumeration",
       "rotating"
     ],
-    "created_at": "2025-1-23",
-    "image_url": "howling_blade.jpeg"
+    "created_at": "2026-1-23",
+    "image_url": "raid/howling_blade.png"
   },
   {
     "boss_id": 10,
@@ -383,8 +314,8 @@
       "akh_morn",
       "defamation"
     ],
-    "created_at": "2025-1-23",
-    "image_url": "vamp_fatale.jpeg"
+    "created_at": "2026-1-23",
+    "image_url": "raid/vamp_fatale.png"
   },
   {
     "boss_id": 11,
@@ -416,16 +347,18 @@
     ],
     "common_mechanics_featured": [
       "defamation",
-      "baited_aoes"
+      "baited_aoes",
+      "dropped_puddles/aoes",
+      "baited_markers/debuffs"
     ],
-    "created_at": "2025-1-23",
-    "image_url": "the_xtremes.jpeg"
+    "created_at": "2026-1-23",
+    "image_url": "raid/the_xtremes.png"
   },
   {
     "boss_id": 12,
     "boss_name": "The Tyrant",
     "boss_alias": null,
-    "expansion": "2.0",
+    "expansion": "7.0",
     "average_clear_time": "",
     "boss_type": [
       "normal",
@@ -455,16 +388,20 @@
     ],
     "common_mechanics_featured": [
       "baited_aoes",
-      "wild_charge"
+      "wild_charge",
+      "meteors",
+      "line_of_sight",
+      "baited_markers/debuffs",
+      "dropped_puddles/aoes"
     ],
-    "created_at": "2025-1-23",
-    "image_url": "bahamut_prime.jpeg"
+    "created_at": "2026-1-23",
+    "image_url": "raid/the_tyrant.png"
   },
   {
     "boss_id": 13,
     "boss_name": "Lindwurm (Phase 1)",
     "boss_alias": null,
-    "expansion": "2.0",
+    "expansion": "7.0",
     "average_clear_time": "",
     "boss_type": [
       "wall_boss",
@@ -494,8 +431,8 @@
       "limit_cut",
       "monitors"
     ],
-    "created_at": "2025-1-23",
-    "image_url": "lindwurm_phase_1.jpeg"
+    "created_at": "2026-1-23",
+    "image_url": "raid/lindwurm_phase_1.png"
   },
   {
     "boss_id": 14,
@@ -529,14 +466,15 @@
       "doom_cleanse",
       "defamation",
       "twister",
-      "stillness*"
+      "stillness",
+      "baited"
     ],
-    "created_at": "2025-1-23",
-    "image_url": "lindwurm_phase_2.jpeg"
+    "created_at": "2026-1-23",
+    "image_url": "raid/lindwurm_phase_2.jpg"
   },
   {
     "boss_id": 15,
-    "boss_name": "Fatebreaker (FRU)",
+    "boss_name": "Fatebreaker (Ultimate)",
     "boss_alias": null,
     "expansion": "7.0",
     "average_clear_time": "",
@@ -562,8 +500,8 @@
       "hot_wing/hot_tail",
       "enumeration"
     ],
-    "created_at": "2025-1-23",
-    "image_url": "fatebreaker.jpeg"
+    "created_at": "2026-1-23",
+    "image_url": "raid/fatebreaker.jpg"
   },
   {
     "boss_id": 16,
@@ -595,12 +533,12 @@
       "baited_aoes",
       "enumeration"
     ],
-    "created_at": "2025-1-23",
-    "image_url": "shiva_ryne.jpeg"
+    "created_at": "2026-1-23",
+    "image_url": "raid/shiva_ryne.jpg"
   },
   {
     "boss_id": 17,
-    "boss_name": "Oracle of Darkness (FRU)",
+    "boss_name": "Oracle of Darkness (Ultimate)",
     "boss_alias": null,
     "expansion": "7.0",
     "average_clear_time": "",
@@ -608,8 +546,7 @@
       "normal"
     ],
     "arena_features": [
-      "circular",
-      "limited_space"
+      "circular"
     ],
     "encounter_features": [
       null
@@ -625,8 +562,8 @@
       "gaze",
       "rotating"
     ],
-    "created_at": "2025-1-23",
-    "image_url": "oracle_of_darkness.jpeg"
+    "created_at": "2026-1-23",
+    "image_url": "raid/oracle_of_darkness.jpg"
   },
   {
     "boss_id": 18,
@@ -660,8 +597,8 @@
       "enumeration",
       "hand_of_pain"
     ],
-    "created_at": "2025-1-23",
-    "image_url": "roommates.jpeg"
+    "created_at": "2026-1-23",
+    "image_url": "raid/roommates.jpg"
   },
   {
     "boss_id": 19,
@@ -689,8 +626,8 @@
       "wild_charge",
       "exas"
     ],
-    "created_at": "2025-1-23",
-    "image_url": "pandora.jpeg"
+    "created_at": "2026-1-23",
+    "image_url": "raid/pandora.png"
   },
   {
     "boss_id": 20,
@@ -721,8 +658,8 @@
       "limit_cut",
       "rotating"
     ],
-    "created_at": "2025-1-31",
-    "image_url": "omega.jpeg"
+    "created_at": "2026-1-31",
+    "image_url": "raid/omega.png"
   },
   {
     "boss_id": 21,
@@ -749,14 +686,12 @@
       "tethers"
     ],
     "common_mechanics_featured": [
-      "baited_aoes",
       "hot_wing/hot_tail",
-      "earthshakers",
-      "limit_cut",
-      "playstation"
+      "playstation",
+      "baited_markers/debuffs"
     ],
-    "created_at": "2025-1-31",
-    "image_url": "Omega-MF.jpeg"
+    "created_at": "2026-1-31",
+    "image_url": "raid/omega_mf.jpg"
   },
   {
     "boss_id": 22,
@@ -785,8 +720,8 @@
       "nisi",
       "monitors"
     ],
-    "created_at": "2025-1-23",
-    "image_url": "final_omega.jpeg"
+    "created_at": "2026-1-23",
+    "image_url": "raid/final_omega.jpg"
   },
   {
     "boss_id": 23,
@@ -812,8 +747,8 @@
     ],
     "common_mechanics_featured": [
     ],
-    "created_at": "2025-1-23",
-    "image_url": "bahamut_prime.jpeg"
+    "created_at": "2026-1-23",
+    "image_url": "raid/blue_screen.jpg"
   },
   {
     "boss_id": 24,
@@ -833,13 +768,195 @@
     "fundamental_mechanics_featured": [
       "spreads",
       "stacks",
-      "light_party_stacks",
       "partner_stacks",
-      "role_stacks",
-      "line_stacks",
       "towers",
-      "proximity",
+      "knockback",
+      "chariot/dynamo",
+      "proteans",
+      "tethers"
+    ],
+    "common_mechanics_featured": [
+      "defamation",
+      "chain_break",
+      "hot_wing/hot_tail",
+      "playstation",
+      "monitors",
+      "rotating"
+    ],
+    "created_at": "2026-02-04",
+    "image_url": "raid/omega_dynamis.jpg"
+  },
+  {
+    "boss_id": 25,
+    "boss_name": "Alpha Omega",
+    "boss_alias": null,
+    "expansion": "6.0",
+    "average_clear_time": "",
+    "boss_type": [
+      "normal"
+    ],
+    "arena_features": [
+      "circular"
+    ],
+    "encounter_features": [
+      "adds"
+    ],
+    "fundamental_mechanics_featured": [
+      "spreads",
+      "stacks",
+      "line_stacks",
       "flares",
+      "proteans"
+    ],
+    "common_mechanics_featured": [
+      "baited_aoes",
+      "wild_charge",
+      "exas"
+    ],
+    "created_at": "2026-02-04",
+    "image_url": "raid/alpha_omega.png"
+  },
+  {
+    "boss_id": 26,
+    "boss_name": "Vault Knights",
+    "boss_alias": null,
+    "expansion": "6.0",
+    "average_clear_time": "",
+    "boss_type": [
+      "wall_boss",
+      "dual_boss"
+    ],
+    "arena_features": [
+      "square",
+      "limited_space"
+    ],
+    "encounter_features": [
+    ],
+    "fundamental_mechanics_featured": [
+      "spreads",
+      "stacks",
+      "chariot/dynamo",
+      "proteans",
+      "tethers"
+    ],
+    "common_mechanics_featured": [
+      "baited_aoes",
+      "chain_break",
+      "playstation"
+    ],
+    "created_at": "2026-02-04",
+    "image_url": "raid/vault_knights.png"
+  },
+  {
+    "boss_id": 27,
+    "boss_name": "King Thordan (Ultimate)",
+    "boss_alias": null,
+    "expansion": "6.0",
+    "average_clear_time": "",
+    "boss_type": [
+      "normal"
+    ],
+    "arena_features": [
+      "circular",
+      "limited_space"
+    ],
+    "encounter_features": [
+      "downtime"
+    ],
+    "fundamental_mechanics_featured": [
+      "spreads",
+      "stacks",
+      "partner_stacks",
+      "towers",
+      "knockback",
+      "proteans",
+      "tethers"
+    ],
+    "common_mechanics_featured": [
+      "defamation",
+      "baited_aoes",
+      "gaze",
+      "meteors"
+    ],
+    "created_at": "2026-02-04",
+    "image_url": "raid/king_thordan.jpg"
+  },
+  {
+    "boss_id": 28,
+    "boss_name": "Nidhogg (Ultimate)",
+    "boss_alias": null,
+    "expansion": "6.0",
+    "average_clear_time": "",
+    "boss_type": [
+      "normal",
+      "stationary_boss"
+    ],
+    "arena_features": [
+      "square"
+    ],
+    "encounter_features": [
+    ],
+    "fundamental_mechanics_featured": [
+      "spreads",
+      "stacks",
+      "towers",
+      "chariot/dynamo",
+      "tethers"
+    ],
+    "common_mechanics_featured": [
+      "baited_aoes",
+      "limit_cut",
+      "enumeration"
+    ],
+    "created_at": "2026-02-04",
+    "image_url": "raid/nidhogg.png"
+  },
+  {
+    "boss_id": 29,
+    "boss_name": "Eyes",
+    "boss_alias": null,
+    "expansion": "6.0",
+    "average_clear_time": "",
+    "boss_type": [
+      "stationary_boss",
+      "dual_boss"
+    ],
+    "arena_features": [
+      "square"
+    ],
+    "encounter_features": [
+      "no_positionals"
+    ],
+    "fundamental_mechanics_featured": [
+      "spreads",
+      "stacks",
+      "partner_stacks",
+      "tethers"
+    ],
+    "common_mechanics_featured": [
+    ],
+    "created_at": "2026-02-04",
+    "image_url": "raid/eyes.png"
+  },
+  {
+    "boss_id": 30,
+    "boss_name": "Dark King Thordan",
+    "boss_alias": null,
+    "expansion": "6.0",
+    "average_clear_time": "",
+    "boss_type": [
+      "normal"
+    ],
+    "arena_features": [
+      "circular"
+    ],
+    "encounter_features": [
+      "downtime",
+      "adds",
+      "no_positionals"
+    ],
+    "fundamental_mechanics_featured": [
+      "spreads",
       "knockback",
       "chariot/dynamo",
       "proteans",
@@ -847,32 +964,459 @@
     ],
     "common_mechanics_featured": [
       "doom_cleanse",
-      "akh_morn",
       "defamation",
-      "baited_aoes",
-      "wild_charge",
-      "exas",
       "twister",
       "chain_break",
-      "hot_wing/hot_tail",
-      "earthshakers",
-      "limit_cut",
       "playstation",
-      "nisi",
-      "tumults",
-      "akh_rhai",
-      "monitors",
-      "enumeration",
+      "divebomb_bait",
+      "dropped_puddles/aoes",
+      "baited_markers/debuffs"
+    ],
+    "created_at": "2026-02-04",
+    "image_url": "raid/dark_king_thordan.jpg"
+  },
+  {
+    "boss_id": 31,
+    "boss_name": "Double Dragons",
+    "boss_alias": null,
+    "expansion": "6.0",
+    "average_clear_time": "",
+    "boss_type": [
+      "wall_boss",
+      "dual_boss"
+    ],
+    "arena_features": [
+      "square"
+    ],
+    "encounter_features": [
+      "no_positionals"
+    ],
+    "fundamental_mechanics_featured": [
+      "spreads",
+      "stacks",
+      "partner_stacks",
+      "proteans",
+      "tethers"
+    ],
+    "common_mechanics_featured": [
+      "akh_morn",
+      "baited_aoes",
+      "wild_charge",
+      "fire/ice_cleanse",
+      "hot_wing/hot_tail",
       "hand_of_pain",
+      "stillness"
+    ],
+    "created_at": "2026-02-10",
+    "image_url": "raid/double_dragons.jpg"
+  },
+  {
+    "boss_id": 32,
+    "boss_name": "Dragon King Thordan",
+    "boss_alias": null,
+    "expansion": "6.0",
+    "average_clear_time": "",
+    "boss_type": [
+      "normal",
+      "stationary_boss"
+    ],
+    "arena_features": [
+      "circular"
+    ],
+    "encounter_features": [
+      "no_positionals"
+    ],
+    "fundamental_mechanics_featured": [
+      "stacks",
+      "towers",
+      "proximity",
+      "chariot/dynamo"
+    ],
+    "common_mechanics_featured": [
+      "akh_morn",
+      "exas"
+    ],
+    "created_at": "2026-02-10",
+    "image_url": "raid/dragon_king_thordan.png"
+  },
+  {
+    "boss_id": 33,
+    "boss_name": "Living Liquid (Ultimate)",
+    "boss_alias": null,
+    "expansion": "5.0",
+    "average_clear_time": "",
+    "boss_type": [
+      "normal",
+      "dual_boss"
+    ],
+    "arena_features": [
+      "circular",
+      "limited_space"
+    ],
+    "encounter_features": [
+    ],
+    "fundamental_mechanics_featured": [
+      "spreads",
+      "knockback",
+      "proteans",
+      "tethers"
+    ],
+    "common_mechanics_featured": [
+      "doom_cleanse",
+      "baited_aoes",
+      "limit_cut",
+      "tumults",
+      "hand_of_pain",
+      "shiva"
+    ],
+    "created_at": "2026-02-10",
+    "image_url": "raid/living_liquid.png"
+  },
+  {
+    "boss_id": 34,
+    "boss_name": "Brute Justice and Cruise Chaser",
+    "boss_alias": null,
+    "expansion": "5.0",
+    "average_clear_time": "",
+    "boss_type": [
+      "normal",
+      "dual_boss"
+    ],
+    "arena_features": [
+      "circular"
+    ],
+    "encounter_features": [
+    ],
+    "fundamental_mechanics_featured": [
+      "spreads",
+      "stacks"
+    ],
+    "common_mechanics_featured": [
+      "baited_aoes",
+      "nisi",
+      "enumeration",
+      "line_of_sight"
+    ],
+    "created_at": "2026-02-10",
+    "image_url": "raid/bjcc.jpg"
+  },
+  {
+    "boss_id": 35,
+    "boss_name": "Alexander Prime (Ultimate)",
+    "boss_alias": null,
+    "expansion": "5.0",
+    "average_clear_time": "",
+    "boss_type": [
+      "normal"
+    ],
+    "arena_features": [
+      "circular"
+    ],
+    "encounter_features": [
+      "downtime"
+    ],
+    "fundamental_mechanics_featured": [
+      "spreads",
+      "stacks",
+      "towers",
+      "proximity",
+      "knockback",
+      "tethers"
+    ],
+    "common_mechanics_featured": [
+      "limit_cut",
+      "enumeration"
+    ],
+    "created_at": "2026-02-10",
+    "image_url": "raid/alexander_prime.png"
+  },
+  {
+    "boss_id": 36,
+    "boss_name": "Perfect Alexander",
+    "boss_alias": null,
+    "expansion": "5.0",
+    "average_clear_time": "",
+    "boss_type": [
+      "normal"
+    ],
+    "arena_features": [
+      "circular"
+    ],
+    "encounter_features": [
+      "downtime"
+    ],
+    "fundamental_mechanics_featured": [
+      "spreads",
+      "stacks",
+      "chariot/dynamo",
+      "tethers"
+    ],
+    "common_mechanics_featured": [
+      "defamation",
       "stillness",
       "motion",
-      "gaze",
-      "rotating",
-      "hot_spell/cold_spell",
-      "shiva",
+      "forced_march"
+    ],
+    "created_at": "2026-02-10",
+    "image_url": "raid/perfect_alexander.png"
+  },
+  {
+    "boss_id": 37,
+    "boss_name": "Garuda",
+    "boss_alias": null,
+    "expansion": "4.0",
+    "average_clear_time": "",
+    "boss_type": [
+      "normal"
+    ],
+    "arena_features": [
+      "circular"
+    ],
+    "encounter_features": [
+      "downtime",
+      "adds"
+    ],
+    "fundamental_mechanics_featured": [
+      "stacks",
+      "chariot/dynamo",
+      "tethers"
+    ],
+    "common_mechanics_featured": [
+      "wild_charge",
       "feather_rain"
     ],
-    "created_at": "2025-1-23",
-    "image_url": "bahamut_prime.jpeg"
+    "created_at": "2026-02-15",
+    "image_url": "raid/garuda.jpg"
+  },
+  {
+    "boss_id": 38,
+    "boss_name": "Ifrit",
+    "boss_alias": null,
+    "expansion": "4.0",
+    "average_clear_time": "",
+    "boss_type": [
+      "normal"
+    ],
+    "arena_features": [
+      "circular"
+    ],
+    "encounter_features": [
+      "downtime",
+      "adds"
+    ],
+    "fundamental_mechanics_featured": [
+      "spreads",
+      "stacks",
+      "knockback",
+      "tethers"
+    ],
+    "common_mechanics_featured": [
+      "baited_aoes"
+    ],
+    "created_at": "2026-02-15",
+    "image_url": "raid/ifrit.jpg"
+  },
+  {
+    "boss_id": 39,
+    "boss_name": "Titan",
+    "boss_alias": null,
+    "expansion": "4.0",
+    "average_clear_time": "",
+    "boss_type": [
+      "normal"
+    ],
+    "arena_features": [
+      "circular",
+      "limited_space"
+    ],
+    "encounter_features": [
+      "downtime",
+      "adds"
+    ],
+    "fundamental_mechanics_featured": [
+      "knockback"
+    ],
+    "common_mechanics_featured": [
+      "baited_aoes",
+      "tumults"
+    ],
+    "created_at": "2026-01-23",
+    "image_url": "raid/titan.jpg"
+  },
+  {
+    "boss_id": 40,
+    "boss_name": "The Ultima Weapon",
+    "boss_alias": null,
+    "expansion": "4.0",
+    "average_clear_time": "",
+    "boss_type": [
+      "normal"
+    ],
+    "arena_features": [
+      "circular"
+    ],
+    "encounter_features": [
+      "downtime",
+      "adds"
+    ],
+    "fundamental_mechanics_featured": [
+      "spreads",
+      "stacks",
+      "line_stacks",
+      "proximity",
+      "knockback",
+      "chariot/dynamo",
+      "tethers"
+    ],
+    "common_mechanics_featured": [
+      "baited_aoes",
+      "wild_charge",
+      "tumults",
+      "feather_rain"
+    ],
+    "created_at": "2026-03-17",
+    "image_url": "raid/ultima_weapon.jpg"
+  },
+  {
+    "boss_id": 41,
+    "boss_name": "Twintania (Ultimate)",
+    "boss_alias": null,
+    "expansion": "4.0",
+    "average_clear_time": "",
+    "boss_type": [
+      "normal"
+    ],
+    "arena_features": [
+      "circular"
+    ],
+    "encounter_features": [
+    ],
+    "fundamental_mechanics_featured": [
+      "stacks"
+    ],
+    "common_mechanics_featured": [
+      "baited_aoes",
+      "twister",
+      "hatch"
+    ],
+    "created_at": "2026-03-17",
+    "image_url": "raid/twintania.png"
+  },
+  {
+    "boss_id": 42,
+    "boss_name": "Nael deus Darnus (Ultimate)",
+    "boss_alias": null,
+    "expansion": "4.0",
+    "average_clear_time": "",
+    "boss_type": [
+      "normal"
+    ],
+    "arena_features": [
+      "circular"
+    ],
+    "encounter_features": [
+      "downtime"
+    ],
+    "fundamental_mechanics_featured": [
+      "spreads",
+      "stacks",
+      "knockback",
+      "chariot/dynamo",
+      "tethers"
+    ],
+    "common_mechanics_featured": [
+      "doom_cleanse",
+      "fire/ice_cleanse",
+      "divebomb_bait"
+    ],
+    "created_at": "2026-03-17",
+    "image_url": "raid/nael_deus_darnus.png"
+  },
+  {
+    "boss_id": 43,
+    "boss_name": "Bahamut Prime (Ultimate)",
+    "boss_alias": null,
+    "expansion": "4.0",
+    "average_clear_time": "",
+    "boss_type": [
+      "normal"
+    ],
+    "arena_features": [
+      "circular"
+    ],
+    "encounter_features": [
+      "downtime"
+    ],
+    "fundamental_mechanics_featured": [
+      "spreads",
+      "stacks",
+      "towers",
+      "knockback",
+      "chariot/dynamo",
+      "tethers"
+    ],
+    "common_mechanics_featured": [
+      "baited_aoes",
+      "wild_charge",
+      "twister",
+      "earthshakers",
+      "rotating",
+      "divebomb_bait",
+      "hatch"
+    ],
+    "created_at": "2026-03-17",
+    "image_url": "raid/bahamut_prime.png"
+  },
+  {
+    "boss_id": 44,
+    "boss_name": "Adds",
+    "boss_alias": null,
+    "expansion": "4.0",
+    "average_clear_time": "",
+    "boss_type": [
+      "dual_boss"
+    ],
+    "arena_features": [
+      "circular"
+    ],
+    "encounter_features": [
+    ],
+    "fundamental_mechanics_featured": [
+      "spreads",
+      "stacks",
+      "chariot/dynamo"
+    ],
+    "common_mechanics_featured": [
+      "baited_aoes",
+      "twister",
+      "hatch"
+    ],
+    "created_at": "2026-03-17",
+    "image_url": "raid/adds.jpg"
+  },
+  {
+    "boss_id": 45,
+    "boss_name": "Golden Bahamut",
+    "boss_alias": null,
+    "expansion": "4.0",
+    "average_clear_time": "",
+    "boss_type": [
+      "normal"
+    ],
+    "arena_features": [
+      "circular"
+    ],
+    "encounter_features": [
+    ],
+    "fundamental_mechanics_featured": [
+      "spreads",
+      "stacks"
+    ],
+    "common_mechanics_featured": [
+      "akh_morn",
+      "exas"
+    ],
+    "created_at": "2026-03-17",
+    "image_url": "raid/golden_bahamut.jpg"
   }
 ]

@@ -1,0 +1,29 @@
+<div class="mt-10 flex flex-col items-center text-center">
+  <div class="bg-white shadow-lg rounded-2xl p-6 w-full max-w-lg flex flex-col items-center">
+
+    <h2 class="text-3xl font-bold text-center mb-6">gg gratz</h2>
+
+    <div class="flex flex-col items-center sm:flex-row sm:items-start sm:space-x-6 space-x-6 text-center sm-text-left">
+      <img
+        [src]="'jobs_and_characters/' + correctAnswer.image_url"
+        alt="{{ correctAnswer.boss_name }}"
+        class="w-40 h-40 object-cover rounded-xl shadow mb-4 sm:mb-0"
+      />
+
+      <p class="text-xl text-gray-800">
+        You guessed <span class="font-semibold">{{ correctAnswer.boss_name }}!</span>
+      </p>
+    </div>
+
+    <p class="mt-4 text-lg text-gray-600">
+      It took you {{ guesses.length }}
+      @if (guesses.length == 1) {
+        pull.
+    } @else {
+        pulls.
+      }
+    </p>
+
+
+  </div>
+</div>
