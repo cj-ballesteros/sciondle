@@ -9,6 +9,16 @@ export type PatchEntry = {
 
 export const patchNotes: PatchEntry[] = [
   {
+    version: "1.0.32",
+    date: "2026-03-27",
+    summary: "Fix for localstorage and daily reset",
+    fixed: [
+      "Fixed getting spoiled for the character of the day"
+      + "due to localstorage reset not properly aligning"
+      + "with the game reset."
+    ]
+  },
+  {
     version: "1.0.31",
     date: "2026-03-17",
     summary: "If randomness doesn't improve with this my family will die. also i promise " +
