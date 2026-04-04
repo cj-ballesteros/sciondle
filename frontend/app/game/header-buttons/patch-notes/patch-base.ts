@@ -9,6 +9,16 @@ export type PatchEntry = {
 
 export const patchNotes: PatchEntry[] = [
   {
+    version: "1.0.33",
+    date: "2026-04-24",
+    summary: "Fixed game being broken when reaching end of array",
+    fixed: [
+      "Added Hermes and some logic that should've been in place"
+      + "in case reaching end of randomness array.",
+      "G'raha Tia was introduced in 2.1, not 2.0, sorry!"
+    ]
+  },
+  {
     version: "1.0.32",
     date: "2026-03-27",
     summary: "Fix for localstorage and daily reset",
