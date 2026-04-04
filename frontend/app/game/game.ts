@@ -25,7 +25,7 @@ export class GameComponent {
   correctAnswer!: Character;
   characters: Character[] = [];
   unmodifiedCharacters: Character[] = [];
-  randomOrder: number[] = [27, 50, 70, 32, 16, 24, 81, 35, 64, 58,
+  randomOrder: number[] = [27, 50, 98, 70, 32, 16, 24, 81, 35, 64, 58,
     49, 26, 60, 79, 55, 72, 39, 10, 44, 94, 7, 12, 33, 69, 63,
     84, 19, 42, 43, 54, 37, 31, 76, 56, 41, 15, 74, 90, 21, 25,
     78, 6, 8, 59, 4, 83, 73, 91, 29, 92, 57, 47, 75, 36, 2, 95,
@@ -90,13 +90,15 @@ export class GameComponent {
 
 
   setCorrectAnswer() {
-    const index = this.getDayOffsetFromStart(this.getGlobalSeed(4)) % this.unmodifiedCharacters.length;
+    const index = this.getDayOffsetFromStart(this.getGlobalSeed(5)) % this.unmodifiedCharacters.length;
     this.correctAnswer = this.unmodifiedCharacters[this.randomOrder[index]];
   }
 
   getPreviousDayAnswer() {
-    const index = this.getDayOffsetFromStart(this.getGlobalSeed(4))  % this.unmodifiedCharacters.length;
-    return this.unmodifiedCharacters[this.randomOrder[index - 1]];
+    const index = this.getDayOffsetFromStart(this.getGlobalSeed(5))  % this.unmodifiedCharacters.length;
+    if (!this.randomOrder[index - 1]){
+      return this.unmodifiedCharacters[this.randomOrder[this.randomOrder.length - 1]];
+    } else return this.unmodifiedCharacters[this.randomOrder[index - 1]];
   }
 
   buildGuessResponse(guess: Character): GuessResponse {
