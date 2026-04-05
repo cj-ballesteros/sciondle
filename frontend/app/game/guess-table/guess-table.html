@@ -1,5 +1,5 @@
 <div class="table-wrapper">
-<div class="mt-8 table-container">
+<div class="table-container">
   <table class="min-w-full rounded-lg">
   <thead>
   <tr class="text-center font-semibold">
@@ -10,7 +10,11 @@
     <th class="px-4 py-2">Affiliation(s)</th>
     <th class="px-4 py-2">Job(s)</th>
     <th class="px-4 py-2">Race</th>
-    <th class="px-4 py-2">Version Introduction</th>
+    <th class="px-4 py-2">
+      <span class="hidden sm:inline">Version Introduction</span>
+      <span class="inline sm:hidden">Ver. Intro</span>
+    </th>
+
   </tr>
   </thead>
   <tbody>
@@ -27,20 +31,19 @@
         </td>
         <td
           class="px-4 py-2"
-          [ngClass]="{ 'bg-green-200': g.comparison.name, 'bg-red-200': !g.comparison.name }"
+          [ngClass]="cellBgBinary(g.comparison.name)"
         >
           {{ g.guess.name }}
         </td>
         <td
           class="px-4 py-2 border-t border-gray-300"
-          [ngClass]="{ 'bg-green-200': g.comparison.gender, 'bg-red-200': !g.comparison.gender }"
+          [ngClass]="cellBgBinary(g.comparison.gender)"
         >
           {{ g.guess.gender }}
         </td>
         <td
           class="px-4 py-2 border-t border-gray-300"
-          [ngClass]="{ 'bg-green-200': g.comparison.age === 'equal',
-          'bg-red-200': g.comparison.age !== 'equal' }"
+          [ngClass]="cellBgNumeric(g.comparison.age)"
         >
           @if (!g.guess.age){
             Not Specified
@@ -59,11 +62,7 @@
         </td>
         <td
           class="px-4 py-2 border-t border-gray-300"
-          [ngClass]="
-          { 'bg-green-200': g.comparison.affiliation === 'exact',
-          'bg-yellow-200': g.comparison.affiliation === 'partial',
-          'bg-red-200': g.comparison.affiliation === 'none'
-          }">
+          [ngClass]="cellBgThree(g.comparison.affiliation)">
           @for (affiliation of g.guess.affiliation; track affiliation) {
             @if ($last) {
               {{ affiliation }}
@@ -72,20 +71,17 @@
               {{ affiliation }},
             }
           }
+
         </td>
         <td
           class="px-4 py-2"
-          [ngClass]="
-          { 'bg-green-200': g.comparison.current_job === 'exact',
-          'bg-yellow-200': g.comparison.current_job === 'partial',
-          'bg-red-200': g.comparison.current_job === 'none'
-           }">
+          [ngClass]="cellBgThree(g.comparison.current_job)">
             @for (job of g.guess.current_job; track job) {
               @if (job !== 'None') {
                 <img
                   [src]="'jobs_and_characters/class_job_icons/' + job + '.png'"
                   alt="{{ job }}"
-                  class="table-cell-image"
+                  class="table-cell-image-job"
                   title="{{ job }}"
                 />
               } @else {
@@ -95,16 +91,13 @@
         </td>
         <td
           class="px-4 py-2"
-          [ngClass]="{ 'bg-green-200': g.comparison.race, 'bg-red-200': !g.comparison.race }"
+          [ngClass]="cellBgBinary(g.comparison.race)"
         >
           {{ g.guess.race }}
         </td>
         <td
           class="px-4 py-2"
-          [ngClass]="{
-            'bg-green-200': g.comparison.version_introduction === 'equal',
-            'bg-red-200': g.comparison.version_introduction !== 'equal'
-          }"
+          [ngClass]="cellBgNumeric(g.comparison.version_introduction)"
         >
           {{ g.guess.version_introduction }}
             @switch (g.comparison.version_introduction) {

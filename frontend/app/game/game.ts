@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {Character, GuessResponse} from './searchjson/searchjson.model';
+import { Character, GuessResponse } from './searchjson/searchjson.model';
 import { GuessTableComponent } from './guess-table/guess-table';
 import { ResultsComponent } from './results/results';
 import { GuessStorageService } from '../services/guess_storage.service';
@@ -25,13 +25,13 @@ export class GameComponent {
   correctAnswer!: Character;
   characters: Character[] = [];
   unmodifiedCharacters: Character[] = [];
-  randomOrder: number[] = [13, 69, 17, 62, 60, 66, 48, 74, 86, 47,
-    85, 6, 7, 19, 82, 61, 45, 83, 40, 0, 76, 52, 75, 68, 49, 31,
-    53, 50, 73, 21, 57, 67, 16, 46, 18, 27, 70, 72, 10, 64, 65, 77,
-    91, 11, 87, 9, 15, 14, 32, 42, 37, 25, 3, 56, 44, 2, 12, 54, 8,
-    4, 29, 55, 84, 90, 28, 78, 26, 89, 51, 41, 20, 80, 38, 22, 93,
-    34, 39, 92, 36, 71, 88, 33, 79, 23, 43, 95, 1, 63, 59, 35, 30, 81,
-    58, 94, 5, 24, 96, 97]
+  randomOrder: number[] = [27, 50, 98, 70, 32, 16, 24, 81, 35, 64, 58,
+    49, 26, 60, 79, 55, 72, 39, 10, 44, 94, 7, 12, 33, 69, 63,
+    84, 19, 42, 43, 54, 37, 31, 76, 56, 41, 15, 74, 90, 21, 25,
+    78, 6, 8, 59, 4, 83, 73, 91, 29, 92, 57, 47, 75, 36, 2, 95,
+    68, 46, 80, 77, 34, 71, 65, 85, 86, 18, 61, 14, 93, 13, 88,
+    22, 82, 52, 23, 97, 48, 17, 62, 20, 87, 45, 96, 1, 40,
+    30, 89, 3, 28, 67, 53, 38, 51, 5, 9, 66, 11];
   // https://www.calculatorsoup.com/calculators/statistics/random-number-generator.php
   // adjust everytime a new character is added!!!
   // TODO: maybe add an automatic function for randomOrder
@@ -64,27 +64,41 @@ export class GameComponent {
       });
   }
 
-  getGlobalSeed = (): number => {
+  getGlobalSeed(offsetDays = 0): string {
     const now = new Date();
 
     const laTime = new Date(
-      now.toLocaleString('en-US', {
-        timeZone: 'America/Los_Angeles'
-      })
+      now.toLocaleString('en-US', { timeZone: 'America/Los_Angeles' })
     );
 
-    laTime.setHours(laTime.getHours() - 5);
+    laTime.setHours(laTime.getHours() + 3);
+    laTime.setDate(laTime.getDate() + offsetDays);
 
-    const dateKey = laTime.toISOString().slice(0, 10);
+    const year = laTime.getFullYear();
+    const month = String(laTime.getMonth() + 1).padStart(2, '0');
+    const day = String(laTime.getDate()).padStart(2, '0');
 
-    return dateKey
-      .split('')
-      .reduce((a, c) => a + c.charCodeAt(0), 0);
+    return `${year}-${month}-${day}`;
   };
 
+  getDayOffsetFromStart(dateKey: string): number {
+    const start = new Date('2026-01-01T00:00:00Z');
+    const current = new Date(dateKey + 'T00:00:00Z');
+
+    return Math.floor((current.getTime() - start.getTime()) / 86400000);
+  }
+
+
   setCorrectAnswer() {
-    const index = this.getGlobalSeed() % this.unmodifiedCharacters.length;
+    const index = this.getDayOffsetFromStart(this.getGlobalSeed(5)) % this.unmodifiedCharacters.length;
     this.correctAnswer = this.unmodifiedCharacters[this.randomOrder[index]];
+  }
+
+  getPreviousDayAnswer() {
+    const index = this.getDayOffsetFromStart(this.getGlobalSeed(5))  % this.unmodifiedCharacters.length;
+    if (!this.randomOrder[index - 1]){
+      return this.unmodifiedCharacters[this.randomOrder[this.randomOrder.length - 1]];
+    } else return this.unmodifiedCharacters[this.randomOrder[index - 1]];
   }
 
   buildGuessResponse(guess: Character): GuessResponse {

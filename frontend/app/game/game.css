@@ -59,3 +59,7 @@
 .cell.green {
   background: #388e3c;
 }
+
+yesterday_bg_color {
+  background: rgb(99, 99, 99)
+}

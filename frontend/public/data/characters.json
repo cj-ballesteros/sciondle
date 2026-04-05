@@ -107,7 +107,7 @@
       "all_rounder"
     ],
     "race": "Miqo'te",
-    "version_introduction": "2.0",
+    "version_introduction": "2.1",
     "created_at": "2025-09-04 22:53:03.074686",
     "image_url": "msq/G'raha_Tia.png",
     "age": 24,
@@ -127,7 +127,7 @@
       "conjurer"
     ],
     "race": "Lalafell",
-    "version_introduction": "2.0",
+    "version_introduction": "3.1",
     "created_at": "2025-09-04 22:53:03.074686",
     "image_url": "msq/Krile.png",
     "age": 22,
@@ -732,7 +732,7 @@
     "name": "Zenos yae Galvus",
     "alias": null,
     "affiliation": [
-      "Telephoroi",
+      "Telophoroi",
       "Garlean Empire"
     ],
     "current_job": [
@@ -1406,7 +1406,7 @@
     "name": "Fandaniel",
     "alias": "Amon",
     "affiliation": [
-      "Telephoroi",
+      "Telophoroi",
       "Ascians",
       "Allagan Empire"
     ],
@@ -1484,7 +1484,9 @@
     "id": 80,
     "name": "Hythlodaeus",
     "alias": null,
-    "affiliation": [],
+    "affiliation": [
+      "None"
+    ],
     "current_job": [
       "bard"
     ],

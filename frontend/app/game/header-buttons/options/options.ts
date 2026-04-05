@@ -1,18 +1,18 @@
 import { Component, Input, Output, EventEmitter,
-  ElementRef, ViewChild, HostListener, effect, signal } from '@angular/core';
+  ElementRef, ViewChild, HostListener, effect, signal, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { A11yModule } from '@angular/cdk/a11y';
-import { patchNotes } from './patch-base';
+import { optionsService } from '../../../services/options.service';
 
 @Component({
-  selector: 'app-patch-notes',
+  selector: 'app-options',
   imports: [ CommonModule , A11yModule ],
-  templateUrl: './patch-notes.html',
-  styleUrl: './patch-notes.css'
+  templateUrl: './options.html',
+  styleUrl: './options.css',
 })
-export class PatchNotes {
+export class OptionsComponent {
+  colorblindMode = inject(optionsService);
   private _open = signal(false);
-  patchNotes = patchNotes;
 
   @Input() set open(v: boolean) { this._open.set(!!v); }
   get open() { return this._open(); }
@@ -42,4 +42,6 @@ export class PatchNotes {
   onEscape() {
     if (this.open) this.close();
   }
+
+  protected readonly optionsService = optionsService;
 }

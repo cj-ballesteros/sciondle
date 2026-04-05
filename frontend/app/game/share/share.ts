@@ -1,7 +1,8 @@
-import {Component, Input} from '@angular/core';
+import {Component, inject, Input} from '@angular/core';
 import {GuessResponse} from '../searchjson/searchjson.model';
 import { DatePipe } from '@angular/common';
 import { ClipboardModule } from '@angular/cdk/clipboard';
+import {optionsService} from '../../services/options.service';
 
 @Component({
   selector: 'app-share',
@@ -12,6 +13,8 @@ import { ClipboardModule } from '@angular/cdk/clipboard';
 })
 
 export class ShareComponent {
+  colorblindMode = inject(optionsService);
+
   @Input() guesses!: GuessResponse[];
   todayDate = new Date();
   myDate: string | null;
@@ -36,38 +39,52 @@ export class ShareComponent {
     this.shareString += " | " + this.myDate + "\n";
     for (let i = 0; i < this.guesses.length; i++) {
       if (i < 5) {
-        if (this.guesses[i].comparison.name) {
+        if (this.guesses[i].comparison.name && !this.colorblindMode.getMode()) {
           this.shareString += "🟩";
+        } else if (this.guesses[i].comparison.name) {
+          this.shareString += "🟦"
         } else {
           this.shareString += "🟥";
         }
-        if (this.guesses[i].comparison.gender) {
+        if (this.guesses[i].comparison.gender && !this.colorblindMode.getMode()) {
           this.shareString += "🟩";
+        } else if (this.guesses[i].comparison.gender) {
+          this.shareString += "🟦"
         } else {
           this.shareString += "🟥";
         }
-        if (this.guesses[i].comparison.age == "equal") {
+        if (this.guesses[i].comparison.age == "equal" && !this.colorblindMode.getMode()) {
           this.shareString += "🟩";
+        } else if (this.guesses[i].comparison.age == "equal") {
+          this.shareString += "🟦"
         } else {
           this.shareString += "🟥";
         }
-        if (this.guesses[i].comparison.affiliation == "exact") {
+        if (this.guesses[i].comparison.affiliation == "exact" && !this.colorblindMode.getMode()) {
           this.shareString += "🟩";
+        } else if (this.guesses[i].comparison.affiliation == "exact") {
+          this.shareString += "🟦"
         } else {
           this.shareString += "🟥";
         }
-        if (this.guesses[i].comparison.current_job == "exact") {
+        if (this.guesses[i].comparison.current_job == "exact" && !this.colorblindMode.getMode()) {
           this.shareString += "🟩";
+        } else if (this.guesses[i].comparison.current_job == "exact") {
+          this.shareString += "🟦"
         } else {
           this.shareString += "🟥";
         }
-        if (this.guesses[i].comparison.race) {
+        if (this.guesses[i].comparison.race && !this.colorblindMode.getMode()) {
           this.shareString += "🟩";
+        } else if (this.guesses[i].comparison.race) {
+          this.shareString += "🟦"
         } else {
           this.shareString += "🟥";
         }
-        if (this.guesses[i].comparison.version_introduction == "equal") {
+        if (this.guesses[i].comparison.version_introduction == "equal" && !this.colorblindMode.getMode()) {
           this.shareString += "🟩";
+        } else if (this.guesses[i].comparison.version_introduction == "equal") {
+          this.shareString += "🟦"
         } else {
           this.shareString += "🟥";
         }

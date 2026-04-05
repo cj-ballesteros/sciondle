@@ -32,13 +32,17 @@ export class GuessStorageService {
     const now = new Date();
 
     const laTime = new Date(
-      now.toLocaleString('en-US', {
-        timeZone: 'America/Los_Angeles'
-      })
+      now.toLocaleString('en-US', { timeZone: 'America/Los_Angeles' })
     );
 
-    laTime.setHours(laTime.getHours() - 5);
-    return laTime.toISOString().slice(0, 10);
+    laTime.setHours(laTime.getHours() + 3);
+    laTime.setDate(laTime.getDate());
+
+    const year = laTime.getFullYear();
+    const month = String(laTime.getMonth() + 1).padStart(2, '0');
+    const day = String(laTime.getDate()).padStart(2, '0');
+
+    return `${year}-${month}-${day}`;
   }
 
    resetLocalStorageAt9pmPT(): void {

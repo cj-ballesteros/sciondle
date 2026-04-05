@@ -7,8 +7,8 @@
 
 /* Circular Ko-fi button */
 .kofi-btn {
-  width: 45px;
-  height: 45px;
+  width: clamp(35px, 5vw, 45px);
+  height: clamp(35px, 5vw, 45px);
 
   background-color: #ff5e5b; /* Ko-fi red */
   border-radius: 50%;
@@ -34,8 +34,8 @@
 }
 
 .kofi-btn img {
-  width: 26px;
-  height: 26px;
+  width: clamp(18px, 3vw, 26px);
+  height: clamp(18px, 3vw, 26px);
 }
 
 a {
@@ -65,4 +65,8 @@ a:hover {
 a:hover::after {
   transform: scaleX(1);
   transform-origin: left;
+}
+
+p {
+  font-size: clamp(5px, 2.5vw, 15px);
 }

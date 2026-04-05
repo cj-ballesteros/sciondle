@@ -1,20 +1,63 @@
 <div
-  class="relative w-max max-w-3xl outline-1
-           mx-auto flex items-center justify-center
-           gap-3 rounded-2xl bg-[#e7dfca] px-4 py-1 shadow-sm"
+  class="mx-auto flex w-fit items-center justify-center
+         max-w-[92vw]
+         gap-[clamp(6px,1.5vw,10px)]
+         rounded-2xl bg-[#e7dfca]
+         px-[clamp(8px,1vw,12px)]
+         py-[clamp(4px,1vw,6px)]
+         shadow-sm ring-1 ring-black/10"
 >
-  <button title="Settings" class="flex h-10 w-10 items-center
-   justify-center rounded-lg material-symbols-outlined">
-    settings
+  <button
+    title="Settings"
+    (click)="openOptions = true"
+    class="grid place-items-center
+         h-[clamp(20px,5vw,44px)]
+         w-[clamp(20px,5vw,44px)]
+         rounded-xl
+         hover:bg-black/5"
+  >
+    <span class="material-symbols-outlined
+                 text-[clamp(15px,3vw,32px)]
+                 text-neutral-600">
+      settings
+    </span>
   </button>
-  <button title="Update Log" class="flex h-10 w-10 items-center
-   justify-center rounded-lg material-symbols-outlined">
-    docs
+
+  <button
+    type="button"
+    title="Patch Notes"
+    (click)="openPatchNotes = true"
+    class="grid place-items-center
+         h-[clamp(20px,5vw,44px)]
+         w-[clamp(20px,5vw,44px)]
+         rounded-xl
+         hover:bg-black/5"
+  >
+  <span class="material-symbols-outlined
+               text-[clamp(15px,3vw,32px)]
+               text-neutral-600">
+    description
+    </span>
   </button>
-  <button title="How to Play" (click)="open = true" class="flex h-10 w-10 items-center
-   justify-center rounded-lg material-symbols-outlined">
-    help
+
+  <button
+    type="button"
+    title="How to Play"
+    (click)="openHelp = true"
+    class="grid place-items-center
+         h-[clamp(20px,5vw,44px)]
+         w-[clamp(20px,5vw,44px)]
+         rounded-xl
+         hover:bg-black/5"
+  >
+    <span class="material-symbols-outlined
+          text-[clamp(15px,5vw,32px)]
+          text-neutral-600">
+      help
+    </span>
   </button>
 </div>
 
-<app-htp [(open)]="open"/>
+<app-htp [(open)]="openHelp"/>
+<app-options [(open)]="openOptions"/>
+<app-patch-notes [(open)]="openPatchNotes"/>
