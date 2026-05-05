@@ -10,10 +10,24 @@ export type PatchEntry = {
 export const patchNotes: PatchEntry[] = [
   {
     version: "1.0.33",
-    date: "2026-04-24",
+    date: "2026-5-05",
+    summary: "Sorry for the wait, haven't touched the website in a while " +
+      "and I also went to fanfest, which was really fun. Also, I apologize " +
+      "about the website going down, that was awkward. I modified some " +
+      "character inaccuracies related to their age and introduction and hopefully fixed " +
+      "the website icon.",
+    fixed: [
+      "Fixed Y'shtola's and Ardbert's ages.",
+      "Fixed Fandaniel and Ysayle's introduction version. (idk why I forgot Ysayle " +
+      "was introduced in 2.4 as that patch was peak."
+    ]
+  },
+  {
+    version: "1.0.33",
+    date: "2026-04-04",
     summary: "Fixed game being broken when reaching end of array",
     fixed: [
-      "Added Hermes and some logic that should've been in place"
+      "Added Hermes and some logic that should've been in place "
       + "in case reaching end of randomness array.",
       "G'raha Tia was introduced in 2.1, not 2.0, sorry!"
     ]
@@ -23,8 +37,8 @@ export const patchNotes: PatchEntry[] = [
     date: "2026-03-27",
     summary: "Fix for localstorage and daily reset",
     fixed: [
-      "Fixed getting spoiled for the character of the day"
-      + "due to localstorage reset not properly aligning"
+      "Fixed getting spoiled for the character of the day "
+      + "due to localstorage reset not properly aligning "
       + "with the game reset."
     ]
   },
