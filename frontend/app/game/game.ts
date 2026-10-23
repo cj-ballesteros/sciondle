@@ -25,13 +25,7 @@ export class GameComponent {
   correctAnswer!: Character;
   characters: Character[] = [];
   unmodifiedCharacters: Character[] = [];
-  randomOrder: number[] = [27, 50, 98, 70, 32, 16, 24, 81, 35, 64, 58,
-    49, 26, 60, 79, 55, 72, 39, 10, 44, 94, 7, 12, 33, 69, 63,
-    84, 19, 42, 43, 54, 37, 31, 76, 56, 41, 15, 74, 90, 21, 25,
-    78, 6, 8, 59, 4, 83, 73, 91, 29, 92, 57, 47, 75, 36, 2, 95,
-    68, 46, 80, 77, 34, 71, 65, 85, 86, 18, 61, 14, 93, 13, 88,
-    22, 82, 52, 23, 97, 48, 17, 62, 20, 87, 45, 96, 1, 40,
-    30, 89, 3, 28, 67, 53, 38, 51, 5, 9, 66, 11];
+  randomOrder: number[] = [];
   // https://www.calculatorsoup.com/calculators/statistics/random-number-generator.php
   // adjust everytime a new character is added!!!
   // TODO: maybe add an automatic function for randomOrder
@@ -51,56 +45,209 @@ export class GameComponent {
     this.add_guess(response);
   }
 
+  private generateRandomOrder(length: number): number[] {
+    const order = Array.from({ length }, (_, i) => i);
+
+    // Deterministic shuffle: same length produces the same order.
+    let seed = 12345;
+
+    for (let i = order.length - 1; i > 0; i--) {
+      seed = (seed * 1664525 + 1013904223) >>> 0;
+      const j = seed % (i + 1);
+      [order[i], order[j]] = [order[j], order[i]];
+    }
+
+    return order;
+  }
+
+  private validateCharacterPool(data: Character[]): boolean {
+    const errors: string[] = [];
+
+    // 1. Make sure characters.json contains an array.
+    if (!Array.isArray(data) || data.length === 0) {
+      console.error('Character data is empty or invalid.');
+      return false;
+    }
+
+    // 2. Check character IDs.
+    const ids = data.map(c => c.id);
+    const uniqueIds = new Set(ids);
+
+    if (ids.some(id => !Number.isFinite(id))) {
+      errors.push('One or more characters have a missing or invalid ID.');
+    }
+
+    if (uniqueIds.size !== ids.length) {
+      errors.push('Duplicate character IDs detected.');
+    }
+
+    // 3. Check the daily ordering.
+    const orderSet = new Set(this.randomOrder);
+
+    if (this.randomOrder.length !== data.length) {
+      errors.push(
+        `randomOrder has ${this.randomOrder.length} entries, ` +
+        `but there are ${data.length} characters.`
+      );
+    }
+
+    if (orderSet.size !== this.randomOrder.length) {
+      errors.push('randomOrder contains duplicate indexes.');
+    }
+
+    const invalidIndexes = this.randomOrder.filter(
+      index =>
+        !Number.isInteger(index) ||
+        index < 0 ||
+        index >= data.length
+    );
+
+    if (invalidIndexes.length > 0) {
+      errors.push(
+        `Invalid character indexes: ${invalidIndexes.join(', ')}`
+      );
+    }
+
+    if (errors.length > 0) {
+      console.error('Character pool validation failed:', errors);
+      return false;
+    }
+
+    return true;
+  }
+
   loadCharacters() {
     fetch('data/characters.json')
-      .then(res => res.json())
-      .then(data => {
-        this.characters = data
+      .then(res => {
+        if (!res.ok) {
+          throw new Error(
+            `Failed to load characters.json: ${res.status}`
+          );
+        }
+
+        return res.json();
+      })
+      .then((data: Character[]) => {
+
+        this.randomOrder = this.generateRandomOrder(data.length);
+
+        if (!this.validateCharacterPool(data)) {
+          throw new Error('Character data failed validation.');
+        }
+
         this.unmodifiedCharacters = data;
-        this.characters = this.characters.filter(
+        this.characters = data.filter(
           c => !this.guesses.some(g => g.guess.id === c.id)
         );
+
         this.setCorrectAnswer();
+
+        if (!this.correctAnswer) {
+          throw new Error('No valid daily answer was selected.');
+        }
+      })
+      .catch(error => {
+        console.error('Unable to initialize game:', error);
+        // TODO: Set a component error state so the UI displays
+        // a helpful message instead of leaving the game unusable.
       });
   }
 
   getGlobalSeed(offsetDays = 0): string {
     const now = new Date();
 
-    const laTime = new Date(
-      now.toLocaleString('en-US', { timeZone: 'America/Los_Angeles' })
+    const parts = new Intl.DateTimeFormat('en-US', {
+      timeZone: 'America/Los_Angeles',
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+    }).formatToParts(now);
+
+    const values = Object.fromEntries(
+      parts.map(part => [part.type, part.value])
     );
 
-    laTime.setHours(laTime.getHours() + 3);
-    laTime.setDate(laTime.getDate() + offsetDays);
+    const today = `${values['year']}-${values['month']}-${values['day']}`;
+    const date = new Date(`${today}T00:00:00Z`);
 
-    const year = laTime.getFullYear();
-    const month = String(laTime.getMonth() + 1).padStart(2, '0');
-    const day = String(laTime.getDate()).padStart(2, '0');
+    date.setUTCDate(date.getUTCDate() + offsetDays);
 
-    return `${year}-${month}-${day}`;
-  };
+    return date.toISOString().slice(0, 10);
+  }
 
   getDayOffsetFromStart(dateKey: string): number {
-    const start = new Date('2026-01-01T00:00:00Z');
+    const start = new Date('2026-10-22T00:00:00Z');
     const current = new Date(dateKey + 'T00:00:00Z');
 
-    return Math.floor((current.getTime() - start.getTime()) / 86400000);
+    return Math.floor(
+      (current.getTime() - start.getTime()) / 86400000
+    );
   }
 
+  setCorrectAnswer(dateKey = this.getGlobalSeed()) {
+    const characters = this.unmodifiedCharacters;
 
-  setCorrectAnswer() {
-    const index = this.getDayOffsetFromStart(this.getGlobalSeed(5)) % this.unmodifiedCharacters.length;
-    this.correctAnswer = this.unmodifiedCharacters[this.randomOrder[index]];
+    if (characters.length === 0) {
+      throw new Error('Cannot select an answer: no characters loaded.');
+    }
+
+    // 1. Check length first
+    if (this.randomOrder.length !== characters.length) {
+      throw new Error('randomOrder length does not match character count.');
+    }
+
+    // 2. Then check for duplicates and invalid indexes
+    const isValidOrder =
+      new Set(this.randomOrder).size === characters.length &&
+      this.randomOrder.every(
+        index =>
+          Number.isInteger(index) &&
+          index >= 0 &&
+          index < characters.length
+      );
+
+    if (!isValidOrder) {
+      throw new Error(
+        'randomOrder must contain every character index exactly once.'
+      );
+    }
+
+    // 3. Continue with daily answer selection
+    const dayOffset = this.getDayOffsetFromStart(dateKey);
+    const index =
+      ((dayOffset % this.randomOrder.length) +
+        this.randomOrder.length) %
+      this.randomOrder.length;
+
+    const characterIndex = this.randomOrder[index];
+    const answer = characters[characterIndex];
+
+    if (!answer) {
+      throw new Error(`Invalid daily character index: ${characterIndex}`);
+    }
+
+    this.correctAnswer = answer;
   }
 
-  getPreviousDayAnswer() {
-    const index = this.getDayOffsetFromStart(this.getGlobalSeed(5))  % this.unmodifiedCharacters.length;
-    if (!this.randomOrder[index - 1]){
-      return this.unmodifiedCharacters[this.randomOrder[this.randomOrder.length - 1]];
-    } else return this.unmodifiedCharacters[this.randomOrder[index - 1]];
-  }
+  getPreviousDayAnswer(): Character | undefined {
+    const today = this.getGlobalSeed();
+    const yesterdayDate = new Date(`${today}T00:00:00Z`);
 
+    yesterdayDate.setUTCDate(yesterdayDate.getUTCDate() - 1);
+
+    const yesterday = yesterdayDate.toISOString().slice(0, 10);
+
+    if (yesterday < '2026-10-22') {
+      return undefined;
+    }
+
+    const dayOffset = this.getDayOffsetFromStart(yesterday);
+    const index =
+      ((dayOffset % this.randomOrder.length) + this.randomOrder.length) %
+      this.randomOrder.length;
+
+    return this.unmodifiedCharacters[this.randomOrder[index]];
+  }
   buildGuessResponse(guess: Character): GuessResponse {
     return {
       guess,

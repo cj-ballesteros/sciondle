@@ -9,7 +9,19 @@ export type PatchEntry = {
 
 export const patchNotes: PatchEntry[] = [
   {
-    version: "1.0.33",
+    version: "1.0.4",
+    date: "2026-10-22",
+    summary: "Gulp, hopefully this update makes it more stable.",
+    added: [
+      "Added Golbez, Halmarut and Arcadion characters to the pool",
+      "Added alias searching"
+    ],
+    fixed: [
+      "Updated way of choosing daily characters"
+    ]
+  },
+  {
+    version: "1.0.34",
     date: "2026-5-05",
     summary: "Sorry for the wait, haven't touched the website in a while " +
       "and I also went to fanfest, which was really fun. Also, I apologize " +

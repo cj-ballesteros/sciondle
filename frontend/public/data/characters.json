@@ -1666,7 +1666,8 @@
     "name": "Calyx",
     "alias": null,
     "affiliation": [
-      "Alexandria"
+      "Alexandria",
+      "Winterers"
     ],
     "current_job": [
       "None"
@@ -1770,9 +1771,27 @@
     "gender": "Female"
   },
   {
+    "id": 113,
+    "name": "Golbez",
+    "alias": "Durante",
+    "affiliation": [
+      "The Thirteenth"
+    ],
+    "current_job": [
+      "Dark Knight"
+    ],
+    "race": "Voidsent",
+    "version_introduction": "6.2",
+    "created_at": "2026-05-08",
+    "image_url": "Golbez.jpeg",
+    "age": null,
+    "job_image_url": "class_job_icons/dark_knight.png",
+    "gender": "Male"
+  },
+  {
     "id": 97,
     "name": "Yda Hext",
-    "alias": "",
+    "alias": null,
     "affiliation": [
       "Circle of Knowing",
       "Ala Mhigo"
@@ -1791,7 +1810,7 @@
   {
     "id": 98,
     "name": "Hermes",
-    "alias": "",
+    "alias": null,
     "affiliation": [
       "Convocation of Fourteen",
       "Elpis"
@@ -1806,5 +1825,259 @@
     "age": null,
     "job_image_url": null,
     "gender": "Male"
+  },
+  {
+    "id": 99,
+    "name": "Black Cat",
+    "alias": "Yaana",
+    "affiliation": [
+      "The Arcadion"
+    ],
+    "current_job": [
+      "pugilist"
+    ],
+    "race": "Miqo'te",
+    "version_introduction": "7.0",
+    "created_at": "2026-05-08",
+    "image_url": "Black_Cat.jpeg",
+    "age": null,
+    "job_image_url": "class_job_icons/pugilist.png",
+    "gender": "Female"
+  },
+  {
+    "id": 100,
+    "name": "Honey B. Lovely",
+    "alias": null,
+    "affiliation": [
+      "The Arcadion"
+    ],
+    "current_job": [
+      "lancer"
+    ],
+    "race": "Miqo'te",
+    "version_introduction": "7.0",
+    "created_at": "2026-05-08",
+    "image_url": "Honey_B_Lovely.jpeg",
+    "age": null,
+    "job_image_url": "class_job_icons/lancer.png",
+    "gender": "Female"
+  },
+  {
+    "id": 101,
+    "name": "Brute Bomber",
+    "alias": "Hector",
+    "affiliation": [
+      "The Arcadion"
+    ],
+    "current_job": [
+      "None"
+    ],
+    "race": "Hyur",
+    "version_introduction": "7.0",
+    "created_at": "2026-05-08",
+    "image_url": "Brute_Bomber.jpeg",
+    "age": null,
+    "job_image_url": null,
+    "gender": "Male"
+  },
+  {
+    "id": 102,
+    "name": "Wicked Thunder",
+    "alias": "Eutrope",
+    "affiliation": [
+      "The Arcadion"
+    ],
+    "current_job": [
+      "None"
+    ],
+    "race": "Miqo'te",
+    "version_introduction": "7.0",
+    "created_at": "2026-05-08",
+    "image_url": "Wicked_Thunder.jpeg",
+    "age": null,
+    "job_image_url": null,
+    "gender": "Female"
+  },
+  {
+    "id": 103,
+    "name": "Dancing Green",
+    "alias": "Eheeya",
+    "affiliation": [
+      "The Arcadion"
+    ],
+    "current_job": [
+      "Dancer"
+    ],
+    "race": "Viera",
+    "version_introduction": "7.2",
+    "created_at": "2026-05-08",
+    "image_url": "Dancing_Green.jpeg",
+    "age": null,
+    "job_image_url": "class_job_icons/dancer.png",
+    "gender": "Male"
+  },
+  {
+    "id": 104,
+    "name": "Sugar Riot",
+    "alias": null,
+    "affiliation": [
+      "The Arcadion"
+    ],
+    "current_job": [
+      "Pictomancer"
+    ],
+    "race": "Lalafell",
+    "version_introduction": "7.2",
+    "created_at": "2026-05-08",
+    "image_url": "Sugar_Riot.jpeg",
+    "age": null,
+    "job_image_url": "class_job_icons/pictomancer.png",
+    "gender": "Female"
+  },
+  {
+    "id": 105,
+    "name": "Howling Blade",
+    "alias": "Retsarra",
+    "affiliation": [
+      "The Arcadion"
+    ],
+    "current_job": [
+      "Dark Knight"
+    ],
+    "race": "Miqo'te",
+    "version_introduction": "7.2",
+    "created_at": "2026-05-08",
+    "image_url": "Howling_Blade.jpeg",
+    "age": null,
+    "job_image_url": "class_job_icons/dark_knight.png",
+    "gender": "Male"
+  },
+  {
+    "id": 106,
+    "name": "Vamp Fatale",
+    "alias": null,
+    "affiliation": [
+      "The Arcadion"
+    ],
+    "current_job": [
+      "None"
+    ],
+    "race": "Elezen",
+    "version_introduction": "7.4",
+    "created_at": "2026-05-08",
+    "image_url": "Vamp_Fatale.jpeg",
+    "age": null,
+    "job_image_url": null,
+    "gender": "Female"
+  },
+  {
+    "id": 107,
+    "name": "Red Hot",
+    "alias": null,
+    "affiliation": [
+      "The Arcadion"
+    ],
+    "current_job": [
+      "None"
+    ],
+    "race": "Hyur",
+    "version_introduction": "7.4",
+    "created_at": "2026-05-08",
+    "image_url": "Red_Hot.jpeg",
+    "age": null,
+    "job_image_url": null,
+    "gender": "Male"
+  },
+  {
+    "id": 108,
+    "name": "Deep Blue",
+    "alias": null,
+    "affiliation": [
+      "The Arcadion"
+    ],
+    "current_job": [
+      "None"
+    ],
+    "race": "Viera",
+    "version_introduction": "7.4",
+    "created_at": "2026-05-08",
+    "image_url": "Deep_Blue.jpeg",
+    "age": null,
+    "job_image_url": null,
+    "gender": "Male"
+  },
+  {
+    "id": 109,
+    "name": "The Tyrant",
+    "alias": null,
+    "affiliation": [
+      "The Arcadion"
+    ],
+    "current_job": [
+      "Reaper"
+    ],
+    "race": "Elezen",
+    "version_introduction": "7.4",
+    "created_at": "2026-05-08",
+    "image_url": "The_Tyrant.jpeg",
+    "age": null,
+    "job_image_url": "class_job_icons/reaper.png",
+    "gender": "Male"
+  },
+  {
+    "id": 110,
+    "name": "The President",
+    "alias": "Lindwurm",
+    "affiliation": [
+      "The Arcadion"
+    ],
+    "current_job": [
+      "None"
+    ],
+    "race": "Hyur",
+    "version_introduction": "7.4",
+    "created_at": "2026-05-08",
+    "image_url": "The_President.jpeg",
+    "age": null,
+    "job_image_url": null,
+    "gender": "Male"
+  },
+  {
+    "id": 111,
+    "name": "Metem",
+    "alias": null,
+    "affiliation": [
+      "The Arcadion"
+    ],
+    "current_job": [
+      "None"
+    ],
+    "race": "Lalafell",
+    "version_introduction": "7.0",
+    "created_at": "2026-05-08",
+    "image_url": "Metem.jpeg",
+    "age": null,
+    "job_image_url": null,
+    "gender": "Female"
+  },
+  {
+    "id": 112,
+    "name": "Halmarut",
+    "alias": null,
+    "affiliation": [
+      "Convocation of Fourteen",
+      "Ascians",
+      "Winterers"
+    ],
+    "current_job": [
+      "None"
+    ],
+    "race": "Ancient",
+    "version_introduction": "7.3",
+    "created_at": "2026-05-08",
+    "image_url": "Halmarut.jpeg",
+    "age": null,
+    "job_image_url": null,
+    "gender": "Female"
   }
 ]
