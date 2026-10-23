@@ -3,6 +3,7 @@ import { matchLevel } from '../../shared/attribute-match';
 export interface Character {
   id: number;
   name: string;
+  alias?: string;
   affiliation: string[];
   current_job: string[];
   race: string;

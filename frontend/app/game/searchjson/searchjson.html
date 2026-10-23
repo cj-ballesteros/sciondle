@@ -4,6 +4,7 @@
       [items]="characters"
       bindLabel="name"
       bindValue="id"
+      [searchFn]="searchCharacter"
       placeholder="Search for a character here..."
       [(ngModel)]="selected"
       [searchable]="true"
@@ -11,13 +12,28 @@
       class="w-full search-input"
     >
       <ng-template ng-option-tmp let-item="item">
-        <div class="inline-flex items-center gap-2">
+        <div class="inline-flex items-center gap-3">
+          <!-- Character image -->
           <div class="w-8 h-8 rounded overflow-hidden border border-gray-300 flex-shrink-0">
-            <img [src]="'jobs_and_characters/' + item.image_url"
-                 alt="{{item.name}}"
-                 class="w-full h-full object-cover" />
+            <img
+              [src]="'jobs_and_characters/' + item.image_url"
+              [alt]="item.name"
+              class="w-full h-full object-cover"
+            />
           </div>
-          <span>{{ item.name }}</span>
+
+          <!-- Character name and alias -->
+          <div class="flex flex-col min-w-0">
+      <span class="font-medium text-gray-900">
+        {{ item.name }}
+      </span>
+
+            @if (item.alias) {
+              <span class="text-xs text-gray-500 truncate">
+          {{ item.alias }}
+        </span>
+            }
+          </div>
         </div>
       </ng-template>
 

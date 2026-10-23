@@ -3,7 +3,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {NgOptionTemplateDirective, NgSelectComponent} from '@ng-select/ng-select';
 import {HttpClient} from '@angular/common/http';
 import { GuessStorageService } from '../../services/guess_storage.service';
-import {GuessResponse} from './searchjson.model';
+import {Character, GuessResponse} from './searchjson.model';
 
 @Component({
   selector: 'app-searchjson',
@@ -20,6 +20,16 @@ export class SearchJsonComponent implements OnInit {
   characters: any[] = [];
   selected: any = null;
   alreadyGuessed: GuessResponse[] = [];
+
+  searchCharacter = (term: string, item: Character): boolean => {
+    const query = term.trim().toLowerCase();
+
+    return (
+      item.name?.toLowerCase().includes(query) ||
+      item.alias?.toLowerCase().includes(query) ||
+      false
+    );
+  };
 
   @Output() characterSelected = new EventEmitter<any>();
 
