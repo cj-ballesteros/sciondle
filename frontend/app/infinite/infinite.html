@@ -1,0 +1,93 @@
+
+<div class="welcome-wrapper">
+    <div
+            class="relative min-w-1xl w-[85%] max-w-3xl aspect-[1341/310]
+           mx-auto
+           bg-[url('app/assets/textbox_template.png')] bg-contain bg-no-repeat bg-center
+           flex items-center justify-center px-6"
+    >
+        <div
+                class="absolute left-[12%] top-0 h-[32.5%] flex items-center
+             text-white drop-shadow-[1px_1px_1px_rgba(255,255,255,0.6)]"
+                style="font-size: min(2.5vw, 20px);"
+        >
+            Welcome to XIVdle!
+        </div>
+
+        <p
+                class="absolute left-[10%] h-[35%] text-gray-900 leading-tight"
+                style="font-size: min(2.5vw, 20px);"
+        >
+            Infinite Mode — guess as many characters as you can!<br/>
+            Change the settings to whatever your preference is o/
+        </p>
+    </div>
+</div>
+
+<app-header-buttons
+        [infiniteMode]="true"
+        (infiniteSettingsConfirmed)="onInfiniteSettingsConfirmed($event)"
+/>
+<section class="infinite-page">
+    <div class="stats" aria-label="Infinite Mode statistics">
+        <div class="stat">
+            <span>Correct</span>
+            <strong>{{ score }}</strong>
+        </div>
+
+        <div class="stat">
+            <span>Current streak</span>
+            <strong>{{ streak }}</strong>
+        </div>
+
+        <div class="stat">
+            <span>Best streak</span>
+            <strong>{{ bestStreak }}</strong>
+        </div>
+
+        <div class="stat">
+            <span>Lives</span>
+            <strong>
+                {{ settings.lives === 0 ? 'Unlimited' : livesRemaining }}
+            </strong>
+        </div>
+    </div>
+
+    @if (loading) {
+        <p class="status-message">Loading characters…</p>
+    } @else if (errorMessage) {
+        <p class="status-message error">{{ errorMessage }}</p>
+    } @else {
+        @if (!roundComplete) {
+            <app-searchjson
+                    [excludedGuesses]="guesses"
+                    (characterSelected)="onCharacterSelected($event)"
+            />
+        } @else {
+            <div class="round-won" role="status">
+                <strong>Correct! It was {{ correctAnswer.name }}.</strong>
+                <button
+                        type="button"
+                        class="primary-button"
+                        (click)="nextRound()"
+                >
+                    Next character
+                </button>
+            </div>
+        }
+
+        @if (guesses.length) {
+            <app-guess-table [guesses]="guesses" />
+        }
+
+        <div class="infinite-actions">
+            <button
+                    type="button"
+                    class="secondary-button"
+                    (click)="resetProgress()"
+            >
+                Reset Infinite Mode stats
+            </button>
+        </div>
+    }
+</section>

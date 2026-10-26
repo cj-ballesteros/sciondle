@@ -1,0 +1,17 @@
+
+.mode-navigation {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: .75rem;
+  margin: .75rem auto;
+}
+.mode-navigation button {
+  border: 1px solid #c8bfa0;
+  border-radius: 999px;
+  padding: .45rem .9rem;
+  background: #f0ece0;
+  color: #2a2418;
+  font-weight: 600;
+  cursor: pointer;
+}

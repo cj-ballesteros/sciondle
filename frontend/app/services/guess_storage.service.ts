@@ -50,7 +50,9 @@ export class GuessStorageService {
     const storedKey = localStorage.getItem('xivdle_daykey');
 
     if (storedKey !== currentKey) {
-      localStorage.clear();
+      // Reset Daily Mode only. Do not erase Infinite Mode progress or other app data.
+      localStorage.removeItem(this.STORAGE_KEY);
+      localStorage.removeItem(this.STATE_KEY);
       localStorage.setItem('xivdle_daykey', currentKey);
     }
   }

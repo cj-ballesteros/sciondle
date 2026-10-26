@@ -13,7 +13,6 @@
       Welcome to XIVdle!
     </div>
 
-    <!-- Centered Dialogue Text -->
     <p class="absolute left-[10%] h-[35%] text-gray-900 leading-tight"
        style="font-size: min(2.5vw, 20px);">
       Choose a gamemode to get started!<br/>
@@ -23,20 +22,32 @@
 </div>
 
 <div class="game-modes-container">
+  <div class="classic-mode-row">
+    <button class="game-mode-item classic-mode-item" type="button"
+            (click)="modeSelected.emit('daily')">
+      <div class="mode-image-wrap">
+        <img src="main_commands/03_MainCommands/01/character.png"
+             class="mode-image" height="48" width="48" alt="" />
+      </div>
+      <div class="mode-text">
+        <span class="mode-title">Classic</span>
+        <span class="mode-description">Get clues on every try</span>
+      </div>
+    </button>
 
-  <button class="game-mode-item" type="button">
-    <div class="mode-image-wrap">
-      <img src="main_commands/03_MainCommands/01/character.png" class="mode-image" height="48" width="48"/>
-    </div>
-    <div class="mode-text">
-      <span class="mode-title">Classic</span>
-      <span class="mode-description">Get clues on every try</span>
-    </div>
-  </button>
+    <button class="infinite-mode-button" type="button"
+            (click)="modeSelected.emit('infinite')"
+            aria-label="Play Infinite Mode" title="Infinite Mode">
+      <span class="infinite-symbol" aria-hidden="true">∞</span>
+      <span class="infinite-label">Infinite</span>
+    </button>
+  </div>
 
-  <button class="game-mode-item" type="button">
+  <button class="game-mode-item raid-mode-item" type="button" disabled
+          aria-label="Raid mode coming soon">
     <div class="mode-image-wrap">
-      <img src="main_commands/03_MainCommands/02/raid_finder.png" class="mode-image" height="48" width="48"/>
+      <img src="main_commands/03_MainCommands/02/raid_finder.png"
+           class="mode-image" height="48" width="48" alt="" />
     </div>
     <div class="mode-text">
       <span class="mode-title">Raid (coming soon)</span>

@@ -1,78 +1,369 @@
 @if (open) {
-  <div class="fixed inset-0 z-50 bg-black/50" role="dialog" aria-modal="true" (click)="close()"
-  >
-    <div
-      class="absolute inset-0"
-      animate.enter="backdrop-enter"
-      animate.leave="backdrop-leave"
-    ></div>
-    <div class="relative flex min-h-full items-center justify-center p-4">
-      <div
-        #panel
-        tabindex="-1"
-        class="flex max-h-[85vh] w-[min(92vw,760px)]
+    <div class="fixed inset-0 z-50 bg-black/50" role="dialog" aria-modal="true" (click)="close()"
+    >
+        <div
+                class="absolute inset-0"
+                animate.enter="backdrop-enter"
+                animate.leave="backdrop-leave"
+        ></div>
+        <div class="relative flex min-h-full items-center justify-center p-4">
+            <div
+                #panel
+                tabindex="-1"
+                class="flex max-h-[85vh] w-[min(92vw,760px)]
         flex-col overflow-hidden rounded-xl
         bg-[#2b2b2b] shadow-2xl outline-none"
-        cdkTrapFocus
-        [cdkTrapFocusAutoCapture]="true"
-        animate.enter="panel-enter"
-        animate.leave="panel-leave"
-        (click)="$event.stopPropagation()"
-      >
-        <div class="relative bg-gradient-to-b from-[#4a4a4a] to-[#2f2f2f] px-3 pt-2">
-          <div class="flex items-center justify-between gap-4">
-            <div>
-              <h2 class="text-xl tracking-wide text-[#e7e7e7]">
-                Options
-              </h2>
-            </div>
-
-            <button
-              type="button"
-              class="rounded-md px-1 text-2xl leading-none text-white/80 hover:bg-white/10 hover:text-white focus:outline-none focus:ring-2 focus:ring-white/30"
-              (click)="close()"
-              aria-label="Close"
+                cdkTrapFocus
+                [cdkTrapFocusAutoCapture]="true"
+                animate.enter="panel-enter"
+                animate.leave="panel-leave"
+                (click)="$event.stopPropagation()"
             >
-              ×
-            </button>
-          </div>
-          <div class="mt-2 h-px w-[calc(100%-0.5rem)] bg-white/15"></div>
-        </div>
+                <div class="relative bg-gradient-to-b from-[#4a4a4a] to-[#2f2f2f] px-3 pt-2">
+                    <div class="flex items-center justify-between gap-4">
+                        <div>
+                            <h2 class="text-xl tracking-wide text-[#e7e7e7]">
+                                Options
+                            </h2>
+                        </div>
 
-        <div class="flex-1 overflow-y-auto bg-[#2f2f2f] p-6">
-          <div class="flex items-center justify-between gap-4">
-            <span class="text-[#D0D0D0] text-lg">Colorblind Mode</span>
-            <button
-              title="Colorblind Mode"
-              type="button"
-              role="switch"
-              [attr.aria-checked]="colorblindMode.getMode()"
-              (click)="colorblindMode.toggleColorblind(); $event.stopPropagation()"
-              class="
+                        <button
+                                type="button"
+                                class="rounded-md px-1 text-2xl leading-none text-white/80 hover:bg-white/10 hover:text-white focus:outline-none focus:ring-2 focus:ring-white/30"
+                                (click)="close()"
+                                aria-label="Close"
+                        >
+                            ×
+                        </button>
+                    </div>
+                    <div class="mt-2 h-px w-[calc(100%-0.5rem)] bg-white/15"></div>
+                </div>
+
+                <div class="flex-1 overflow-y-auto bg-[#2f2f2f] p-6">
+                    <div class="flex items-center justify-between gap-4">
+                        <span class="text-[#D0D0D0] text-lg">Colorblind Mode</span>
+                        <button
+                                title="Colorblind Mode"
+                                type="button"
+                                role="switch"
+                                [attr.aria-checked]="colorblindMode.getMode()"
+                                (click)="colorblindMode.toggleColorblind(); $event.stopPropagation()"
+                                class="
               relative h-7 w-14 rounded-full border border-white/20
               bg-gradient-to-b
               shadow-[inset_0_1px_0_rgba(255,255,255,0.18),_0_2px_3px_rgba(0,0,0,0.5)]
               transition"
-              [class.bg-gradient-to-b]="true"
-              [class.from-[#5a5a5a]]="!colorblindMode.getMode()"
-              [class.to-[#3a3a3a]]="!colorblindMode.getMode()"
-              [class.border-white]="!colorblindMode.getMode()"
-              [class.from-blue-500]="colorblindMode.getMode()"
-              [class.to-blue-700]="colorblindMode.getMode()"
-              [class.border-blue-400]="colorblindMode.getMode()"
-            >
+                                [class.bg-gradient-to-b]="true"
+                                [class.from-[#5a5a5a]]="!colorblindMode.getMode()"
+                                [class.to-[#3a3a3a]]="!colorblindMode.getMode()"
+                                [class.border-white]="!colorblindMode.getMode()"
+                                [class.from-blue-500]="colorblindMode.getMode()"
+                                [class.to-blue-700]="colorblindMode.getMode()"
+                                [class.border-blue-400]="colorblindMode.getMode()"
+                        >
               <span
-                class="absolute top-1 left-1 h-5 w-5 rounded-full bg-white
+                      class="absolute top-1 left-1 h-5 w-5 rounded-full bg-white
                        transition-all duration-200"
-                [class.left-8]="colorblindMode.getMode()"
+                      [class.left-8]="colorblindMode.getMode()"
               ></span>
-            </button>
-          </div>
-        </div>
-        <div class="shrink-0 border-t border-white/10 bg-[#2b2b2b] px-6 py-4 flex justify-end">
-          <button
-            (click)="close()"
-            class="
+                        </button>
+                    </div>
+                    @if (infiniteMode) {
+                        <div class="mt-6 border-t border-white/10 pt-5">
+                            <h3 class="mb-4 text-lg font-semibold text-[#e7e7e7]">
+                                Infinite Mode
+                            </h3>
+
+                            <label for="infinite-lives" class="mb-2 block text-[#D0D0D0]">
+                                Lives per round
+                            </label>
+                            <select
+                                    id="infinite-lives"
+                                    class="mb-5 rounded border border-white/20 bg-[#3a3a3a] p-2 text-white"
+                                    [value]="infiniteSettings.lives"
+                                    (change)="onLivesChange($any($event.target).value)">
+                                <option value="0">Unlimited</option>
+                                <option value="3">3 lives</option>
+                                <option value="5">5 lives</option>
+                                <option value="10">10 lives</option>
+                            </select>
+
+                            <p class="mb-3 text-sm text-[#D0D0D0]">
+                                Leave a category unselected to include all characters.
+                            </p>
+
+                            <h4 class="mb-2 font-semibold text-[#e7e7e7]">Race</h4>
+                            <div class="mb-4 flex flex-wrap gap-3">
+                                @for (race of raceOptions; track race) {
+                                    <label class="flex items-center gap-2">
+                                        <input
+                                                type="checkbox"
+                                                [checked]="infiniteSettings.races.includes(race)"
+                                                (change)="onFilterChange('races', race, $any($event.target).checked)"/>
+                                        {{ race }}
+                                    </label>
+                                }
+                            </div>
+
+                            <h4 class="mb-2 font-semibold text-[#e7e7e7]">Gender</h4>
+                            <div class="mb-4 flex flex-wrap gap-3">
+                                @for (gender of genderOptions; track gender) {
+                                    <label class="flex items-center gap-2">
+                                        <input
+                                                type="checkbox"
+                                                [checked]="infiniteSettings.genders.includes(gender)"
+                                                (change)="onFilterChange('genders', gender, $any($event.target).checked)"/>
+                                        {{ gender }}
+                                    </label>
+                                }
+                            </div>
+
+                            <h4 class="mb-2 font-semibold text-[#e7e7e7]">Affiliation</h4>
+                            <div class="mb-4 flex flex-wrap gap-3">
+                                @for (affiliation of affiliationOptions; track affiliation) {
+                                    <label class="flex items-center gap-2">
+                                        <input
+                                                type="checkbox"
+                                                [checked]="infiniteSettings.affiliations.includes(affiliation)"
+                                                (change)="onFilterChange('affiliations', affiliation, $any($event.target).checked)"/>
+                                        {{ affiliation }}
+                                    </label>
+                                }
+                            </div>
+
+                            <h4 class="mb-2 font-semibold text-[#e7e7e7]">Job</h4>
+                            <div class="mb-4 flex flex-wrap gap-3">
+                                @for (job of jobOptions; track job) {
+                                    <label class="flex items-center gap-2">
+                                        <input
+                                                type="checkbox"
+                                                [checked]="infiniteSettings.jobs.includes(job)"
+                                                (change)="onFilterChange('jobs', job, $any($event.target).checked)"/>
+                                        {{ job }}
+                                    </label>
+                                }
+                            </div>
+
+
+                            <!-- Expansion filter -->
+                            <div class="mt-5">
+                                <label class="mb-2 block text-sm font-semibold text-white">
+                                    Expansion Filter
+                                </label>
+
+                                <select
+                                        class="w-full rounded-lg border border-white/20 bg-[#353535] px-3 py-2 text-white"
+                                        [value]="infiniteSettings.expansionFilter.mode"
+                                        (change)="onExpansionFilterChange({
+      mode: $any($event.target).value
+    })"
+                                >
+                                    <option value="all">All expansions</option>
+                                    <option value="expansion">Specific expansion</option>
+                                    <option value="range">Version range</option>
+                                </select>
+
+                                @if (infiniteSettings.expansionFilter.mode === 'expansion') {
+                                    <div class="mt-3">
+                                        <label class="mb-3 block text-sm text-white/80">
+                                            Choose an expansion
+                                        </label>
+
+                                        <div class="grid grid-cols-2 gap-3 sm:grid-cols-3">
+                                            @for (expansion of expansionChoices; track expansion.version) {
+                                                <button
+                                                        type="button"
+                                                        class="rounded-lg border p-3 transition-colors duration-200 hover:bg-white/10 hover:border-white/40 focus:outline-none focus:ring-2 focus:ring-white/30"
+                                                        [ngClass]="{
+                                                            'border-blue-400': infiniteSettings.expansionFilter.expansion === expansion.version,
+                                                            'bg-white/10': infiniteSettings.expansionFilter.expansion === expansion.version,
+                                                            'border-white/20': infiniteSettings.expansionFilter.expansion !== expansion.version
+                                                          }"
+                                                        [attr.aria-pressed]="infiniteSettings.expansionFilter.expansion === expansion.version"
+                                                        (click)="onExpansionFilterChange({ expansion: expansion.version })"
+                                                >
+                                                    <img
+                                                            [src]="expansion.image"
+                                                            [alt]="expansion.name + ' logo'"
+                                                            class="mx-auto h-14 w-full object-contain"
+                                                    />
+                                                </button>
+                                            }
+                                        </div>
+
+                                        <label class="mt-4 flex items-center gap-2 text-sm text-white/80">
+                                            <input
+                                                    type="checkbox"
+                                                    class="accent-blue-500"
+                                                    [checked]="infiniteSettings.expansionFilter.includePrevious"
+                                                    (change)="onExpansionFilterChange({
+          includePrevious: $any($event.target).checked
+        })"
+                                            />
+                                            Include characters from previous expansions
+                                        </label>
+                                    </div>
+                                }
+                                @if (infiniteSettings.expansionFilter.mode === 'range') {
+                                    <div class="mt-3 grid grid-cols-2 gap-3">
+
+                                        <!-- Starting Version -->
+                                        <div class="relative min-w-0">
+                                            <label class="mb-2 block text-sm text-white/80">
+                                                Starting Version
+                                            </label>
+
+                                            <button
+                                                    type="button"
+                                                    class="flex w-full items-center justify-between rounded-lg border border-white/20 bg-[#353535] px-3 py-2 text-sm text-white hover:border-white/40 focus:outline-none focus:ring-2 focus:ring-blue-400/50"
+                                                    [attr.aria-expanded]="openVersionDropdown === 'start'"
+                                                    (click)="toggleVersionDropdown('start')"
+                                            >
+                                                <span>{{ infiniteSettings.expansionFilter.startVersion }}</span>
+                                                <span class="ml-2 text-white/60">⌄</span>
+                                            </button>
+
+                                            @if (openVersionDropdown === 'start') {
+                                                <div
+                                                        class="absolute left-0 top-full z-50 mt-1 w-full min-w-0 overflow-hidden rounded-lg border border-white/20 bg-[#292929] shadow-xl"
+                                                >
+                                                    <div class="border-b border-white/10 p-2">
+                                                        <input
+                                                                type="text"
+                                                                class="w-full rounded-md border border-white/15 bg-[#353535] px-2 py-1.5 text-sm text-white placeholder:text-white/40 focus:outline-none focus:ring-1 focus:ring-blue-400"
+                                                                placeholder="Search version..."
+                                                                aria-label="Search starting versions"
+                                                                [(ngModel)]="startVersionSearch"
+                                                        />
+                                                    </div>
+
+                                                    <div class="max-h-40 overflow-y-auto overscroll-contain p-1">
+                                                        @for (version of filteredStartVersions; track version) {
+                                                            <button
+                                                                    type="button"
+                                                                    class="w-full rounded-md px-3 py-2 text-left text-sm text-white hover:bg-white/10"
+                                                                    [class.bg-blue-500/20]="version === infiniteSettings.expansionFilter.startVersion"
+                                                                    [class.text-blue-300]="version === infiniteSettings.expansionFilter.startVersion"
+                                                                    (click)="selectVersion('start', version)"
+                                                                    >
+                                                            {{ version }}
+                                                            </button>
+                                                        }
+
+                                                        @if (filteredStartVersions.length === 0) {
+                                                            <p class="px-3 py-2 text-sm text-white/50">
+                                                                No matching versions
+                                                            </p>
+                                                        }
+                                                    </div>
+                                                </div>
+                                            }
+                                        </div>
+
+                                        <!-- Ending Version -->
+                                        <div class="relative min-w-0">
+                                            <label class="mb-2 block text-sm text-white/80">
+                                                Ending Version
+                                            </label>
+
+                                            <button
+                                                    type="button"
+                                                    class="flex w-full items-center justify-between rounded-lg border border-white/20 bg-[#353535] px-3 py-2 text-sm text-white hover:border-white/40 focus:outline-none focus:ring-2 focus:ring-blue-400/50"
+                                                    [attr.aria-expanded]="openVersionDropdown === 'end'"
+                                                    (click)="toggleVersionDropdown('end')"
+                                            >
+                                                <span>{{ infiniteSettings.expansionFilter.endVersion }}</span>
+                                                <span class="ml-2 text-white/60">⌄</span>
+                                            </button>
+
+                                            @if (openVersionDropdown === 'end') {
+                                                <div
+                                                        class="absolute right-0 top-full z-50 mt-1 w-full min-w-0 overflow-hidden rounded-lg border border-white/20 bg-[#292929] shadow-xl"
+                                                >
+                                                    <div class="border-b border-white/10 p-2">
+                                                        <input
+                                                                type="text"
+                                                                class="w-full rounded-md border border-white/15 bg-[#353535] px-2 py-1.5 text-sm text-white placeholder:text-white/40 focus:outline-none focus:ring-1 focus:ring-blue-400"
+                                                                placeholder="Search version..."
+                                                                aria-label="Search ending versions"
+                                                                [(ngModel)]="endVersionSearch"
+                                                        />
+                                                    </div>
+
+                                                    <div class="max-h-40 overflow-y-auto overscroll-contain p-1">
+                                                        @for (version of filteredEndVersions; track version) {
+                                                            <button
+                                                                    type="button"
+                                                                    class="w-full rounded-md px-3 py-2 text-left text-sm text-white hover:bg-white/10"
+                                                                    [class.bg-blue-500/20]="version === infiniteSettings.expansionFilter.endVersion"
+                                                                    [class.text-blue-300]="version === infiniteSettings.expansionFilter.endVersion"
+                                                                    (click)="selectVersion('end', version)"
+                                                                    >
+                                                            {{ version }}
+                                                            </button>
+                                                        }
+
+                                                        @if (filteredEndVersions.length === 0) {
+                                                            <p class="px-3 py-2 text-sm text-white/50">
+                                                                No matching versions
+                                                            </p>
+                                                        }
+                                                    </div>
+                                                </div>
+                                            }
+                                        </div>
+
+                                    </div>
+                                }                            </div>
+
+
+                            <div class="mt-5 flex flex-wrap gap-3">
+                                <button
+                                        type="button"
+                                        class="
+                                  rounded-3xl
+                                  border border-white/20
+                                  bg-gradient-to-b from-[#5a5a5a] to-[#3a3a3a]
+                                  px-8 py-1
+                                  text-sm font-semibold tracking-wide text-[#e7e7e7]
+                                  shadow-[inset_0_1px_0_rgba(255,255,255,0.25),_0_2px_4px_rgba(0,0,0,0.4)]
+                                  hover:from-[#6a6a6a] hover:to-[#4a4a4a]
+                                  active:translate-y-px
+                                  active:shadow-[inset_0_2px_2px_rgba(0,0,0,0.5)]
+                                  focus:outline-none
+                                  focus:ring-2 focus:ring-white/30"
+                                        (click)="resetInfiniteSettings()">
+                                    Reset to Defaults
+                                </button>
+
+                                <button
+                                        type="button"
+                                        class="
+                                    rounded-3xl
+                                    border border-white/20
+                                    bg-gradient-to-b from-[#5a5a5a] to-[#3a3a3a]
+                                    px-8 py-1
+                                    text-sm font-semibold tracking-wide text-[#e7e7e7]
+                                    shadow-[inset_0_1px_0_rgba(255,255,255,0.25),_0_2px_4px_rgba(0,0,0,0.4)]
+                                    hover:from-[#6a6a6a] hover:to-[#4a4a4a]
+                                    active:translate-y-px
+                                    active:shadow-[inset_0_2px_2px_rgba(0,0,0,0.5)]
+                                    focus:outline-none
+                                    focus:ring-2 focus:ring-white/30"
+                                        (click)="confirmInfiniteSettings()">
+                                    Confirm
+                                </button>
+                            </div>
+                        </div>
+                    }
+
+                </div>
+
+
+                <div class="shrink-0 border-t border-white/10 bg-[#2b2b2b] px-6 py-4 flex justify-end">
+                    <button
+                            (click)="close()"
+                            class="
               rounded-3xl
               border border-white/20
               bg-gradient-to-b from-[#5a5a5a] to-[#3a3a3a]
@@ -85,11 +376,11 @@
               focus:outline-none
               focus:ring-2 focus:ring-white/30
             "
-          >
-            Close
-          </button>
+                    >
+                        Close
+                    </button>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
 }

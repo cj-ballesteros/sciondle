@@ -1,4 +1,19 @@
-<app-header/>
-<app-game/>
-<!--<app-game-options/>-->
-<app-footer/>
+<app-header />
+@if (mode === 'menu') {
+  <app-game-options (modeSelected)="selectMode($event)" />
+} @else {
+  <div class="mode-navigation">
+    <button type="button" (click)="selectMode('menu')">← Game modes</button>
+    @if (mode === 'daily') {
+      <button type="button" (click)="selectMode('infinite')">Play Infinite Mode</button>
+    } @else {
+      <button type="button" (click)="selectMode('daily')">Play Daily Mode</button>
+    }
+  </div>
+  @if (mode === 'daily') {
+    <app-game />
+  } @else {
+    <app-infinite />
+  }
+}
+<app-footer />
