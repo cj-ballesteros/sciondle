@@ -157,7 +157,7 @@ export class GameComponent {
     const now = new Date();
 
     const parts = new Intl.DateTimeFormat('en-US', {
-      timeZone: 'America/Los_Angeles',
+      timeZone: 'America/New_York',
       year: 'numeric',
       month: '2-digit',
       day: '2-digit',
@@ -174,6 +174,8 @@ export class GameComponent {
 
     return date.toISOString().slice(0, 10);
   }
+
+
 
   getDayOffsetFromStart(dateKey: string): number {
     const start = new Date('2026-10-22T00:00:00Z');
