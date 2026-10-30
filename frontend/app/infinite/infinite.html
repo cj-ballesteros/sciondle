@@ -44,14 +44,48 @@
             <span>Best streak</span>
             <strong>{{ bestStreak }}</strong>
         </div>
-
-        <div class="stat">
-            <span>Lives</span>
-            <strong>
-                {{ settings.lives === 0 ? 'Unlimited' : livesRemaining }}
-            </strong>
-        </div>
     </div>
+    @if (settings.lives > 0) {
+        <div class="my-3 flex justify-center">
+            <div class="relative inline-block">
+                <app-tooltip>
+                    <img
+                            src="buff_debuff_icons/resurrection_restricted.png"
+                            alt="Lives"
+                            class="h-12 w-12 object-contain"
+                    />
+
+                    <span
+                            class="absolute -right-0 -top-0 flex h-7 min-w-7 items-center justify-center
+                     px-1 text-2xl font-bold text-white shadow-md leading-none"
+                            style="-webkit-text-stroke: 3px black; paint-order: stroke fill;"
+                            aria-label="Lives remaining"
+                    >{{ livesRemaining }}</span>
+
+                    <span tooltip-text>
+                        Resurrection Restricted<br>
+                        Lives are limited due to the game options, game ends at 0.
+                    </span>
+                </app-tooltip>
+            </div>
+        </div>
+    } @else {
+        <div class="my-3 flex justify-center">
+            <div class="relative inline-block">
+                <app-tooltip>
+                    <img
+                            src="buff_debuff_icons/brilliant_conviction.png"
+                            alt="Infinite Lives"
+                            class="h-12 w-12 object-contain"
+                    />
+                    <span tooltip-text>
+                        Brilliant Conviction<br>
+                        Grants infinite lives.
+                    </span>
+                </app-tooltip>
+            </div>
+        </div>
+    }
 
     @if (loading) {
         <p class="status-message">Loading characters…</p>

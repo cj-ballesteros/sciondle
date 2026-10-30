@@ -1,31 +1,33 @@
 @if (open) {
-    <div class="fixed inset-0 z-50 bg-black/50" role="dialog" aria-modal="true" (click)="close()"
+    <div
+            class="fixed inset-0 z-50 bg-black/50"
+            role="dialog"
+            aria-modal="true"
+            (click)="close()"
     >
         <div
                 class="absolute inset-0"
                 animate.enter="backdrop-enter"
                 animate.leave="backdrop-leave"
         ></div>
+
         <div class="relative flex min-h-full items-center justify-center p-4">
             <div
                 #panel
                 tabindex="-1"
-                class="flex max-h-[85vh] w-[min(92vw,760px)]
-        flex-col overflow-hidden rounded-xl
-        bg-[#2b2b2b] shadow-2xl outline-none"
+                class="flex max-h-[85vh] w-[min(92vw,760px)] flex-col overflow-hidden rounded-xl bg-[#2b2b2b] shadow-2xl outline-none"
                 cdkTrapFocus
                 [cdkTrapFocusAutoCapture]="true"
                 animate.enter="panel-enter"
                 animate.leave="panel-leave"
                 (click)="$event.stopPropagation()"
             >
+                <!-- Header -->
                 <div class="relative bg-gradient-to-b from-[#4a4a4a] to-[#2f2f2f] px-3 pt-2">
                     <div class="flex items-center justify-between gap-4">
-                        <div>
-                            <h2 class="text-xl tracking-wide text-[#e7e7e7]">
-                                Options
-                            </h2>
-                        </div>
+                        <h2 class="text-xl tracking-wide text-[#e7e7e7]">
+                            Options
+                        </h2>
 
                         <button
                                 type="button"
@@ -36,52 +38,57 @@
                             ×
                         </button>
                     </div>
+
                     <div class="mt-2 h-px w-[calc(100%-0.5rem)] bg-white/15"></div>
                 </div>
 
+                <!-- Settings Content -->
                 <div class="flex-1 overflow-y-auto bg-[#2f2f2f] p-6">
+                    <!-- Colorblind Mode -->
                     <div class="flex items-center justify-between gap-4">
-                        <span class="text-[#D0D0D0] text-lg">Colorblind Mode</span>
+                        <span class="text-lg text-[#D0D0D0]">
+                            Colorblind Mode
+                        </span>
+
                         <button
-                                title="Colorblind Mode"
                                 type="button"
+                                title="Colorblind Mode"
                                 role="switch"
                                 [attr.aria-checked]="colorblindMode.getMode()"
                                 (click)="colorblindMode.toggleColorblind(); $event.stopPropagation()"
-                                class="
-              relative h-7 w-14 rounded-full border border-white/20
-              bg-gradient-to-b
-              shadow-[inset_0_1px_0_rgba(255,255,255,0.18),_0_2px_3px_rgba(0,0,0,0.5)]
-              transition"
-                                [class.bg-gradient-to-b]="true"
-                                [class.from-[#5a5a5a]]="!colorblindMode.getMode()"
-                                [class.to-[#3a3a3a]]="!colorblindMode.getMode()"
-                                [class.border-white]="!colorblindMode.getMode()"
-                                [class.from-blue-500]="colorblindMode.getMode()"
-                                [class.to-blue-700]="colorblindMode.getMode()"
-                                [class.border-blue-400]="colorblindMode.getMode()"
+                                class="relative h-7 w-14 rounded-full border bg-gradient-to-b shadow-[inset_0_1px_0_rgba(255,255,255,0.18),_0_2px_3px_rgba(0,0,0,0.5)] transition"
+                                [ngClass]="{
+                                'from-[#5a5a5a] to-[#3a3a3a] border-white': !colorblindMode.getMode(),
+                                'from-blue-500 to-blue-700 border-blue-400': colorblindMode.getMode()
+                            }"
                         >
-              <span
-                      class="absolute top-1 left-1 h-5 w-5 rounded-full bg-white
-                       transition-all duration-200"
-                      [class.left-8]="colorblindMode.getMode()"
-              ></span>
+                            <span
+                                    class="absolute top-1 left-1 h-5 w-5 rounded-full bg-white transition-all duration-200"
+                                    [class.left-8]="colorblindMode.getMode()"
+                            ></span>
                         </button>
                     </div>
+
                     @if (infiniteMode) {
                         <div class="mt-6 border-t border-white/10 pt-5">
                             <h3 class="mb-4 text-lg font-semibold text-[#e7e7e7]">
                                 Infinite Mode
                             </h3>
 
-                            <label for="infinite-lives" class="mb-2 block text-[#D0D0D0]">
+                            <!-- Lives -->
+                            <label
+                                    for="infinite-lives"
+                                    class="mb-2 block text-[#D0D0D0]"
+                            >
                                 Lives per round
                             </label>
+
                             <select
                                     id="infinite-lives"
                                     class="mb-5 rounded border border-white/20 bg-[#3a3a3a] p-2 text-white"
                                     [value]="infiniteSettings.lives"
-                                    (change)="onLivesChange($any($event.target).value)">
+                                    (change)="onLivesChange($any($event.target).value)"
+                            >
                                 <option value="0">Unlimited</option>
                                 <option value="3">3 lives</option>
                                 <option value="5">5 lives</option>
@@ -92,60 +99,279 @@
                                 Leave a category unselected to include all characters.
                             </p>
 
-                            <h4 class="mb-2 font-semibold text-[#e7e7e7]">Race</h4>
+                            <!-- Race Filter -->
+                            <h4 class="mb-2 font-semibold text-[#e7e7e7]">
+                                Race
+                            </h4>
+
                             <div class="mb-4 flex flex-wrap gap-3">
                                 @for (race of raceOptions; track race) {
                                     <label class="flex items-center gap-2">
                                         <input
                                                 type="checkbox"
                                                 [checked]="infiniteSettings.races.includes(race)"
-                                                (change)="onFilterChange('races', race, $any($event.target).checked)"/>
+                                                (change)="onFilterChange('races', race, $any($event.target).checked)"
+                                        />
                                         {{ race }}
                                     </label>
                                 }
                             </div>
 
-                            <h4 class="mb-2 font-semibold text-[#e7e7e7]">Gender</h4>
+                            <!-- Gender Filter -->
+                            <h4 class="mb-2 font-semibold text-[#e7e7e7]">
+                                Gender
+                            </h4>
+
                             <div class="mb-4 flex flex-wrap gap-3">
                                 @for (gender of genderOptions; track gender) {
                                     <label class="flex items-center gap-2">
                                         <input
                                                 type="checkbox"
                                                 [checked]="infiniteSettings.genders.includes(gender)"
-                                                (change)="onFilterChange('genders', gender, $any($event.target).checked)"/>
+                                                (change)="onFilterChange('genders', gender, $any($event.target).checked)"
+                                        />
                                         {{ gender }}
                                     </label>
                                 }
                             </div>
 
-                            <h4 class="mb-2 font-semibold text-[#e7e7e7]">Affiliation</h4>
+                            <!-- Affiliation Filter -->
+                            <h4 class="mb-2 font-semibold text-[#e7e7e7]">
+                                Affiliation
+                            </h4>
+
                             <div class="mb-4 flex flex-wrap gap-3">
                                 @for (affiliation of affiliationOptions; track affiliation) {
                                     <label class="flex items-center gap-2">
                                         <input
                                                 type="checkbox"
                                                 [checked]="infiniteSettings.affiliations.includes(affiliation)"
-                                                (change)="onFilterChange('affiliations', affiliation, $any($event.target).checked)"/>
+                                                (change)="onFilterChange('affiliations', affiliation, $any($event.target).checked)"
+                                        />
                                         {{ affiliation }}
                                     </label>
                                 }
                             </div>
 
-                            <h4 class="mb-2 font-semibold text-[#e7e7e7]">Job</h4>
-                            <div class="mb-4 flex flex-wrap gap-3">
-                                @for (job of jobOptions; track job) {
-                                    <label class="flex items-center gap-2">
-                                        <input
-                                                type="checkbox"
-                                                [checked]="infiniteSettings.jobs.includes(job)"
-                                                (change)="onFilterChange('jobs', job, $any($event.target).checked)"/>
-                                        {{ job }}
-                                    </label>
-                                }
+                            <!-- Job Filter -->
+                            <h4 class="mb-3 font-semibold text-[#e7e7e7]">
+                                Job
+                            </h4>
+
+                            <div class="mb-5 space-y-5">
+                                <!-- Tank -->
+                                <div class="grid grid-cols-[125px_1fr] items-start gap-3">
+                                    <div class="flex items-center gap-2 pt-2 text-[#D0D0D0]">
+                                        <img
+                                                [src]="'jobs_and_characters/class_job_icons/tank_role.png'"
+                                                alt="Tank role"
+                                                class="h-full w-full object-contain"
+                                        />
+                                        <span>Tank</span>
+                                    </div>
+
+                                    <div class="flex flex-wrap gap-2">
+                                        @for (job of ['paladin', 'warrior', 'dark_knight', 'gunbreaker']; track job) {
+                                            @if (jobOptions.includes(job)) {
+                                                <button
+                                                        type="button"
+                                                        class="h-12 w-12 rounded-md border bg-gradient-to-b from-[#505050] to-[#303030] shadow-[inset_0_1px_0_rgba(255,255,255,0.15),0_2px_3px_rgba(0,0,0,0.4)] transition hover:brightness-125 focus:outline-none focus:ring-2 focus:ring-amber-200/60"
+                                                        [ngClass]="{
+                                                        'border-amber-200 shadow-[0_0_8px_rgba(255,220,140,0.8)]': infiniteSettings.jobs.includes(job),
+                                                        'border-white/20': !infiniteSettings.jobs.includes(job)
+                                                    }"
+                                                        [attr.aria-pressed]="infiniteSettings.jobs.includes(job)"
+                                                        [title]="job.replaceAll('_', ' ')"
+                                                        (click)="onFilterChange('jobs', job, !infiniteSettings.jobs.includes(job))"
+                                                >
+                                                    <img
+                                                            [src]="'jobs_and_characters/class_job_icons/' + job + '.png'"
+                                                            [alt]="job.replaceAll('_', ' ')"
+                                                            class="h-full w-full object-contain"
+                                                    />
+                                                </button>
+                                            }
+                                        }
+                                    </div>
+                                </div>
+
+                                <!-- Healer -->
+                                <div class="grid grid-cols-[125px_1fr] items-start gap-3">
+                                    <div class="flex items-center gap-2 pt-2 text-[#D0D0D0]">
+                                        <span class="text-lg">✚</span>
+                                        <span>Healer</span>
+                                    </div>
+
+                                    <div class="space-y-3">
+                                        <!-- Pure Healer -->
+                                        <div>
+                                            <p class="mb-2 text-xs text-white/60">
+                                                Pure Healer
+                                            </p>
+
+                                            <div class="flex flex-wrap gap-2">
+                                                @for (job of ['white_mage', 'astrologian']; track job) {
+                                                    @if (jobOptions.includes(job)) {
+                                                        <button
+                                                                type="button"
+                                                                class="h-12 w-12 rounded-md border bg-gradient-to-b from-[#505050] to-[#303030] shadow-[inset_0_1px_0_rgba(255,255,255,0.15),0_2px_3px_rgba(0,0,0,0.4)] transition hover:brightness-125 focus:outline-none focus:ring-2 focus:ring-amber-200/60"
+                                                                [ngClass]="{
+                                                                'border-amber-200 shadow-[0_0_8px_rgba(255,220,140,0.8)]': infiniteSettings.jobs.includes(job),
+                                                                'border-white/20': !infiniteSettings.jobs.includes(job)
+                                                            }"
+                                                                [attr.aria-pressed]="infiniteSettings.jobs.includes(job)"
+                                                                [title]="job.replaceAll('_', ' ')"
+                                                                (click)="onFilterChange('jobs', job, !infiniteSettings.jobs.includes(job))"
+                                                        >
+                                                            <img
+                                                                    [src]="'jobs_and_characters/class_job_icons/' + job + '.png'"
+                                                                    [alt]="job.replaceAll('_', ' ')"
+                                                                    class="h-full w-full object-contain"
+                                                            />
+                                                        </button>
+                                                    }
+                                                }
+                                            </div>
+                                        </div>
+
+                                        <!-- Barrier Healer -->
+                                        <div>
+                                            <p class="mb-2 text-xs text-white/60">
+                                                Barrier Healer
+                                            </p>
+
+                                            <div class="flex flex-wrap gap-2">
+                                                @for (job of ['scholar', 'sage']; track job) {
+                                                    @if (jobOptions.includes(job)) {
+                                                        <button
+                                                                type="button"
+                                                                class="h-12 w-12 rounded-md border bg-gradient-to-b from-[#505050] to-[#303030] shadow-[inset_0_1px_0_rgba(255,255,255,0.15),0_2px_3px_rgba(0,0,0,0.4)] transition hover:brightness-125 focus:outline-none focus:ring-2 focus:ring-amber-200/60"
+                                                                [ngClass]="{
+                                                                'border-amber-200 shadow-[0_0_8px_rgba(255,220,140,0.8)]': infiniteSettings.jobs.includes(job),
+                                                                'border-white/20': !infiniteSettings.jobs.includes(job)
+                                                            }"
+                                                                [attr.aria-pressed]="infiniteSettings.jobs.includes(job)"
+                                                                [title]="job.replaceAll('_', ' ')"
+                                                                (click)="onFilterChange('jobs', job, !infiniteSettings.jobs.includes(job))"
+                                                        >
+                                                            <img
+                                                                    [src]="'jobs_and_characters/class_job_icons/' + job + '.png'"
+                                                                    [alt]="job.replaceAll('_', ' ')"
+                                                                    class="h-full w-full object-contain"
+                                                            />
+                                                        </button>
+                                                    }
+                                                }
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- DPS -->
+                                <div class="grid grid-cols-[125px_1fr] items-start gap-3">
+                                    <div class="flex items-center gap-2 pt-2 text-[#D0D0D0]">
+                                        <span class="text-lg">⚔️</span>
+                                        <span>DPS</span>
+                                    </div>
+
+                                    <div class="space-y-3">
+                                        <!-- Melee DPS -->
+                                        <div>
+                                            <p class="mb-2 text-xs text-white/60">
+                                                Melee DPS
+                                            </p>
+
+                                            <div class="flex flex-wrap gap-2">
+                                                @for (job of ['monk', 'dragoon', 'ninja', 'samurai', 'reaper', 'viper']; track job) {
+                                                    @if (jobOptions.includes(job)) {
+                                                        <button
+                                                                type="button"
+                                                                class="h-12 w-12 rounded-md border bg-gradient-to-b from-[#505050] to-[#303030] shadow-[inset_0_1px_0_rgba(255,255,255,0.15),0_2px_3px_rgba(0,0,0,0.4)] transition hover:brightness-125 focus:outline-none focus:ring-2 focus:ring-amber-200/60"
+                                                                [ngClass]="{
+                                                                'border-amber-200 shadow-[0_0_8px_rgba(255,220,140,0.8)]': infiniteSettings.jobs.includes(job),
+                                                                'border-white/20': !infiniteSettings.jobs.includes(job)
+                                                            }"
+                                                                [attr.aria-pressed]="infiniteSettings.jobs.includes(job)"
+                                                                [title]="job.replaceAll('_', ' ')"
+                                                                (click)="onFilterChange('jobs', job, !infiniteSettings.jobs.includes(job))"
+                                                        >
+                                                            <img
+                                                                    [src]="'jobs_and_characters/class_job_icons/' + job + '.png'"
+                                                                    [alt]="job.replaceAll('_', ' ')"
+                                                                    class="h-full w-full object-contain"
+                                                            />
+                                                        </button>
+                                                    }
+                                                }
+                                            </div>
+                                        </div>
+
+                                        <!-- Physical Ranged DPS -->
+                                        <div>
+                                            <p class="mb-2 text-xs text-white/60">
+                                                Physical Ranged DPS
+                                            </p>
+
+                                            <div class="flex flex-wrap gap-2">
+                                                @for (job of ['bard', 'machinist', 'dancer']; track job) {
+                                                    @if (jobOptions.includes(job)) {
+                                                        <button
+                                                                type="button"
+                                                                class="h-12 w-12 rounded-md border bg-gradient-to-b from-[#505050] to-[#303030] shadow-[inset_0_1px_0_rgba(255,255,255,0.15),0_2px_3px_rgba(0,0,0,0.4)] transition hover:brightness-125 focus:outline-none focus:ring-2 focus:ring-amber-200/60"
+                                                                [ngClass]="{
+                                                                'border-amber-200 shadow-[0_0_8px_rgba(255,220,140,0.8)]': infiniteSettings.jobs.includes(job),
+                                                                'border-white/20': !infiniteSettings.jobs.includes(job)
+                                                            }"
+                                                                [attr.aria-pressed]="infiniteSettings.jobs.includes(job)"
+                                                                [title]="job.replaceAll('_', ' ')"
+                                                                (click)="onFilterChange('jobs', job, !infiniteSettings.jobs.includes(job))"
+                                                        >
+                                                            <img
+                                                                    [src]="'jobs_and_characters/class_job_icons/' + job + '.png'"
+                                                                    [alt]="job.replaceAll('_', ' ')"
+                                                                    class="h-full w-full object-contain"
+                                                            />
+                                                        </button>
+                                                    }
+                                                }
+                                            </div>
+                                        </div>
+
+                                        <!-- Magical Ranged DPS -->
+                                        <div>
+                                            <p class="mb-2 text-xs text-white/60">
+                                                Magical Ranged DPS
+                                            </p>
+
+                                            <div class="flex flex-wrap gap-2">
+                                                @for (job of ['black_mage', 'summoner', 'red_mage', 'pictomancer']; track job) {
+                                                    @if (jobOptions.includes(job)) {
+                                                        <button
+                                                                type="button"
+                                                                class="h-12 w-12 rounded-md border bg-gradient-to-b from-[#505050] to-[#303030] shadow-[inset_0_1px_0_rgba(255,255,255,0.15),0_2px_3px_rgba(0,0,0,0.4)] transition hover:brightness-125 focus:outline-none focus:ring-2 focus:ring-amber-200/60"
+                                                                [ngClass]="{
+                                                                'border-amber-200 shadow-[0_0_8px_rgba(255,220,140,0.8)]': infiniteSettings.jobs.includes(job),
+                                                                'border-white/20': !infiniteSettings.jobs.includes(job)
+                                                            }"
+                                                                [attr.aria-pressed]="infiniteSettings.jobs.includes(job)"
+                                                                [title]="job.replaceAll('_', ' ')"
+                                                                (click)="onFilterChange('jobs', job, !infiniteSettings.jobs.includes(job))"
+                                                        >
+                                                            <img
+                                                                    [src]="'jobs_and_characters/class_job_icons/' + job + '.png'"
+                                                                    [alt]="job.replaceAll('_', ' ')"
+                                                                    class="h-full w-full object-contain"
+                                                            />
+                                                        </button>
+                                                    }
+                                                }
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
 
-
-                            <!-- Expansion filter -->
+                            <!-- Expansion Filter -->
                             <div class="mt-5">
                                 <label class="mb-2 block text-sm font-semibold text-white">
                                     Expansion Filter
@@ -155,8 +381,8 @@
                                         class="w-full rounded-lg border border-white/20 bg-[#353535] px-3 py-2 text-white"
                                         [value]="infiniteSettings.expansionFilter.mode"
                                         (change)="onExpansionFilterChange({
-      mode: $any($event.target).value
-    })"
+                                        mode: $any($event.target).value
+                                    })"
                                 >
                                     <option value="all">All expansions</option>
                                     <option value="expansion">Specific expansion</option>
@@ -173,12 +399,11 @@
                                             @for (expansion of expansionChoices; track expansion.version) {
                                                 <button
                                                         type="button"
-                                                        class="rounded-lg border p-3 transition-colors duration-200 hover:bg-white/10 hover:border-white/40 focus:outline-none focus:ring-2 focus:ring-white/30"
+                                                        class="rounded-lg border p-3 transition-colors duration-200 hover:border-white/40 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/30"
                                                         [ngClass]="{
-                                                            'border-blue-400': infiniteSettings.expansionFilter.expansion === expansion.version,
-                                                            'bg-white/10': infiniteSettings.expansionFilter.expansion === expansion.version,
-                                                            'border-white/20': infiniteSettings.expansionFilter.expansion !== expansion.version
-                                                          }"
+                                                        'border-blue-400 bg-white/10': infiniteSettings.expansionFilter.expansion === expansion.version,
+                                                        'border-white/20': infiniteSettings.expansionFilter.expansion !== expansion.version
+                                                    }"
                                                         [attr.aria-pressed]="infiniteSettings.expansionFilter.expansion === expansion.version"
                                                         (click)="onExpansionFilterChange({ expansion: expansion.version })"
                                                 >
@@ -197,16 +422,16 @@
                                                     class="accent-blue-500"
                                                     [checked]="infiniteSettings.expansionFilter.includePrevious"
                                                     (change)="onExpansionFilterChange({
-          includePrevious: $any($event.target).checked
-        })"
+                                                    includePrevious: $any($event.target).checked
+                                                })"
                                             />
                                             Include characters from previous expansions
                                         </label>
                                     </div>
                                 }
+
                                 @if (infiniteSettings.expansionFilter.mode === 'range') {
                                     <div class="mt-3 grid grid-cols-2 gap-3">
-
                                         <!-- Starting Version -->
                                         <div class="relative min-w-0">
                                             <label class="mb-2 block text-sm text-white/80">
@@ -224,9 +449,7 @@
                                             </button>
 
                                             @if (openVersionDropdown === 'start') {
-                                                <div
-                                                        class="absolute left-0 top-full z-50 mt-1 w-full min-w-0 overflow-hidden rounded-lg border border-white/20 bg-[#292929] shadow-xl"
-                                                >
+                                                <div class="absolute left-0 top-full z-50 mt-1 w-full min-w-0 overflow-hidden rounded-lg border border-white/20 bg-[#292929] shadow-xl">
                                                     <div class="border-b border-white/10 p-2">
                                                         <input
                                                                 type="text"
@@ -242,11 +465,12 @@
                                                             <button
                                                                     type="button"
                                                                     class="w-full rounded-md px-3 py-2 text-left text-sm text-white hover:bg-white/10"
-                                                                    [class.bg-blue-500/20]="version === infiniteSettings.expansionFilter.startVersion"
-                                                                    [class.text-blue-300]="version === infiniteSettings.expansionFilter.startVersion"
+                                                                    [ngClass]="{
+                                                                    'bg-blue-500/20 text-blue-300': version === infiniteSettings.expansionFilter.startVersion
+                                                                }"
                                                                     (click)="selectVersion('start', version)"
-                                                                    >
-                                                            {{ version }}
+                                                            >
+                                                                {{ version }}
                                                             </button>
                                                         }
 
@@ -277,9 +501,7 @@
                                             </button>
 
                                             @if (openVersionDropdown === 'end') {
-                                                <div
-                                                        class="absolute right-0 top-full z-50 mt-1 w-full min-w-0 overflow-hidden rounded-lg border border-white/20 bg-[#292929] shadow-xl"
-                                                >
+                                                <div class="absolute right-0 top-full z-50 mt-1 w-full min-w-0 overflow-hidden rounded-lg border border-white/20 bg-[#292929] shadow-xl">
                                                     <div class="border-b border-white/10 p-2">
                                                         <input
                                                                 type="text"
@@ -295,11 +517,12 @@
                                                             <button
                                                                     type="button"
                                                                     class="w-full rounded-md px-3 py-2 text-left text-sm text-white hover:bg-white/10"
-                                                                    [class.bg-blue-500/20]="version === infiniteSettings.expansionFilter.endVersion"
-                                                                    [class.text-blue-300]="version === infiniteSettings.expansionFilter.endVersion"
+                                                                    [ngClass]="{
+                                                                    'bg-blue-500/20 text-blue-300': version === infiniteSettings.expansionFilter.endVersion
+                                                                }"
                                                                     (click)="selectVersion('end', version)"
-                                                                    >
-                                                            {{ version }}
+                                                            >
+                                                                {{ version }}
                                                             </button>
                                                         }
 
@@ -312,70 +535,38 @@
                                                 </div>
                                             }
                                         </div>
-
                                     </div>
-                                }                            </div>
+                                }
+                            </div>
 
-
+                            <!-- Infinite Mode Actions -->
                             <div class="mt-5 flex flex-wrap gap-3">
                                 <button
                                         type="button"
-                                        class="
-                                  rounded-3xl
-                                  border border-white/20
-                                  bg-gradient-to-b from-[#5a5a5a] to-[#3a3a3a]
-                                  px-8 py-1
-                                  text-sm font-semibold tracking-wide text-[#e7e7e7]
-                                  shadow-[inset_0_1px_0_rgba(255,255,255,0.25),_0_2px_4px_rgba(0,0,0,0.4)]
-                                  hover:from-[#6a6a6a] hover:to-[#4a4a4a]
-                                  active:translate-y-px
-                                  active:shadow-[inset_0_2px_2px_rgba(0,0,0,0.5)]
-                                  focus:outline-none
-                                  focus:ring-2 focus:ring-white/30"
-                                        (click)="resetInfiniteSettings()">
+                                        class="rounded-3xl border border-white/20 bg-gradient-to-b from-[#5a5a5a] to-[#3a3a3a] px-8 py-1 text-sm font-semibold tracking-wide text-[#e7e7e7] shadow-[inset_0_1px_0_rgba(255,255,255,0.25),_0_2px_4px_rgba(0,0,0,0.4)] hover:from-[#6a6a6a] hover:to-[#4a4a4a] active:translate-y-px active:shadow-[inset_0_2px_2px_rgba(0,0,0,0.5)] focus:outline-none focus:ring-2 focus:ring-white/30"
+                                        (click)="resetInfiniteSettings()"
+                                >
                                     Reset to Defaults
                                 </button>
 
                                 <button
                                         type="button"
-                                        class="
-                                    rounded-3xl
-                                    border border-white/20
-                                    bg-gradient-to-b from-[#5a5a5a] to-[#3a3a3a]
-                                    px-8 py-1
-                                    text-sm font-semibold tracking-wide text-[#e7e7e7]
-                                    shadow-[inset_0_1px_0_rgba(255,255,255,0.25),_0_2px_4px_rgba(0,0,0,0.4)]
-                                    hover:from-[#6a6a6a] hover:to-[#4a4a4a]
-                                    active:translate-y-px
-                                    active:shadow-[inset_0_2px_2px_rgba(0,0,0,0.5)]
-                                    focus:outline-none
-                                    focus:ring-2 focus:ring-white/30"
-                                        (click)="confirmInfiniteSettings()">
+                                        class="rounded-3xl border border-white/20 bg-gradient-to-b from-[#5a5a5a] to-[#3a3a3a] px-8 py-1 text-sm font-semibold tracking-wide text-[#e7e7e7] shadow-[inset_0_1px_0_rgba(255,255,255,0.25),_0_2px_4px_rgba(0,0,0,0.4)] hover:from-[#6a6a6a] hover:to-[#4a4a4a] active:translate-y-px active:shadow-[inset_0_2px_2px_rgba(0,0,0,0.5)] focus:outline-none focus:ring-2 focus:ring-white/30"
+                                        (click)="confirmInfiniteSettings()"
+                                >
                                     Confirm
                                 </button>
                             </div>
                         </div>
                     }
-
                 </div>
 
-
-                <div class="shrink-0 border-t border-white/10 bg-[#2b2b2b] px-6 py-4 flex justify-end">
+                <!-- Footer -->
+                <div class="flex shrink-0 justify-end border-t border-white/10 bg-[#2b2b2b] px-6 py-4">
                     <button
+                            type="button"
+                            class="rounded-3xl border border-white/20 bg-gradient-to-b from-[#5a5a5a] to-[#3a3a3a] px-8 py-1 text-sm font-semibold tracking-wide text-[#e7e7e7] shadow-[inset_0_1px_0_rgba(255,255,255,0.25),_0_2px_4px_rgba(0,0,0,0.4)] hover:from-[#6a6a6a] hover:to-[#4a4a4a] active:translate-y-px active:shadow-[inset_0_2px_2px_rgba(0,0,0,0.5)] focus:outline-none focus:ring-2 focus:ring-white/30"
                             (click)="close()"
-                            class="
-              rounded-3xl
-              border border-white/20
-              bg-gradient-to-b from-[#5a5a5a] to-[#3a3a3a]
-              px-8 py-1
-              text-sm font-semibold tracking-wide text-[#e7e7e7]
-              shadow-[inset_0_1px_0_rgba(255,255,255,0.25),_0_2px_4px_rgba(0,0,0,0.4)]
-              hover:from-[#6a6a6a] hover:to-[#4a4a4a]
-              active:translate-y-px
-              active:shadow-[inset_0_2px_2px_rgba(0,0,0,0.5)]
-              focus:outline-none
-              focus:ring-2 focus:ring-white/30
-            "
                     >
                         Close
                     </button>

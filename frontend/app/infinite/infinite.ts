@@ -1,4 +1,3 @@
-
 import { Component, inject } from '@angular/core';
 import { Character, GuessResponse } from '../game/searchjson/searchjson.model';
 import { SearchJsonComponent } from '../game/searchjson/searchjson';
@@ -7,6 +6,7 @@ import { HeaderButtons } from '../game/header-buttons/header-buttons';
 import { attributeMatch, jobMatch } from '../shared/attribute-match';
 import type { InfiniteSettings } from '../services/infinite-settings.service';
 import { InfiniteSettingsService } from '../services/infinite-settings.service';
+import { TooltipComponent } from "../shared/tooltip/tooltip";
 
 interface InfiniteState {
   answerId: number | null;
@@ -39,7 +39,8 @@ const STORAGE_KEY = 'sciondle_infinite_state';
   imports: [
     HeaderButtons,
     SearchJsonComponent,
-    GuessTableComponent
+    GuessTableComponent,
+      TooltipComponent
   ],
   templateUrl: './infinite.html',
   styleUrl: './infinite.css'
